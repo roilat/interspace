@@ -1,28 +1,29 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
+import './data/head_list.json';
 
+
+class Header extends Component{
+	constructor(props){
+		super(props);
+		var str = header.map((item)=>{
+			<li><a href={item.page}>{item.title}</a></li>
+		});
+		this.state = {headStr:str};
+	}
+	render(){
+		return (<ul>
+			{this.state.str}
+		</ul>)
+	}
+}
 class App extends Component {
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return (<Header />);
   }
 }
+
+
 
 export default App;
