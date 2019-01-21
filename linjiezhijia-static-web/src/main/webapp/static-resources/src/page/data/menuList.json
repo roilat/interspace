@@ -1,0 +1,30 @@
+[
+	{
+		"page": "index.html",
+		"title": "网站首页"
+	},
+	{
+		"page": "share.html",
+		"title": "我的相册"
+	},
+	{
+		"page": "list.html",
+		"title": "我的日记"
+	},
+	{
+		"page": "about.html",
+		"title": "关于我"
+	},
+	{
+		"page": "gbook.html",
+		"title": "留言"
+	},
+	{
+		"page": "info.html",
+		"title": "内容页"
+	},
+	{
+		"page": "infopic.html",
+		"title": "内容页"
+	}
+]
