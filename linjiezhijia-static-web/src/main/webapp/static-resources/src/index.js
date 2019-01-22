@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Header from './page/common/Header';
+import Router from './page/common/Router';
 
-	console.log(header);
-	ReactDOM.render(
-	  (<App  />),
-	  document.getElementById('nav')
-	);
-	
+
+ReactDOM.render(
+  (<Header />),
+  document.getElementsByTagName("header")[0]
+);
+
+ReactDOM.render(
+  (<Router />),
+  document.getElementsByTagName("article")[0]
+);
