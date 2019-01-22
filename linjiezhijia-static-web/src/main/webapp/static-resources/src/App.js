@@ -7,7 +7,7 @@ import './data/head_list.json';
 class Header extends Component{
 	constructor(props){
 		super(props);
-		var str = header.map((item)=>{
+		var str = props.header.map((item)=>{
 			<li><a href={item.page}>{item.title}</a></li>
 		});
 		this.state = {headStr:str};
