@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Body extends Component{
-	constructor(props){
-		super(props);
-	}
+class Body extends React.Component{
 	render(){
 		return ("");
 	}

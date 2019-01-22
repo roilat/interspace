@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Header from './page/common/Header';
-import Body from './page/common/Body';
+import Router from './page/common/Router';
+
 
 ReactDOM.render(
   (<Header />),
-  document.getElementById("nav")
+  document.getElementsByTagName("header")[0]
 );
-	
+
 ReactDOM.render(
-  (<Body />),
-  document.getElementById("aboutMe")
+  (<Router />),
+  document.getElementsByTagName("article")[0]
 );
