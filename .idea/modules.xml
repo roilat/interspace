@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/linjiezhijia.iml" filepath="$PROJECT_DIR$/linjiezhijia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linjiezhijia-api/linjiezhijia-api.iml" filepath="$PROJECT_DIR$/linjiezhijia-api/linjiezhijia-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linjiezhijia-static-web/linjiezhijia-static-web.iml" filepath="$PROJECT_DIR$/linjiezhijia-static-web/linjiezhijia-static-web.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linjiezhijia-web/linjiezhijia-web.iml" filepath="$PROJECT_DIR$/linjiezhijia-web/linjiezhijia-web.iml" />
+    </modules>
+  </component>
+</project>
