@@ -27,7 +27,7 @@ class HomeAboutMe extends React.Component{
 		return (<div id="aboutMe" className="about_me"><h2>关于我</h2>
 	      <ul>
 	        <i><img src="images/owner.jpg" alt=""></img></i>
-	        <p><b>临界之间</b>，一个80后程序猿一名。</p>
+	        <p><b>临界之间</b>，一个80后程序猿一名。<br />Not everything that counts can be counted and not everything that's counted truly counts.</p>
 	      </ul></div>);
 	}
 }

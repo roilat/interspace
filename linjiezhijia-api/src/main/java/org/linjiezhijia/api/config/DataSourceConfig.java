@@ -22,7 +22,7 @@ public class DataSourceConfig {
     @Bean(name = "dataSource")
     @ConfigurationProperties(prefix = "spring.datasource")
     @Primary
-    public DataSource testDataSource() {
+    public DataSource dataSource() {
         return DataSourceBuilder.create().build();
     }
 
@@ -32,7 +32,7 @@ public class DataSourceConfig {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver()
-            .getResources("classpath:mybatis/mapper/test1/*.xml"));
+            .getResources("classpath:org/linjiezhijia/api/*/mappers/*.xml"));
         return bean.getObject();
     }
 
