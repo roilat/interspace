@@ -1,0 +1,7 @@
+1.在maven工程中，build->resources下的配置会覆盖parent的配置，也就是说，如果parent中的相关配置范围较大，而当前pom配置范围较小，就会出一些意想不到的问题，如我的配置中，就出现了properties文件未读取到以至于数据源初始化时，一直报配置找不到。
+
+2.配置多个数据源启动报错，error querying database. Cause: java.lang.IllegalArgumentException: dataSource or dataSourceClassName or jdbcUrl is required，
+主要原因是在1.0 配置数据源的过程中主要是写成：spring.datasource.url 和spring.datasource.driverClassName。
+而在2.0升级之后需要变更成：spring.datasource.jdbc-url和spring.datasource.driver-class-name即可解决！
+
+

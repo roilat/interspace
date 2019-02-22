@@ -5,9 +5,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class PropertiesUtils {
-    @Value("${com.neo.title}")
+    @Value("${spring.redis.host}")
     private String title;
-    @Value("${com.neo.description}")
+    @Value("${spring.redis.port}")
     private String description;
 
     public String getTitle() {
