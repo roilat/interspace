@@ -5,3 +5,35 @@
 而在2.0升级之后需要变更成：spring.datasource.jdbc-url和spring.datasource.driver-class-name即可解决！
 
 
+3.tomcat8启动后，出现如下错误:
+25-Feb-2019 10:27:47.686 严重 [localhost-startStop-1] org.apache.catalina.core.StandardContext.startInternal One or more Filters failed to start. Full details will be found in the appropriate container log file
+25-Feb-2019 10:27:47.687 严重 [localhost-startStop-1] org.apache.catalina.core.StandardContext.startInternal Context [/linjiezhijia-api] startup failed due to previous errors
+25-Feb-2019 10:27:47.726 警告 [localhost-startStop-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [linjiezhijia-api] registered the JDBC driver [com.alibaba.druid.proxy.DruidDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Feb-2019 10:27:47.726 警告 [localhost-startStop-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc The web application [linjiezhijia-api] registered the JDBC driver [com.mysql.cj.jdbc.Driver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+25-Feb-2019 10:27:47.727 警告 [localhost-startStop-1] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads The web application [linjiezhijia-api] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:70)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+ java.lang.Thread.run(Thread.java:745)
+参考：启动tomcat8提示内存泄漏问题解决(https://blog.csdn.net/ouyida3/article/details/49534839),是filter加载的时候出错，
+参考日志：localhost.2019-02-25.log
+25-Feb-2019 11:27:27.960 严重 [localhost-startStop-1] org.apache.catalina.core.StandardContext.filterStart Exception starting filter [LogFilter1]
+ java.lang.AbstractMethodError: javax.servlet.Filter.init(Ljavax/servlet/FilterConfig;)V
+	at org.linjiezhijia.api.config.filter.LogFilter1.init(LogFilter1.java:16)
+	at org.apache.catalina.core.ApplicationFilterConfig.initFilter(ApplicationFilterConfig.java:285)
+	at org.apache.catalina.core.ApplicationFilterConfig.<init>(ApplicationFilterConfig.java:112)
+	at org.apache.catalina.core.StandardContext.filterStart(StandardContext.java:4599)
+解决办法：原有的filter.init()方法中，代码如下：
+Filter.super.init(filterConfig);//由于filter所实现的是tomcat-ebeded-core.9.0.14.jar,其它Filter接口init方法是default的，而tomcat中Filter没有default，不能如此使用。
+
+
+
+4.在开发的过程中，前期总是出现mapper中的方法找不到的情况，虽然可能是因为xml格式错误而产生的，但是最终发现是需要进行mvn clean compile之后，再次运行就可以了。
+
+
+5.如果不配置任务事务，则默认是org.springframework.orm.jpa.JpaTransactionManager@1e1a2f43。如果在datasourceConfig类中配置了，则系统会使用已有配置.其实所有事务管理器都是实现了PlatformTransactionManager接口,只要管理的数据源是相同就好
+
+
+

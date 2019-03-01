@@ -6,15 +6,22 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 
+/**
+ * 数据源及mybatis配置
+ * 1.@MapperScan这个注解配置是搜索mapper接口，需要和yml文件中的mybatis.mapper-locations配合使用
+ * 2.根据application.yml,应该已经为hibernate生成自己的sessionFactory
+ * @author roilat-J
+ * @version $Id: DataSourceConfig.java, v 0.1 2019年2月28日 下午5:05:13 roilat-J Exp $
+ */
 @Configuration
-@MapperScan(basePackages = "org.linjiezhijia.api.*.mappers", sqlSessionTemplateRef = "sqlSessionTemplate")
+@MapperScan(basePackages = "org.linjiezhijia.api.biz.*.dao.mappers", sqlSessionTemplateRef = "sqlSessionTemplate")
 public class DataSourceConfig {
 
     /**
@@ -41,12 +48,31 @@ public class DataSourceConfig {
         return bean.getObject();
     }*/
 
-    @Bean(name = "transactionManager")
+    /**
+     * 适用的场景是“mybatis”，“ jdbctemplate”，"本地事务"
+     * 
+     * @param dataSource
+     * @return
+     */
+   @Bean(name = "transactionManager")
     @Primary
     public DataSourceTransactionManager transactionManager(@Qualifier("dataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);
     }
+   /******************************************/
+   
+   @Bean(name = "jpaTransactionManager")
+   public JpaTransactionManager jpaTransactionManager(@Qualifier("entityManagerFactory") LocalContainerEntityManagerFactoryBean localContainerEntityManagerFactoryBean ) {
+       return new JpaTransactionManager(localContainerEntityManagerFactoryBean.getNativeEntityManagerFactory());
+   }
 
+    /**
+     * 这是mybatis的sqlSessionTemplate
+     * 
+     * @param sqlSessionFactory
+     * @return
+     * @throws Exception
+     */
     @Bean(name = "sqlSessionTemplate")
     @Primary
     public SqlSessionTemplate testSqlSessionTemplate(@Qualifier("sqlSessionFactory") SqlSessionFactory sqlSessionFactory) throws Exception {

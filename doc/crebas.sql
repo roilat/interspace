@@ -26,152 +26,145 @@ drop table if exists T_PHOTO_ALBUM_LIST;
 /*==============================================================*/
 create table T_BLOG_ARTICLE
 (
-   ID                   int not null comment 'Ö÷¼ü',
-   CODE                 char(1) comment 'ÀàÄ¿±àÂë',
-   CONTENT              longtext comment '²©¿ÍÄÚÈİ',
-   TITLE                varchar(200) comment '²©¿Í±êÌâ',
-   COVER                varchar(100) comment 'ÎÄÕÂ·âÃæ£¨Ò»¸öurl£©',
-   SOURCE               varchar(10) comment 'ÄÚÈİÀ´Ô´(×Öµä´ı¶¨)',
-   ATTACHMENTS          varchar(100) comment '¸½¼şÁĞ±í(½«ID¶ººÅ·Ö¿ª)',
-   IF_PUBLISH           char(1) comment 'ÊÇ·ñ¹«¿ª(1¿ÉÒÔ,0²»¿ÉÒÔ)',
-   IF_COMMENT           char(1) comment 'ÊÇ·ñÆÀÂÛ(1¿ÉÒÔ,0²»¿ÉÒÔ)',
-   CREATE_DT            datetime comment '´´½¨ÈÕÆÚ',
-   UPDATE_DT            datetime comment '¸üĞÂÈÕÆÚ',
-   CREATOR              varchar(20) comment '´´½¨ÈË',
-   UPDATOR              varchar(20) comment '¸üĞÂÈË',
-   STATE                char(1) comment '¼ÇÂ¼×´Ì¬(1ÓĞĞ§,0É¾³ı)',
+   ID                   int not null auto_increment comment 'ä¸»é”®',
+   CODE                 char(5) comment 'ç±»ç›®ç¼–ç ',
+   CONTENT              longtext comment 'åšå®¢å†…å®¹',
+   TITLE                varchar(200) comment 'åšå®¢æ ‡é¢˜',
+   COVER                varchar(100) comment 'æ–‡ç« å°é¢ï¼ˆä¸€ä¸ªurlï¼‰',
+   SOURCE               varchar(10) comment 'å†…å®¹æ¥æº(å­—å…¸å¾…å®š)',
+   ATTACHMENTS          varchar(100) comment 'é™„ä»¶åˆ—è¡¨(å°†IDé€—å·åˆ†å¼€)',
+   IF_PUBLISH           char(1) comment 'æ˜¯å¦å…¬å¼€(1å¯ä»¥,0ä¸å¯ä»¥)',
+   IF_COMMENT           char(1) comment 'æ˜¯å¦è¯„è®º(1å¯ä»¥,0ä¸å¯ä»¥)',
+   CREATE_DT            datetime comment 'åˆ›å»ºæ—¥æœŸ',
+   UPDATE_DT            datetime comment 'æ›´æ–°æ—¥æœŸ',
+   CREATOR              varchar(20) comment 'åˆ›å»ºäºº',
+   UPDATOR              varchar(20) comment 'æ›´æ–°äºº',
+   STATE                char(1) comment 'è®°å½•çŠ¶æ€(1æœ‰æ•ˆ,0åˆ é™¤)',
    primary key (ID)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='åšå®¢æ–‡ç« ';
 
-alter table T_BLOG_ARTICLE comment '²©¿ÍÎÄÕÂ';
 
 /*==============================================================*/
 /* Table: T_BLOG_ATTACHMENT                                     */
 /*==============================================================*/
 create table T_BLOG_ATTACHMENT
 (
-   ID                   int not null comment 'Ö÷¼ü',
-   BLOG_ID              int comment '²©¿ÍID',
-   SAVE_PATH            varchar(150) comment '¸½¼şÈ«ÏŞ¶¨Ãû£¨°üÀ¨Â·¾¶ºÍÃû³Æ£©',
-   NAME                 varchar(50) comment '¸½¼şÃû³Æ',
-   TYPE                 char(1) comment '¸½¼şÀàĞÍ(ÔİÎ´¶¨Òå)',
-   CREATE_DT            datetime comment '´´½¨ÈÕÆÚ',
-   UPDATE_DT            datetime comment '¸üĞÂÈÕÆÚ',
-   CREATOR              varchar(20) comment '´´½¨ÈË',
-   UPDATOR              varchar(20) comment '¸üĞÂÈË',
-   STATE                char(1) comment '¼ÇÂ¼×´Ì¬(1ÓĞĞ§,0É¾³ı)',
+   ID                   int not null auto_increment comment 'ä¸»é”®',
+   BLOG_ID              int comment 'åšå®¢ID',
+   SAVE_PATH            varchar(150) comment 'é™„ä»¶å…¨é™å®šåï¼ˆåŒ…æ‹¬è·¯å¾„å’Œåç§°ï¼‰',
+   NAME                 varchar(50) comment 'é™„ä»¶åç§°',
+   TYPE                 char(1) comment 'é™„ä»¶ç±»å‹(æš‚æœªå®šä¹‰)',
+   CREATE_DT            datetime comment 'åˆ›å»ºæ—¥æœŸ',
+   UPDATE_DT            datetime comment 'æ›´æ–°æ—¥æœŸ',
+   CREATOR              varchar(20) comment 'åˆ›å»ºäºº',
+   UPDATOR              varchar(20) comment 'æ›´æ–°äºº',
+   STATE                char(1) comment 'è®°å½•çŠ¶æ€(1æœ‰æ•ˆ,0åˆ é™¤)',
    primary key (ID)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='åšå®¢é™„ä»¶';
 
-alter table T_BLOG_ATTACHMENT comment '²©¿Í¸½¼ş';
 
 /*==============================================================*/
 /* Table: T_BLOG_CATEGORY                                       */
 /*==============================================================*/
 create table T_BLOG_CATEGORY
 (
-   ID                   int not null comment 'Ö÷¼ü',
-   TYPE                 char(1) comment 'ÀàÄ¿ÀàĞÍ(L:link,A:article)',
-   CODE                 char(5) comment 'ÀàÄ¿±àÂë(Cxxxx<4Î»Êı×Ö>)',
-   PATH                 varchar(100) comment 'ÀàÄ¿±àÂëÂ·¾¶',
-   LEVEL                smallint comment 'ÀàÄ¿²ã¼¶',
-   ORDER_NUM            smallint comment 'ÀàÄ¿ÅÅĞò',
-   COUNTS               int comment 'ÎÄÕÂÊıÁ¿',
-   DESCRIPTION          varchar(100) comment 'ÀàÄ¿ÃèÊö',
-   P_CODE               char(5) comment '¸¸ÀàÄ¿±àÂë',
-   CREATE_DT            datetime comment '´´½¨ÈÕÆÚ',
-   UPDATE_DT            datetime comment '¸üĞÂÈÕÆÚ',
-   CREATOR              varchar(20) comment '´´½¨ÈË',
-   UPDATOR              varchar(20) comment '¸üĞÂÈË',
-   STATE                char(1) comment '¼ÇÂ¼×´Ì¬(1ÓĞĞ§,0É¾³ı)',
+   ID                   int not null auto_increment comment 'ä¸»é”®',
+   TYPE                 char(1) comment 'ç±»ç›®ç±»å‹(L:link,A:article)',
+   CODE                 char(5) comment 'ç±»ç›®ç¼–ç (Cxxxx<4ä½æ•°å­—>)',
+   PATH                 varchar(100) comment 'ç±»ç›®ç¼–ç è·¯å¾„',
+   LEVEL                smallint comment 'ç±»ç›®å±‚çº§',
+   ORDER_NUM            smallint comment 'ç±»ç›®æ’åº',
+   COUNTS               int comment 'æ–‡ç« æ•°é‡',
+   DESCRIPTION          varchar(100) comment 'ç±»ç›®æè¿°',
+   P_CODE               char(5) comment 'çˆ¶ç±»ç›®ç¼–ç ',
+   CREATE_DT            datetime comment 'åˆ›å»ºæ—¥æœŸ',
+   UPDATE_DT            datetime comment 'æ›´æ–°æ—¥æœŸ',
+   CREATOR              varchar(20) comment 'åˆ›å»ºäºº',
+   UPDATOR              varchar(20) comment 'æ›´æ–°äºº',
+   STATE                char(1) comment 'è®°å½•çŠ¶æ€(1æœ‰æ•ˆ,0åˆ é™¤)',
    primary key (ID)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='åšå®¢ç±»ç›®';
 
-alter table T_BLOG_CATEGORY comment '²©¿ÍÀàÄ¿';
 
 /*==============================================================*/
 /* Table: T_BLOG_LINK                                           */
 /*==============================================================*/
 create table T_BLOG_LINK
 (
-   ID                   int not null comment 'Ö÷¼ü',
-   SOURCE               varchar(10) comment 'Á´½ÓÀ´Ô´(×Öµä´ı¶¨)',
-   ADDRESS              varchar(200) comment 'Á´½ÓµØÖ·',
-   SNAPSHOOT            varchar(500) comment 'ÄÚÈİ¿ìÕÕ',
-   CREATE_DT            datetime comment '´´½¨ÈÕÆÚ',
-   UPDATE_DT            datetime comment '¸üĞÂÈÕÆÚ',
-   CREATOR              varchar(20) comment '´´½¨ÈË',
-   UPDATOR              varchar(20) comment '¸üĞÂÈË',
-   STATE                char(1) comment '¼ÇÂ¼×´Ì¬(1ÓĞĞ§,0É¾³ı)',
+   ID                   int not null auto_increment comment 'ä¸»é”®',
+   SOURCE               varchar(10) comment 'é“¾æ¥æ¥æº(å­—å…¸å¾…å®š)',
+   ADDRESS              varchar(200) comment 'é“¾æ¥åœ°å€',
+   SNAPSHOOT            varchar(500) comment 'å†…å®¹å¿«ç…§',
+   CREATE_DT            datetime comment 'åˆ›å»ºæ—¥æœŸ',
+   UPDATE_DT            datetime comment 'æ›´æ–°æ—¥æœŸ',
+   CREATOR              varchar(20) comment 'åˆ›å»ºäºº',
+   UPDATOR              varchar(20) comment 'æ›´æ–°äºº',
+   STATE                char(1) comment 'è®°å½•çŠ¶æ€(1æœ‰æ•ˆ,0åˆ é™¤)',
    primary key (ID)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='åšå®¢é“¾æ¥';
 
-alter table T_BLOG_LINK comment '²©¿ÍÁ´½Ó';
 
 /*==============================================================*/
 /* Table: T_DDCZ_EVENTS                                         */
 /*==============================================================*/
 create table T_DDCZ_EVENTS
 (
-   ID                   int not null comment 'Ö÷¼ü',
-   EVENT_TYPE           char(3) comment 'ÊÂ¼şÀàĞÍ£¨ÂëÖµ´ı¶¨£©',
-   EVENT_NAME           varchar(50) comment 'ÊÂ¼şÃû³Æ',
-   DESCRIPTION          varchar(500) comment 'ÊÂ¼şÃèÊö',
-   ORDER_NUM            smallint comment 'ÊÂ¼şÅÅĞò',
-   RELA_LINKS           varchar(150) comment 'ÊÂ¼şÏà¹ØÁ´½Ó',
-   FILE_SAVE_PATH       varchar(150) comment 'ÊÂ¼şÎÄ¼şÈ«ÏŞ¶¨Ãû£¨°üÀ¨Â·¾¶ºÍÃû³Æ£©',
-   FILE_NAME            varchar(50) comment 'ÊÂ¼şÎÄ¼şÃû³Æ',
-   FILE_TYPE            char(1) comment 'ÊÂ¼şÎÄ¼şÀàĞÍ(1Í¼Æ¬2ÊÓÆµ)',
-   EVENT_DATE           char(10) comment 'ÊÂ¼şÈÕÆÚ(yyyy-MM-dd)',
-   EVENT_TIME           char(8) comment 'ÊÂ¼şÊ±¼ä(HH:MI:SS)',
-   CREATE_DT            datetime comment '´´½¨ÈÕÆÚ',
-   UPDATE_DT            datetime comment '¸üĞÂÈÕÆÚ',
-   CREATOR              varchar(20) comment '´´½¨ÈË',
-   UPDATOR              varchar(20) comment '¸üĞÂÈË',
-   STATE                char(1) comment '¼ÇÂ¼×´Ì¬(1ÓĞĞ§,0É¾³ı)',
+   ID                   int not null auto_increment comment 'ä¸»é”®',
+   EVENT_TYPE           char(3) comment 'äº‹ä»¶ç±»å‹ï¼ˆç å€¼å¾…å®šï¼‰',
+   EVENT_NAME           varchar(50) comment 'äº‹ä»¶åç§°',
+   DESCRIPTION          varchar(500) comment 'äº‹ä»¶æè¿°',
+   ORDER_NUM            smallint comment 'äº‹ä»¶æ’åº',
+   RELA_LINKS           varchar(150) comment 'äº‹ä»¶ç›¸å…³é“¾æ¥',
+   FILE_SAVE_PATH       varchar(150) comment 'äº‹ä»¶æ–‡ä»¶å…¨é™å®šåï¼ˆåŒ…æ‹¬è·¯å¾„å’Œåç§°ï¼‰',
+   FILE_NAME            varchar(50) comment 'äº‹ä»¶æ–‡ä»¶åç§°',
+   FILE_TYPE            char(1) comment 'äº‹ä»¶æ–‡ä»¶ç±»å‹(1å›¾ç‰‡2è§†é¢‘)',
+   EVENT_DATE           char(10) comment 'äº‹ä»¶æ—¥æœŸ(yyyy-MM-dd)',
+   EVENT_TIME           char(8) comment 'äº‹ä»¶æ—¶é—´(HH:MI:SS)',
+   CREATE_DT            datetime comment 'åˆ›å»ºæ—¥æœŸ',
+   UPDATE_DT            datetime comment 'æ›´æ–°æ—¥æœŸ',
+   CREATOR              varchar(20) comment 'åˆ›å»ºäºº',
+   UPDATOR              varchar(20) comment 'æ›´æ–°äºº',
+   STATE                char(1) comment 'è®°å½•çŠ¶æ€(1æœ‰æ•ˆ,0åˆ é™¤)',
    primary key (ID)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='è±†è±†æˆé•¿è®°äº‹è¡¨';
 
-alter table T_DDCZ_EVENTS comment '¶¹¶¹³É³¤¼ÇÊÂ±í';
 
 /*==============================================================*/
 /* Table: T_PHOTO_ALBUM_FILE                                    */
 /*==============================================================*/
 create table T_PHOTO_ALBUM_FILE
 (
-   ID                   int not null comment 'Ö÷¼ü',
-   PHOTO_ALBUM_ID       int comment 'Ïà²áID',
-   SAVE_PATH            varchar(150) comment 'Ïà²áÎÄ¼şÈ«ÏŞ¶¨Ãû£¨°üÀ¨Â·¾¶ºÍÃû³Æ£©',
-   NAME                 varchar(50) comment 'Ïà²áÎÄ¼şÃû³Æ',
-   DESCRIPTION          varchar(200) comment 'Ïà²áÎÄ¼şÃèÊö',
-   TYPE                 char(1) comment 'Ïà²áÎÄ¼şÀàĞÍ(1Í¼Æ¬2ÊÓÆµ)',
-   CREATE_DT            datetime comment '´´½¨ÈÕÆÚ',
-   UPDATE_DT            datetime comment '¸üĞÂÈÕÆÚ',
-   CREATOR              varchar(20) comment '´´½¨ÈË',
-   UPDATOR              varchar(20) comment '¸üĞÂÈË',
-   STATE                char(1) comment '¼ÇÂ¼×´Ì¬(1ÓĞĞ§,0É¾³ı)',
+   ID                   int not null auto_increment comment 'ä¸»é”®',
+   PHOTO_ALBUM_ID       int comment 'ç›¸å†ŒID',
+   SAVE_PATH            varchar(150) comment 'ç›¸å†Œæ–‡ä»¶å…¨é™å®šåï¼ˆåŒ…æ‹¬è·¯å¾„å’Œåç§°ï¼‰',
+   NAME                 varchar(50) comment 'ç›¸å†Œæ–‡ä»¶åç§°',
+   DESCRIPTION          varchar(200) comment 'ç›¸å†Œæ–‡ä»¶æè¿°',
+   TYPE                 char(1) comment 'ç›¸å†Œæ–‡ä»¶ç±»å‹(1å›¾ç‰‡2è§†é¢‘)',
+   CREATE_DT            datetime comment 'åˆ›å»ºæ—¥æœŸ',
+   UPDATE_DT            datetime comment 'æ›´æ–°æ—¥æœŸ',
+   CREATOR              varchar(20) comment 'åˆ›å»ºäºº',
+   UPDATOR              varchar(20) comment 'æ›´æ–°äºº',
+   STATE                char(1) comment 'è®°å½•çŠ¶æ€(1æœ‰æ•ˆ,0åˆ é™¤)',
    primary key (ID)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='ç›¸å†Œæ–‡ä»¶';
 
-alter table T_PHOTO_ALBUM_FILE comment 'Ïà²áÎÄ¼ş';
 
 /*==============================================================*/
 /* Table: T_PHOTO_ALBUM_LIST                                    */
 /*==============================================================*/
 create table T_PHOTO_ALBUM_LIST
 (
-   ID                   int not null comment 'Ö÷¼ü',
-   NAME                 varchar(50) comment 'Ïà²áÃû³Æ',
-   DESCRIPTION          varchar(500) comment 'Ïà²áÃèÊö',
-   ORDER_NUM            smallint comment 'Ïà²áÅÅĞò',
-   COUNTS               int comment 'Ïà²áÎÄ¼şÊıÁ¿',
-   CREATE_DT            datetime comment '´´½¨ÈÕÆÚ',
-   UPDATE_DT            datetime comment '¸üĞÂÈÕÆÚ',
-   CREATOR              varchar(20) comment '´´½¨ÈË',
-   UPDATOR              varchar(20) comment '¸üĞÂÈË',
-   STATE                char(1) comment '¼ÇÂ¼×´Ì¬(1ÓĞĞ§,0É¾³ı)',
+   ID                   int not null auto_increment comment 'ä¸»é”®',
+   NAME                 varchar(50) comment 'ç›¸å†Œåç§°',
+   DESCRIPTION          varchar(500) comment 'ç›¸å†Œæè¿°',
+   ORDER_NUM            smallint comment 'ç›¸å†Œæ’åº',
+   COUNTS               int comment 'ç›¸å†Œæ–‡ä»¶æ•°é‡',
+   CREATE_DT            datetime comment 'åˆ›å»ºæ—¥æœŸ',
+   UPDATE_DT            datetime comment 'æ›´æ–°æ—¥æœŸ',
+   CREATOR              varchar(20) comment 'åˆ›å»ºäºº',
+   UPDATOR              varchar(20) comment 'æ›´æ–°äºº',
+   STATE                char(1) comment 'è®°å½•çŠ¶æ€(1æœ‰æ•ˆ,0åˆ é™¤)',
    primary key (ID)
-);
+)ENGINE=InnoDB DEFAULT CHARSET=UTF8 COMMENT='ç›¸å†Œåˆ†ç±»';
 
-alter table T_PHOTO_ALBUM_LIST comment 'Ïà²á·ÖÀà';
 

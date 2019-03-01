@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.linjiezhijia.api.biz.blog.dao.mappers.BlogCategoryMapper">
+	<resultMap id="BlogCategoryResultMap"
+		type="org.linjiezhijia.api.biz.blog.model.BlogCategory">
+		<result column="ID" jdbcType="INTEGER" property="id" />
+		<result column="TYPE" jdbcType="CHAR" property="type" />
+		<result column="CODE" jdbcType="CHAR" property="code" />
+		<result column="PATH" jdbcType="VARCHAR" property="path" />
+		<result column="LEVEL" jdbcType="SMALLINT" property="level" />
+		<result column="ORDER_NUM" jdbcType="SMALLINT" property="orderNum" />
+		<result column="COUNTS" jdbcType="INTEGER" property="counts" />
+		<result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+		<result column="P_CODE" jdbcType="CHAR" property="pCode" />
+		<result column="CREATE_DT" jdbcType="TIMESTAMP" property="createDt" />
+		<result column="UPDATE_DT" jdbcType="TIMESTAMP" property="updateDt" />
+		<result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+		<result column="UPDATOR" jdbcType="VARCHAR" property="updator" />
+		<result column="STATE" jdbcType="CHAR" property="state" />
+	</resultMap>
+	<sql id="Where_Clause">
+		<where>criterias
+			<foreach collection="criterias" item="criteria" separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value" item="listItem"
+										open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Update_By_Where_Clause">
+		<where>
+			<foreach collection="param.criterias" item="criteria"
+				separator="or">
+				<if test="criteria.valid">
+					<trim prefix="(" prefixOverrides="and" suffix=")">
+						<foreach collection="criteria.criteria" item="criterion">
+							<choose>
+								<when test="criterion.noValue">
+									and ${criterion.condition}
+								</when>
+								<when test="criterion.singleValue">
+									and ${criterion.condition} #{criterion.value}
+								</when>
+								<when test="criterion.betweenValue">
+									and ${criterion.condition} #{criterion.value} and
+									#{criterion.secondValue}
+								</when>
+								<when test="criterion.listValue">
+									and ${criterion.condition}
+									<foreach close=")" collection="criterion.value" item="listItem"
+										open="(" separator=",">
+										#{listItem}
+									</foreach>
+								</when>
+							</choose>
+						</foreach>
+					</trim>
+				</if>
+			</foreach>
+		</where>
+	</sql>
+	<sql id="Base_Column_List">
+		ID, TYPE, CODE, PATH, LEVEL, ORDER_NUM, COUNTS, DESCRIPTION, P_CODE,
+		CREATE_DT, UPDATE_DT,
+		CREATOR, UPDATOR, STATE
+	</sql>
+	<delete id="delete" parameterType="org.linjiezhijia.api.biz.blog.dbo.BlogCategoryDO">
+		delete from t_blog_category
+		<if test="_parameter != null">
+			<include refid="Where_Clause" />
+		</if>
+	</delete><select id="pageCount" parameterType="org.linjiezhijia.api.biz.blog.dbo.BlogCategoryDO" resultType="java.lang.Long">
+		select count(*) from t_blog_category
+		<if test="_parameter != null">
+			<include refid="Where_Clause" />
+		</if>
+	</select><select id="pageList"
+		parameterType="org.linjiezhijia.api.biz.blog.dbo.BlogCategoryDO"
+		resultMap="BlogCategoryResultMap">
+		select
+		<if test="distinct">
+			distinct
+		</if>
+		<include refid="Base_Column_List" />
+		from t_blog_category
+		<if test="_parameter != null">
+			<include refid="Where_Clause" />
+		</if>
+		<if test="orderByClause != null">
+			order by ${orderByClause}
+		</if>
+	</select>
+	
+	<insert id="insert" parameterType="org.linjiezhijia.api.biz.blog.model.BlogCategory">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into t_blog_category (TYPE, CODE, PATH, LEVEL,
+		ORDER_NUM, COUNTS, DESCRIPTION,
+		P_CODE, CREATE_DT, UPDATE_DT,
+		CREATOR, UPDATOR, STATE
+		)
+		values (#{type,jdbcType=CHAR}, #{code,jdbcType=CHAR},
+		#{path,jdbcType=VARCHAR}, #{level,jdbcType=SMALLINT},
+		#{orderNum,jdbcType=SMALLINT}, #{counts,jdbcType=INTEGER},
+		#{description,jdbcType=VARCHAR},
+		#{pCode,jdbcType=CHAR}, #{createDt,jdbcType=TIMESTAMP}, #{updateDt,jdbcType=TIMESTAMP},
+		#{creator,jdbcType=VARCHAR}, #{updator,jdbcType=VARCHAR},
+		#{state,jdbcType=CHAR}
+		)
+	</insert>
+	
+	<update id="update" parameterType="map">
+		update t_blog_category
+		<set>
+			<if test="record.id != null">
+				ID = #{record.id,jdbcType=INTEGER},
+			</if>
+			<if test="record.type != null">
+				TYPE = #{record.type,jdbcType=CHAR},
+			</if>
+			<if test="record.code != null">
+				CODE = #{record.code,jdbcType=CHAR},
+			</if>
+			<if test="record.path != null">
+				PATH = #{record.path,jdbcType=VARCHAR},
+			</if>
+			<if test="record.level != null">
+				LEVEL = #{record.level,jdbcType=SMALLINT},
+			</if>
+			<if test="record.orderNum != null">
+				ORDER_NUM = #{record.orderNum,jdbcType=SMALLINT},
+			</if>
+			<if test="record.counts != null">
+				COUNTS = #{record.counts,jdbcType=INTEGER},
+			</if>
+			<if test="record.description != null">
+				DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+			</if>
+			<if test="record.pCode != null">
+				P_CODE = #{record.pCode,jdbcType=CHAR},
+			</if>
+			<if test="record.createDt != null">
+				CREATE_DT = #{record.createDt,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.updateDt != null">
+				UPDATE_DT = #{record.updateDt,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.creator != null">
+				CREATOR = #{record.creator,jdbcType=VARCHAR},
+			</if>
+			<if test="record.updator != null">
+				UPDATOR = #{record.updator,jdbcType=VARCHAR},
+			</if>
+			<if test="record.state != null">
+				STATE = #{record.state,jdbcType=CHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include refid="Update_By_Where_Clause" />
+		</if>
+	</update>
+</mapper>
