@@ -4,160 +4,54 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.linjiezhijia.api.biz.blog.po.BlogCategoryPO;
+import org.linjiezhijia.api.common.query.BaseDO;
+import org.linjiezhijia.api.common.query.Criteria;
 import org.linjiezhijia.api.common.query.Criterion;
+import org.linjiezhijia.api.util.StringUtils;
 
-public class BlogCategoryDO {
-    /**
-
-     * This field corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    protected String orderByClause;
-
-    /**
-
-     * This field corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    protected boolean distinct;
-
-    /**
-
-     * This field corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    protected List<Criteria> criterias;
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public BlogCategoryDO() {
-        criterias = new ArrayList<Criteria>();
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setOrderByClause(String orderByClause) {
-        this.orderByClause = orderByClause;
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public String getOrderByClause() {
-        return orderByClause;
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setDistinct(boolean distinct) {
-        this.distinct = distinct;
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public boolean isDistinct() {
-        return distinct;
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public List<Criteria> getCriterias() {
-        return criterias;
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void or(Criteria criteria) {
-        criterias.add(criteria);
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Criteria or() {
-        Criteria criteria = createCriteriaInternal();
-        criterias.add(criteria);
-        return criteria;
-    }
-
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Criteria createCriteria() {
-        Criteria criteria = createCriteriaInternal();
-        if (criterias.size() == 0) {
-            criterias.add(criteria);
+/**
+ * 博客类目-数据访问对象
+ * 
+ * @author roilat-J
+ * @version $Id: BlogCategoryDO.java, v 0.1 2019年3月7日 下午4:43:54 roilat-J Exp $
+ */
+public class BlogCategoryDO extends BaseDO<BlogCategoryPO>{
+    public Criteria buildCriteria(BlogCategoryPO blogCategoryPO) {
+        GeneratedCriteria criteria = new GeneratedCriteria();
+        this.criterias.add(criteria);
+        if(blogCategoryPO == null) {
+            return criteria;
+        }
+        this.orderByClause = blogCategoryPO.getOrderByClause();
+        if(StringUtils.isNotEmpty(blogCategoryPO.getDescription())) {
+            criteria.andDescriptionLike(blogCategoryPO.getDescription());
         }
         return criteria;
     }
 
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     protected Criteria createCriteriaInternal() {
-        Criteria criteria = new Criteria();
+        Criteria criteria = new GeneratedCriteria();
         return criteria;
     }
 
-    /**
-     * 
-     * This method corresponds to the database table t_blog_category
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void clear() {
-        criterias.clear();
-        orderByClause = null;
-        distinct = false;
+    @Override
+    public String toString() {
+        return "BlogCategoryDO [orderByClause=" + orderByClause + ", distinct=" + distinct
+               + ", criterias=" + criterias + "]";
     }
 
-    /**
-     */
-    protected abstract static class GeneratedCriteria {
+    class GeneratedCriteria extends Criteria {
         protected List<Criterion> criteria;
 
         protected GeneratedCriteria() {
             super();
             criteria = new ArrayList<Criterion>();
+        }
+
+        @Override
+        public String toString() {
+            return "GeneratedCriteria [criteria=" + criteria + "]";
         }
 
         public boolean isValid() {
@@ -172,25 +66,29 @@ public class BlogCategoryDO {
             return criteria;
         }
 
-        protected void addCriterion(String condition) {
+        public Criteria addCriterion(String condition) {
             if (condition == null) {
                 throw new RuntimeException("Value for condition cannot be null");
             }
             criteria.add(new Criterion(condition));
+            return this;
         }
 
-        protected void addCriterion(String condition, Object value, String property) {
+        public Criteria addCriterion(String condition, Object value, String property) {
             if (value == null) {
                 throw new RuntimeException("Value for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value));
+            return this;
         }
 
-        protected void addCriterion(String condition, Object value1, Object value2, String property) {
+        public Criteria addCriterion(String condition, Object value1, Object value2,
+                                    String property) {
             if (value1 == null || value2 == null) {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
+            return this;
         }
 
         public Criteria andIdIsNull() {
@@ -473,52 +371,52 @@ public class BlogCategoryDO {
             return (Criteria) this;
         }
 
-        public Criteria andLevelEqualTo(Short value) {
+        public Criteria andLevelEqualTo(Integer value) {
             addCriterion("LEVEL =", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelNotEqualTo(Short value) {
+        public Criteria andLevelNotEqualTo(Integer value) {
             addCriterion("LEVEL <>", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelGreaterThan(Short value) {
+        public Criteria andLevelGreaterThan(Integer value) {
             addCriterion("LEVEL >", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelGreaterThanOrEqualTo(Short value) {
+        public Criteria andLevelGreaterThanOrEqualTo(Integer value) {
             addCriterion("LEVEL >=", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelLessThan(Short value) {
+        public Criteria andLevelLessThan(Integer value) {
             addCriterion("LEVEL <", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelLessThanOrEqualTo(Short value) {
+        public Criteria andLevelLessThanOrEqualTo(Integer value) {
             addCriterion("LEVEL <=", value, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelIn(List<Short> values) {
+        public Criteria andLevelIn(List<Integer> values) {
             addCriterion("LEVEL in", values, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelNotIn(List<Short> values) {
+        public Criteria andLevelNotIn(List<Integer> values) {
             addCriterion("LEVEL not in", values, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelBetween(Short value1, Short value2) {
+        public Criteria andLevelBetween(Integer value1, Integer value2) {
             addCriterion("LEVEL between", value1, value2, "level");
             return (Criteria) this;
         }
 
-        public Criteria andLevelNotBetween(Short value1, Short value2) {
+        public Criteria andLevelNotBetween(Integer value1, Integer value2) {
             addCriterion("LEVEL not between", value1, value2, "level");
             return (Criteria) this;
         }
@@ -533,52 +431,52 @@ public class BlogCategoryDO {
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumEqualTo(Short value) {
+        public Criteria andOrderNumEqualTo(Integer value) {
             addCriterion("ORDER_NUM =", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumNotEqualTo(Short value) {
+        public Criteria andOrderNumNotEqualTo(Integer value) {
             addCriterion("ORDER_NUM <>", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumGreaterThan(Short value) {
+        public Criteria andOrderNumGreaterThan(Integer value) {
             addCriterion("ORDER_NUM >", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumGreaterThanOrEqualTo(Short value) {
+        public Criteria andOrderNumGreaterThanOrEqualTo(Integer value) {
             addCriterion("ORDER_NUM >=", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumLessThan(Short value) {
+        public Criteria andOrderNumLessThan(Integer value) {
             addCriterion("ORDER_NUM <", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumLessThanOrEqualTo(Short value) {
+        public Criteria andOrderNumLessThanOrEqualTo(Integer value) {
             addCriterion("ORDER_NUM <=", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumIn(List<Short> values) {
+        public Criteria andOrderNumIn(List<Integer> values) {
             addCriterion("ORDER_NUM in", values, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumNotIn(List<Short> values) {
+        public Criteria andOrderNumNotIn(List<Integer> values) {
             addCriterion("ORDER_NUM not in", values, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumBetween(Short value1, Short value2) {
+        public Criteria andOrderNumBetween(Integer value1, Integer value2) {
             addCriterion("ORDER_NUM between", value1, value2, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumNotBetween(Short value1, Short value2) {
+        public Criteria andOrderNumNotBetween(Integer value1, Integer value2) {
             addCriterion("ORDER_NUM not between", value1, value2, "orderNum");
             return (Criteria) this;
         }
@@ -1111,19 +1009,6 @@ public class BlogCategoryDO {
         public Criteria andStateNotBetween(String value1, String value2) {
             addCriterion("STATE not between", value1, value2, "state");
             return (Criteria) this;
-        }
-    }
-
-    /**
-     * This class was generated by MyBatis Generator.
-     * This class corresponds to the database table t_blog_category
-     *
-     * @mbg.generated do_not_delete_during_merge Wed Feb 27 18:14:31 CST 2019
-     */
-    public static class Criteria extends GeneratedCriteria {
-
-        protected Criteria() {
-            super();
         }
     }
 }

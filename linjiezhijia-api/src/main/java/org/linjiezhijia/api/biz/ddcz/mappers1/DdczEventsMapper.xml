@@ -6,7 +6,7 @@
     <result column="EVENT_TYPE" jdbcType="CHAR" property="eventType" />
     <result column="EVENT_NAME" jdbcType="VARCHAR" property="eventName" />
     <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
-    <result column="ORDER_NUM" jdbcType="SMALLINT" property="orderNum" />
+    <result column="ORDER_NUM" jdbcType="INTEGER" property="orderNum" />
     <result column="RELA_LINKS" jdbcType="VARCHAR" property="relaLinks" />
     <result column="FILE_SAVE_PATH" jdbcType="VARCHAR" property="fileSavePath" />
     <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
@@ -112,7 +112,7 @@
       CREATOR, UPDATOR, STATE
       )
     values (#{eventType,jdbcType=CHAR}, #{eventName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
-      #{orderNum,jdbcType=SMALLINT}, #{relaLinks,jdbcType=VARCHAR}, #{fileSavePath,jdbcType=VARCHAR}, 
+      #{orderNum,jdbcType=INTEGER}, #{relaLinks,jdbcType=VARCHAR}, #{fileSavePath,jdbcType=VARCHAR}, 
       #{fileName,jdbcType=VARCHAR}, #{fileType,jdbcType=CHAR}, #{eventDate,jdbcType=CHAR}, 
       #{eventTime,jdbcType=CHAR}, #{createDt,jdbcType=TIMESTAMP}, #{updateDt,jdbcType=TIMESTAMP}, 
       #{creator,jdbcType=VARCHAR}, #{updator,jdbcType=VARCHAR}, #{state,jdbcType=CHAR}
@@ -181,7 +181,7 @@
         #{description,jdbcType=VARCHAR},
       </if>
       <if test="orderNum != null">
-        #{orderNum,jdbcType=SMALLINT},
+        #{orderNum,jdbcType=INTEGER},
       </if>
       <if test="relaLinks != null">
         #{relaLinks,jdbcType=VARCHAR},
@@ -240,7 +240,7 @@
         DESCRIPTION = #{record.description,jdbcType=VARCHAR},
       </if>
       <if test="record.orderNum != null">
-        ORDER_NUM = #{record.orderNum,jdbcType=SMALLINT},
+        ORDER_NUM = #{record.orderNum,jdbcType=INTEGER},
       </if>
       <if test="record.relaLinks != null">
         RELA_LINKS = #{record.relaLinks,jdbcType=VARCHAR},
@@ -286,7 +286,7 @@
       EVENT_TYPE = #{record.eventType,jdbcType=CHAR},
       EVENT_NAME = #{record.eventName,jdbcType=VARCHAR},
       DESCRIPTION = #{record.description,jdbcType=VARCHAR},
-      ORDER_NUM = #{record.orderNum,jdbcType=SMALLINT},
+      ORDER_NUM = #{record.orderNum,jdbcType=INTEGER},
       RELA_LINKS = #{record.relaLinks,jdbcType=VARCHAR},
       FILE_SAVE_PATH = #{record.fileSavePath,jdbcType=VARCHAR},
       FILE_NAME = #{record.fileName,jdbcType=VARCHAR},

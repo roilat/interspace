@@ -1,59 +1,90 @@
 package org.linjiezhijia.api.biz.blog.controller;
 
+import java.io.IOException;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 import org.linjiezhijia.api.biz.blog.model.BlogArticle;
 import org.linjiezhijia.api.biz.blog.po.BlogArticlePO;
 import org.linjiezhijia.api.biz.blog.services.BlogArticleService;
+import org.linjiezhijia.api.common.enums.CommonRecordStateEnum;
+import org.linjiezhijia.api.common.exception.LinjiezhijiaErrorCodeEnums;
+import org.linjiezhijia.api.common.exception.LinjiezhijiaException;
 import org.linjiezhijia.api.common.result.CommonPageResult;
 import org.linjiezhijia.api.common.result.CommonResult;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/blog")
+@RequestMapping(value = "/api/blog/article")
 public class BlogArticleController {
     @Resource
     private BlogArticleService blogArticleService;
 
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = "application/json")
-    public CommonResult<BlogArticle> getById(@PathVariable("id") String idStr) {
-        CommonResult<BlogArticle> result;
-        try {
-            Integer id = Integer.parseInt(idStr);
-            result = blogArticleService.getById(id);
-        } catch (NumberFormatException e) {
-            result = new CommonResult<>();
-            result.buildResult(false);
-
-        }
-        return result;
-    }
-
     @RequestMapping(path = "/", method = RequestMethod.GET, produces = "application/json")
-    public CommonPageResult<BlogArticle> pageList(BlogArticlePO blogArticlePO) {
+    public CommonPageResult<BlogArticle> pageList(HttpServletRequest request,
+                                                  BlogArticlePO blogArticlePO) throws IOException {
+        byte[] b = new byte[1024];
+        request.getInputStream().read(b);
+        System.out.println(new String(b));
         CommonPageResult<BlogArticle> result = blogArticleService.pageList(blogArticlePO);
         return result;
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = "application/json")
-    public CommonResult<BlogArticle> save(BlogArticle blogArticle) {
+    @RequestMapping(path = "/", method = RequestMethod.POST, produces = "application/json")
+    public CommonResult<BlogArticle> save(@RequestBody BlogArticle blogArticle) {
         CommonResult<BlogArticle> result = blogArticleService.save(blogArticle);
         return result;
     }
 
-    @RequestMapping(method = RequestMethod.PUT, produces = "application/json")
-    public CommonResult<BlogArticle> update(BlogArticle blogArticle) {
+    @RequestMapping(path = "/{id}", method = RequestMethod.PUT, produces = "application/json")
+    public CommonResult<BlogArticle> update(@PathVariable("id") String idStr,
+                                            @RequestBody BlogArticle blogArticle) {
+        Integer id = null;
+        try {
+            id = Integer.parseInt(idStr);
+        } catch (NumberFormatException e) {
+        }
+        if (id == null) {
+            throw new LinjiezhijiaException(LinjiezhijiaErrorCodeEnums.ID_NOT_EXISTS);
+        }
+        blogArticle.setId(id);
         CommonResult<BlogArticle> result = blogArticleService.update(blogArticle);
         return result;
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, produces = "application/json")
-    public CommonResult<BlogArticle> delete(BlogArticle blogArticle) {
-        CommonResult<BlogArticle> result = blogArticleService.update(blogArticle);
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    public CommonResult<BlogArticle> delete(@PathVariable("id") String idStr) {
+        Integer id = null;
+        try {
+            id = Integer.parseInt(idStr);
+        } catch (NumberFormatException e) {
+        }
+        if (id == null) {
+            throw new LinjiezhijiaException(LinjiezhijiaErrorCodeEnums.ID_NOT_EXISTS);
+        }
+        BlogArticle article = new BlogArticle();
+        article.setId(id);
+        article.setState(CommonRecordStateEnum.DELETE.getCode());
+        CommonResult<BlogArticle> result = blogArticleService.update(article);
+        return result;
+    }
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.GET, produces = "application/json")
+    public CommonResult<BlogArticle> getById(@PathVariable("id") String idStr) {
+        Integer id = null;
+        try {
+            id = Integer.parseInt(idStr);
+        } catch (NumberFormatException e) {
+        }
+        if (id == null) {
+            throw new LinjiezhijiaException(LinjiezhijiaErrorCodeEnums.ID_NOT_EXISTS);
+        }
+        CommonResult<BlogArticle> result = blogArticleService.getById(id);
         return result;
     }
 }

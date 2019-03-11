@@ -12,10 +12,12 @@ import org.linjiezhijia.api.biz.demo.dao.ArticleRepository;
 import org.linjiezhijia.api.biz.demo.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
+@ActiveProfiles("test")
 public class ArticleRepositoryTest {
 
     @Autowired
@@ -38,7 +40,7 @@ public class ArticleRepositoryTest {
     @Test
     public void testInsert() {
         Article article = new Article();
-        article.setTitle("测试标题");
+        article.setTitle("测试标题111");
         article.setSummary("测试摘要");
         article.setUserId(1L);
         article.setStatus(1);
@@ -47,6 +49,13 @@ public class ArticleRepositoryTest {
         article.setUpdateTime(new Date());
         article.setPublicTime(new Date());
         articleRepository.save(article);
+        System.out.println(article);
+    }
+    
+    @Test
+    public void testDelete() {
+        Article article = new Article();
+        articleRepository.delete(article);
         System.out.println(article);
     }
 }

@@ -1,82 +1,53 @@
 package org.linjiezhijia.api.biz.blog.po;
 
-import java.util.Date;
+import org.linjiezhijia.api.common.BasePO;
 
-import org.linjiezhijia.api.common.query.BasePO;
+/**
+ * 博客文章-参数对象
+ * 
+ * @author roilat-J
+ * @version $Id: BlogArticlePO.java, v 0.1 2019年3月7日 下午4:41:20 roilat-J Exp $
+ */
+public class BlogArticlePO extends BasePO {
 
-public class BlogArticlePO extends BasePO{
     /**
-     *
-     */
-    private Integer id;
-
-    /**
-     *
+     *类目编码
      */
     private String code;
 
     /**
-     *
+     *博客内容
+     */
+    private String content;
+    /**
+     *博客标题
      */
     private String title;
 
     /**
-     *
+     *文章封面（一个url）
      */
     private String cover;
 
     /**
-     *
+     *内容来源(字典待定)
      */
     private String source;
 
     /**
-     *
+     *附件列表(将ID逗号分开)
      */
     private String attachments;
 
     /**
-     *
+     *是否公开(1可以,0不可以)
      */
     private String ifPublish;
 
     /**
-     *
+     *是否评论(1可以,0不可以)
      */
     private String ifComment;
-
-    /**
-     *
-     */
-    private Date createDt;
-
-    /**
-     *
-     */
-    private Date updateDt;
-
-    /**
-     *
-     */
-    private String creator;
-
-    /**
-     *
-     */
-    private String updator;
-
-    /**
-     *
-     */
-    private String state;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getCode() {
         return code;
@@ -84,6 +55,14 @@ public class BlogArticlePO extends BasePO{
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 
     public String getTitle() {
@@ -134,44 +113,15 @@ public class BlogArticlePO extends BasePO{
         this.ifComment = ifComment;
     }
 
-    public Date getCreateDt() {
-        return createDt;
-    }
-
-    public void setCreateDt(Date createDt) {
-        this.createDt = createDt;
-    }
-
-    public Date getUpdateDt() {
-        return updateDt;
-    }
-
-    public void setUpdateDt(Date updateDt) {
-        this.updateDt = updateDt;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getUpdator() {
-        return updator;
-    }
-
-    public void setUpdator(String updator) {
-        this.updator = updator;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
+    @Override
+    public String toString() {
+        return "BlogArticlePO [code=" + code + ", content=" + content + ", title=" + title
+               + ", cover=" + cover + ", source=" + source + ", attachments=" + attachments
+               + ", ifPublish=" + ifPublish + ", ifComment=" + ifComment + ", orderByClause="
+               + orderByClause + ", currentPage=" + currentPage + ", pageSize=" + pageSize
+               + ", params=" + params + ", id=" + id + ", createDt=" + createDt + ", updateDt="
+               + updateDt + ", creator=" + creator + ", updator=" + updator + ", state=" + state
+               + "]";
     }
 
 }

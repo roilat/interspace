@@ -40,17 +40,24 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		
 		<!-- springboot基本的starter -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!-- springweb starter 不使用tomcat的时候 -->
 		<dependency>
@@ -61,6 +68,10 @@
 		            <groupId>org.springframework.boot</groupId>
 		            <artifactId>spring-boot-starter-tomcat</artifactId>
 		        </exclusion>
+		        <exclusion>
+	                <groupId>org.springframework.boot</groupId>
+	                <artifactId>spring-boot-starter-logging</artifactId>
+		        </exclusion>
 		    </exclusions>
 		</dependency>
 		<dependency>
@@ -68,7 +79,6 @@
 		    <artifactId>spring-boot-starter-tomcat</artifactId>
 		    <!--打包的时候可以不用包进去，别的设施会提供。事实上该依赖理论上可以参与编译，测试，运行等周期。
 		        相当于compile，但是打包阶段做了exclude操作-->
-		    <scope>provided</scope>
 		</dependency>
 		<!-- 连接池处理器 -->
 		<dependency>
@@ -86,10 +96,10 @@
 		    <artifactId>slf4j-api</artifactId>
 		</dependency>		
 		<!-- 数据访问jdbc,jpa,mybatis正常情况，3选1就可以，但是一般不直接使用jdbc -->
-		<dependency>
+ 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
-		</dependency>
+		</dependency> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -111,19 +121,13 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>jquery</artifactId>
-			<version>2.0.3</version>
-		</dependency>
-		<dependency>
-			<groupId>org.webjars.bower</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>3.0.3</version>
-		</dependency>
-		<dependency>
 		    <groupId>org.apache.maven.surefire</groupId>
 		    <artifactId>surefire-logger-api</artifactId>
 		    <version>${maven-surefire-plugin.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>com.alibaba</groupId>

@@ -5,8 +5,8 @@ import java.io.Serializable;
 public class BaseResult implements Serializable {
     /**  */
     private static final long serialVersionUID = -8108913939000376272L;
-    private String            msg;
-    private Boolean           success;
+    protected String          msg;
+    protected Boolean         success          = true;
 
     public BaseResult() {
     }

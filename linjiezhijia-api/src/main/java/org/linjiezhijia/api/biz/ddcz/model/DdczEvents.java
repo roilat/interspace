@@ -46,7 +46,7 @@ public class DdczEvents {
      *
      * @mbg.generated Wed Feb 27 18:14:31 CST 2019
      */
-    private Short orderNum;
+    private Integer orderNum;
 
     /**
      *
@@ -251,7 +251,7 @@ public class DdczEvents {
      *
      * @mbg.generated Wed Feb 27 18:14:31 CST 2019
      */
-    public Short getOrderNum() {
+    public Integer getOrderNum() {
         return orderNum;
     }
 
@@ -263,7 +263,7 @@ public class DdczEvents {
      *
      * @mbg.generated Wed Feb 27 18:14:31 CST 2019
      */
-    public void setOrderNum(Short orderNum) {
+    public void setOrderNum(Integer orderNum) {
         this.orderNum = orderNum;
     }
 
