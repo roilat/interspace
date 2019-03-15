@@ -100,3 +100,21 @@ server:
   tomcat: 
     uri-encoding: UTF-8
     max-threads: 1000
+    
+linjiezhijia: 
+  profiles: test
+  log: 
+    path: D:/logs
+    displayName: linjiiezhijia-api
+    
+log4j2: 
+  profiles: test
+  logger: 
+    org: 
+      springframework: ERROR
+      linjiezhijia: 
+        api: 
+          biz: 
+            blog: 
+              controller: ERROR
+              services: ERROR    

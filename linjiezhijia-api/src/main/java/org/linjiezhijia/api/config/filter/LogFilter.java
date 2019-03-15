@@ -8,9 +8,13 @@ import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
-@WebFilter(urlPatterns = "/*", filterName="LogFilter2")
-public class LogFilter2 implements Filter {
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class LogFilter implements Filter {
+    Logger logger = LoggerFactory.getLogger("sytem.filter.log");
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -25,10 +29,9 @@ public class LogFilter2 implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                          FilterChain chain) throws IOException, ServletException {
-        long start = System.currentTimeMillis();
-        System.out.println("LogFilter2 invoked");
         chain.doFilter(servletRequest, servletResponse);
-        System.out.println("LogFilter2 Execute cost=" + (System.currentTimeMillis() - start));
+        HttpServletRequest request = (HttpServletRequest) servletRequest;
+        logger.info("调用接口{}：{}", request.getMethod(), request.getRequestURI());
     }
 
 }

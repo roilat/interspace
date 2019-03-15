@@ -2,66 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="645ebd2a-9df6-4ded-8dda-c99ef6604544" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/linjiezhijia_api_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/linjiezhijia_api_war.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/linjiezhijia_api_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/linjiezhijia_api_war_exploded.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_attoparser_attoparser_2_0_5_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_2_1_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_extras_thymeleaf_extras_java8time_3_0_2_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_3_0_11_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring5_3_0_11_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_6_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_bower_bootstrap_3_0_3.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_bower_jquery_2_0_3.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/doc/crebas.sql" afterPath="$PROJECT_DIR$/doc/crebas.sql" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/linjiezhijia-api/.settings/org.eclipse.core.resources.prefs" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/.settings/org.eclipse.wst.common.component" afterPath="$PROJECT_DIR$/linjiezhijia-api/.settings/org.eclipse.wst.common.component" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/linjiezhijia-api.iml" afterPath="$PROJECT_DIR$/linjiezhijia-api/linjiezhijia-api.iml" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/linjiiezhijia-api.log" afterPath="$PROJECT_DIR$/linjiezhijia-api/linjiiezhijia-api.log" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/pom.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/linjiezhijia-api/pom.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/pom.xml" />
       <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleController.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleController.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogAttachmentMapper.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogAttachmentMapper.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogCategoryMapper.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogCategoryMapper.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogCategoryMapper.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogCategoryMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogLinkMapper.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dao/mappers/BlogLinkMapper.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogArticleDO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogArticleDO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogAttachmentDO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogAttachmentDO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogCategoryDO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogCategoryDO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogLinkDO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/dbo/BlogLinkDO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogArticle.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogArticle.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogAttachment.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogAttachment.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogCategory.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogCategory.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogLink.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogLink.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogArticlePO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogArticlePO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogAttachmentPO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogAttachmentPO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogCategoryPO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogCategoryPO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogLinkPO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/po/BlogLinkPO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/services/impl/BlogArticleServiceImpl.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/services/impl/BlogArticleServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/ddcz/mappers1/DdczEventsMapper.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/ddcz/mappers1/DdczEventsMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/ddcz/model/DdczEvents.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/ddcz/model/DdczEvents.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/ddcz/model/DdczEventsExample.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/ddcz/model/DdczEventsExample.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/mappers/ArticleMapper.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/dao/mappers/ArticleMapper.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/mappers/ArticleMapper.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/dao/mappers/ArticleMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/model/Article.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/model/Article.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/photoalbum/mappers1/PhotoAlbumListMapper.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/photoalbum/mappers1/PhotoAlbumListMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/photoalbum/model/PhotoAlbumList.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/photoalbum/model/PhotoAlbumList.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/photoalbum/model/PhotoAlbumListExample.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/photoalbum/model/PhotoAlbumListExample.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/query/BasePO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/BasePO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/query/Criterion.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/query/Criterion.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/result/BaseResult.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/result/BaseResult.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/result/CommonPageResult.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/result/CommonPageResult.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/result/CommonResult.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/common/result/CommonResult.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.yml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/HelloWorldControllerTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/biz/demo/controller/HelloWorldControllerTest.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/biz/blog/services/BlogArticleServiceTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/biz/blog/services/BlogArticleServiceTest.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleMapperTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleMapperTest.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-static-web/.classpath" afterPath="$PROJECT_DIR$/linjiezhijia-static-web/.classpath" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-static-web/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/linjiezhijia-static-web/.settings/org.eclipse.jdt.core.prefs" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-static-web/linjiezhijia-static-web.iml" afterPath="$PROJECT_DIR$/linjiezhijia-static-web/linjiezhijia-static-web.iml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-web/.classpath" afterPath="$PROJECT_DIR$/linjiezhijia-web/.classpath" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-web/.settings/org.eclipse.jdt.core.prefs" afterPath="$PROJECT_DIR$/linjiezhijia-web/.settings/org.eclipse.jdt.core.prefs" />
-      <change beforePath="$PROJECT_DIR$/target/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/InterceptorConfig.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/InterceptorConfig.java" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/interceptors/LogCostInterceptor.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/interceptors/LogInvokeInfoInterceptor.java" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/log4j2.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/log4j2.xml" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleControllerTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleControllerTest.java" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.properties" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.yml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/linjiezhijia-web/target/" />
     <ignored path="$PROJECT_DIR$/linjiezhijia-api/target/" />
@@ -75,96 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BlogCategory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogCategory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RestartClassLoader.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-devtools/2.1.2.RELEASE/spring-boot-devtools-2.1.2.RELEASE-sources.jar!/org/springframework/boot/devtools/restart/classloader/RestartClassLoader.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2242">
-              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linjiezhijia-api/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1425">
-              <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linjiezhijia-web/src/test/java/cn/roilat/linjiezhijia/AppTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleRepositoryTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQL5InnoDBDialect.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/dialect/MySQL5InnoDBDialect.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-              <folding>
-                <marker date="1548412603067" expanded="false" signature="0:104" ph="/.../" />
-                <marker date="1548412603067" expanded="true" signature="138:156" ph="/**...*/" />
-                <marker date="1548412603067" expanded="true" signature="259:266" ph="{}" />
-                <marker date="1548412603067" expanded="false" signature="331:342" ph=" { " />
-                <marker date="1548412603067" expanded="false" signature="378:384" ph=" }" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQL5InnoDBDialect.java" pinned="false" current-in-tab="true">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final-sources.jar!/org/hibernate/dialect/MySQL5InnoDBDialect.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -270,6 +133,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -394,6 +261,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
               <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="ArticleRepositoryTest" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
@@ -649,14 +527,55 @@
               <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
               <item name="EnableAutoConfiguration" type="1a9f42e2:ClassTreeNode" />
             </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+              <item name="restart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+              <item name="restart" type="462c0819:PsiDirectoryNode" />
+              <item name="classloader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+              <item name="restart" type="462c0819:PsiDirectoryNode" />
+              <item name="classloader" type="462c0819:PsiDirectoryNode" />
+              <item name="RestartClassLoader" type="1a9f42e2:ClassTreeNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -838,6 +757,8 @@
       <workItem from="1551345204090" duration="1334000" />
       <workItem from="1552028133566" duration="4218000" />
       <workItem from="1552290155410" duration="652000" />
+      <workItem from="1552358423188" duration="1897000" />
+      <workItem from="1552447485766" duration="187000" />
     </task>
     <servers />
   </component>
@@ -847,7 +768,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19084000" />
+    <option name="totallyTimeSpent" value="21168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -868,11 +789,11 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19722815" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20149253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -901,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="61" column="66" lean-forward="false" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="61" column="66" lean-forward="false" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1121">
           <caret line="88" column="36" lean-forward="false" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -997,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
           <caret line="84" column="7" lean-forward="true" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1152,25 +1060,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-devtools/2.1.2.RELEASE/spring-boot-devtools-2.1.2.RELEASE-sources.jar!/org/springframework/boot/devtools/restart/classloader/RestartClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2242">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="0">
           <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1178,7 +1074,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1207,7 +1102,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="65" column="2" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1225,30 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1425">
-          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linjiezhijia-web/src/test/java/cn/roilat/linjiezhijia/AppTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final-sources.jar!/org/hibernate/dialect/MySQLDialect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8569">
@@ -1263,25 +1133,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final-sources.jar!/org/hibernate/dialect/MySQL5InnoDBDialect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/dialect/MySQL5InnoDBDialect.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <marker date="1548412603067" expanded="false" signature="0:104" ph="/.../" />
-            <marker date="1548412603067" expanded="true" signature="138:156" ph="/**...*/" />
-            <marker date="1548412603067" expanded="true" signature="259:266" ph="{}" />
-            <marker date="1548412603067" expanded="false" signature="331:342" ph=" { " />
-            <marker date="1548412603067" expanded="false" signature="378:384" ph=" }" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final-sources.jar!/org/hibernate/dialect/MySQL5InnoDBDialect.java">
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="95">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-web/src/test/java/cn/roilat/linjiezhijia/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-devtools/2.1.2.RELEASE/spring-boot-devtools-2.1.2.RELEASE-sources.jar!/org/springframework/boot/devtools/restart/classloader/RestartClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
         </state>
       </provider>
     </entry>

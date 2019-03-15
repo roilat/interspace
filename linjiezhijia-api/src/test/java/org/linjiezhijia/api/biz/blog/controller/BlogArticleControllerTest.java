@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.linjiezhijia.api.BaseTest;
@@ -15,6 +17,9 @@ public class BlogArticleControllerTest extends BaseTest {
 
     @Before
     public void setUp() throws Exception {
+        Logger x = LogManager.getLogger("wombat");
+        Logger y = LogManager.getLogger("wombat");
+        logger.info("logger x==y--$1", x == y);
     }
 
     @Test
@@ -41,7 +46,6 @@ public class BlogArticleControllerTest extends BaseTest {
         blogArticle.setUpdator("admin");
         CommonResult<?> result = doPost("/api/blog/article/", blogArticle);
         logger.info(result.toString());
-        logger.debug("my logger debug info");
     }
 
     @Test
@@ -66,7 +70,6 @@ public class BlogArticleControllerTest extends BaseTest {
         blogArticle.setUpdator("admin");
         CommonResult<?> result = doPut("/api/blog/article/75", blogArticle);
         logger.info(result.toString());
-        logger.debug("my logger debug info");
     }
 
     @Test

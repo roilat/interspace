@@ -1,9 +1,6 @@
 package org.linjiezhijia.api.biz.blog.controller;
 
-import java.io.IOException;
-
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
 import org.linjiezhijia.api.biz.blog.model.BlogArticle;
 import org.linjiezhijia.api.biz.blog.po.BlogArticlePO;
@@ -13,6 +10,8 @@ import org.linjiezhijia.api.common.exception.LinjiezhijiaErrorCodeEnums;
 import org.linjiezhijia.api.common.exception.LinjiezhijiaException;
 import org.linjiezhijia.api.common.result.CommonPageResult;
 import org.linjiezhijia.api.common.result.CommonResult;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,15 +21,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/api/blog/article")
 public class BlogArticleController {
+
+    Logger           logger = LoggerFactory.getLogger(getClass());
     @Resource
     private BlogArticleService blogArticleService;
 
     @RequestMapping(path = "/", method = RequestMethod.GET, produces = "application/json")
-    public CommonPageResult<BlogArticle> pageList(HttpServletRequest request,
-                                                  BlogArticlePO blogArticlePO) throws IOException {
-        byte[] b = new byte[1024];
-        request.getInputStream().read(b);
-        System.out.println(new String(b));
+    public CommonPageResult<BlogArticle> pageList(BlogArticlePO blogArticlePO) {
         CommonPageResult<BlogArticle> result = blogArticleService.pageList(blogArticlePO);
         return result;
     }
@@ -42,8 +39,7 @@ public class BlogArticleController {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.PUT, produces = "application/json")
-    public CommonResult<BlogArticle> update(@PathVariable("id") String idStr,
-                                            @RequestBody BlogArticle blogArticle) {
+    public CommonResult<BlogArticle> update(@PathVariable("id") String idStr, @RequestBody BlogArticle blogArticle) {
         Integer id = null;
         try {
             id = Integer.parseInt(idStr);

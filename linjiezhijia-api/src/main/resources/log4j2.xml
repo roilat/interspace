@@ -4,47 +4,100 @@
 <configuration status="INFO">
 	<!-- 全局参数 -->
 	<Properties>
-		<Property name="pattern">%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %c{1}:%L-%m%n
-		</Property>
-		<Property name="displayName">linjiiezhijia-api</Property>
+		<Property name="simplePattern">%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %c{1}(%L):%m%n</Property>
+		<Property name="pattern">%d{yyyy-MM-dd HH:mm:ss,SSS} %-5p %c(%L):%m%n</Property>
+		<Property name="displayName">${linjiezhijia.log.displayName}</Property>
+		<Property name="LOG_HOME">D:/logs</Property>
 	</Properties>
 	<Appenders>
 		<Console name="console" target="SYSTEM_OUT" follow="true">
 			<PatternLayout>
-				<pattern>${pattern}</pattern>
+				<pattern>${simplePattern}</pattern>
 			</PatternLayout>
 		</Console>
-		<!-- 文件 每次运行程序会自动清空，由append属性决定 -->
-		<File name="error" fileName="${displayName}_error.log" append="false">
-			<!-- 指定error 级别的日志 -->
-			<ThresholdFilter level="ERROR" onMatch="ACCEPT"
-				onMismatch="DENY" />
+		
+		<RollingFile name="std_error" fileName="${LOG_HOME}/${displayName}/std_error.log"
+			filePattern="std_error_%d{yyyy-MM-dd}.log">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout>
+				<pattern>${simplePattern}</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="50 MB" />
+		</RollingFile>
+		<RollingFile name="std_common" fileName="${LOG_HOME}/${displayName}/std_common.log"
+			filePattern="std_common_%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>${simplePattern}</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="50 MB" />
+		</RollingFile>
+		
+		
+		<RollingFile name="biz_error_log" fileName="${LOG_HOME}/${displayName}/biz_error.log"
+			filePattern="biz_error_%d{yyyy-MM-dd}.log">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout>
+				<pattern>${simplePattern}</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="50 MB" />
+		</RollingFile>
+		<RollingFile name="biz_common_log" fileName="${LOG_HOME}/${displayName}/biz_common.log"
+			filePattern="biz_common_%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>${simplePattern}</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="50 MB" />
+		</RollingFile>
+		
+		<RollingFile name="web_error_log" fileName="${LOG_HOME}/${displayName}/web_error.log"
+			filePattern="web_error_%d{yyyy-MM-dd}.log">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
 			<PatternLayout>
 				<pattern>${pattern}</pattern>
 			</PatternLayout>
-		</File>
-		<!-- 滚动文件 -->
-		<RollingFile name="rollingFile" fileName="${displayName}.log"
-			filePattern="${displayName}_%d{yyyy-MM-dd}.log">
+			<SizeBasedTriggeringPolicy size="50 MB" />
+		</RollingFile>
+		<RollingFile name="web_common_log" fileName="${LOG_HOME}/${displayName}/web_common.log"
+			filePattern="web_common_%d{yyyy-MM-dd}.log">
 			<PatternLayout>
 				<pattern>${pattern}</pattern>
 			</PatternLayout>
-			<!-- 按大小划分 -->
+			<SizeBasedTriggeringPolicy size="50 MB" />
+		</RollingFile>
+		
+		<RollingFile name="framework_common" fileName="${LOG_HOME}/framework/framework_common.log"
+			filePattern="framework_common_%d{yyyy-MM-dd}.log">
+			<PatternLayout>
+				<pattern>${pattern}</pattern>
+			</PatternLayout>
+			<SizeBasedTriggeringPolicy size="50 MB" />
+		</RollingFile>
+		<RollingFile name="framework_error" fileName="${LOG_HOME}/framework/framework_error.log"
+			filePattern="framework_error_%d{yyyy-MM-dd}.log">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout>
+				<pattern>${pattern}</pattern>
+			</PatternLayout>
 			<SizeBasedTriggeringPolicy size="50 MB" />
 		</RollingFile>
 	</Appenders>
 	<Loggers>
-		<!-- <Logger name="org.apache.catalina.util.LifecycleBase" level="ERROR" 
-			/> <Logger name="org.apache.coyote.http11.Http11NioProtocol" level="WARN" 
-			/> <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="WARN" 
-			/> -->
-		<Logger name="org.springframework" level="WARN" />
-		<Logger name="org.linjiezhijia.api.biz" level="INFO" />
-		<Logger name="org.linjiezhijia.api" level="INFO" />
+		<Logger name="org.springframework" level="INFO" additivity="false">
+			<AppenderRef ref="framework_error"></AppenderRef>
+			<AppenderRef ref="framework_common"></AppenderRef>
+		</Logger>
+		<Logger name="org.linjiezhijia.api.biz" level="INFO" additivity="false">
+			<AppenderRef ref="biz_error_log"></AppenderRef>
+			<AppenderRef ref="biz_common_log"></AppenderRef>	
+		</Logger>
+		<Logger name="sytem" level="INFO" additivity="false">
+			<AppenderRef ref="web_error_log"></AppenderRef>
+			<AppenderRef ref="web_common_log"></AppenderRef>
+		</Logger>
 		<Root level="INFO">
 			<AppenderRef ref="console"></AppenderRef>
-			<AppenderRef ref="error"></AppenderRef>
-			<AppenderRef ref="rollingFile"></AppenderRef>
+			<AppenderRef ref="std_common"></AppenderRef>
+			<AppenderRef ref="std_error"></AppenderRef>
 		</Root>
 	</Loggers>
 </configuration>
