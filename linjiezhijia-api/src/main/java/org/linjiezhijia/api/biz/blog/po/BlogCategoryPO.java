@@ -119,7 +119,8 @@ public class BlogCategoryPO extends BasePO{
                + level + ", orderNum=" + orderNum + ", counts=" + counts + ", description="
                + description + ", pCode=" + pCode + ", orderByClause=" + orderByClause
                + ", currentPage=" + currentPage + ", pageSize=" + pageSize + ", params=" + params
-               + ", id=" + id + ", createDt=" + createDt + ", updateDt=" + updateDt + ", creator="
+               + ", id=" + id + ", createDtStart=" + createDtStart + ", createDtEnd=" + createDtEnd
+               + ", updateDtStart=" + updateDtStart + ", updateDtEnd=" + updateDtEnd + ", creator="
                + creator + ", updator=" + updator + ", state=" + state + "]";
     }
 

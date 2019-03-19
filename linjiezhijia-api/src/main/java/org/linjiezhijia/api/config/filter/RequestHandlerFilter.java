@@ -40,12 +40,12 @@ public class RequestHandlerFilter implements Filter {
         if (HttpMethod.POST.name().equals(requestMethod)
             || HttpMethod.PUT.name().equals(requestMethod)) {
             if (!StringUtils.isEmpty(contentType) && !contentType.startsWith("application/json")) {
-                ((HttpServletResponse)servletResponse).setStatus(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value());
+                ((HttpServletResponse) servletResponse)
+                    .setStatus(HttpStatus.UNSUPPORTED_MEDIA_TYPE.value());
+                return ;
             }
         }
-        else {
-            chain.doFilter(servletRequest, servletResponse);
-        }
+        chain.doFilter(servletRequest, servletResponse);
     }
 
 }

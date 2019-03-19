@@ -27,6 +27,21 @@ public class BlogArticleDO extends BaseDO<BlogArticlePO> {
         if(StringUtils.isNotEmpty(blogArticlePO.getTitle())) {
             criteria.andTitleLike("%" + blogArticlePO.getTitle() + "%");
         }
+        if(StringUtils.isNotEmpty(blogArticlePO.getCode())) {
+            criteria.andCodeEqualTo(blogArticlePO.getCode());
+        }
+        if(StringUtils.isNotEmpty(blogArticlePO.getCreator())) {
+            criteria.andCreatorEqualTo(blogArticlePO.getCreator());
+        }
+        if(StringUtils.isNotEmpty(blogArticlePO.getSource())) {
+            criteria.andSourceEqualTo(blogArticlePO.getSource());
+        }
+        if(blogArticlePO.getCreateDtStart() != null && blogArticlePO.getCreateDtEnd() != null) {
+            criteria.andCreateDtBetween(blogArticlePO.getCreateDtStart(), blogArticlePO.getCreateDtEnd());
+        }
+        if(blogArticlePO.getUpdateDtStart() != null && blogArticlePO.getUpdateDtEnd() != null) {
+            criteria.andUpdateDtBetween(blogArticlePO.getUpdateDtStart(), blogArticlePO.getUpdateDtEnd());
+        }
         return criteria;
     }
 

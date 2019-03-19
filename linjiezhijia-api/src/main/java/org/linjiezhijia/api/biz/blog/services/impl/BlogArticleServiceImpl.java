@@ -1,5 +1,6 @@
 package org.linjiezhijia.api.biz.blog.services.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -52,6 +53,12 @@ public class BlogArticleServiceImpl implements BlogArticleService {
     @Override
     public CommonResult<BlogArticle> update(BlogArticle blogArticle) {
         CommonResult<BlogArticle> result = new CommonResult<BlogArticle>();
+        if(blogArticleDAO.existsById(blogArticle.getId())) {
+            result.setSuccess(false);
+            result.setMsg("数据不存在！");
+            return result;
+        }
+        blogArticle.setUpdateDt(new Date());
         blogArticleDAO.save(blogArticle);
         result.setData(blogArticle);
         return result;
@@ -60,7 +67,13 @@ public class BlogArticleServiceImpl implements BlogArticleService {
     @Override
     public CommonResult<BlogArticle> delete(BlogArticle blogArticle) {
         CommonResult<BlogArticle> result = new CommonResult<BlogArticle>();
+        if(blogArticleDAO.existsById(blogArticle.getId())) {
+            result.setSuccess(false);
+            result.setMsg("数据不存在！");
+            return result;
+        }
         blogArticle.setState(CommonRecordStateEnum.DELETE.getCode());
+        
         blogArticleDAO.delete(blogArticle);
         result.setData(blogArticle);
         return result;

@@ -53,8 +53,9 @@ public class BlogLinkPO extends BasePO {
     public String toString() {
         return "BlogLinkPO [source=" + source + ", address=" + address + ", snapshoot=" + snapshoot
                + ", orderByClause=" + orderByClause + ", currentPage=" + currentPage + ", pageSize="
-               + pageSize + ", params=" + params + ", id=" + id + ", createDt=" + createDt
-               + ", updateDt=" + updateDt + ", creator=" + creator + ", updator=" + updator
+               + pageSize + ", params=" + params + ", id=" + id + ", createDtStart=" + createDtStart
+               + ", createDtEnd=" + createDtEnd + ", updateDtStart=" + updateDtStart
+               + ", updateDtEnd=" + updateDtEnd + ", creator=" + creator + ", updator=" + updator
                + ", state=" + state + "]";
     }
 

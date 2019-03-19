@@ -35,5 +35,6 @@ Filter.super.init(filterConfig);//由于filter所实现的是tomcat-ebeded-core.
 
 5.如果不配置任务事务，则默认是org.springframework.orm.jpa.JpaTransactionManager@1e1a2f43。如果在datasourceConfig类中配置了，则系统会使用已有配置.其实所有事务管理器都是实现了PlatformTransactionManager接口,只要管理的数据源是相同就好
 
-
+6.静态资源访问说明：
+/error.html			对应webapp/error.html
 

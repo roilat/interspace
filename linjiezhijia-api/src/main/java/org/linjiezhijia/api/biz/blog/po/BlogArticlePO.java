@@ -119,9 +119,10 @@ public class BlogArticlePO extends BasePO {
                + ", cover=" + cover + ", source=" + source + ", attachments=" + attachments
                + ", ifPublish=" + ifPublish + ", ifComment=" + ifComment + ", orderByClause="
                + orderByClause + ", currentPage=" + currentPage + ", pageSize=" + pageSize
-               + ", params=" + params + ", id=" + id + ", createDt=" + createDt + ", updateDt="
-               + updateDt + ", creator=" + creator + ", updator=" + updator + ", state=" + state
-               + "]";
+               + ", params=" + params + ", id=" + id + ", createDtStart=" + createDtStart
+               + ", createDtEnd=" + createDtEnd + ", updateDtStart=" + updateDtStart
+               + ", updateDtEnd=" + updateDtEnd + ", creator=" + creator + ", updator=" + updator
+               + ", state=" + state + "]";
     }
 
 }

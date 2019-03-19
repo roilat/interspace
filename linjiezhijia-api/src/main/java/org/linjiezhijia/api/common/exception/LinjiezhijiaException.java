@@ -1,5 +1,7 @@
 package org.linjiezhijia.api.common.exception;
 
+import org.linjiezhijia.api.util.StringUtils;
+
 /**
  * 系统异常
  * 
@@ -15,6 +17,12 @@ public class LinjiezhijiaException extends RuntimeException {
 
     public LinjiezhijiaException(LinjiezhijiaErrorCodeEnums exceptionCodeEnums) {
         super(exceptionCodeEnums != null ? exceptionCodeEnums.getDesc() : "unknown error");
+        this.exceptionCodeEnums = exceptionCodeEnums;
+    }
+
+    public LinjiezhijiaException(LinjiezhijiaErrorCodeEnums exceptionCodeEnums, String msg) {
+        super(StringUtils.isNotEmpty(msg) ? msg
+            : exceptionCodeEnums != null ? exceptionCodeEnums.getDesc() : "unknown error");
         this.exceptionCodeEnums = exceptionCodeEnums;
     }
 

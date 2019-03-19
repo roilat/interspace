@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -26,25 +27,31 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
 public class BaseTest {
-    protected Logger           logger = LoggerFactory.getLogger("Junit-Test-Logger");
+    protected Logger           logger      = LoggerFactory.getLogger("Junit-Test-Logger");
     @Autowired
     protected TestRestTemplate restTemplate;
-
-    protected CommonResult<?> doPost(String url, Object requestBody) {
-        return restTemplate.postForEntity(url, requestBody, CommonResult.class).getBody();
+    private HttpHeaders        httpHeaders = new HttpHeaders();
+    {
+        httpHeaders.add("content-type", "application/json;charset=UTF-8");
     }
-
-    protected CommonResult<?> doGet(String url, Map<String, String> params) {
-        return restTemplate.getForEntity(URLHelper.appendUrlParams(url, params), CommonResult.class).getBody();
-    }
-
-    protected CommonPageResult<?> doGetPage(String url, Map<String, String> params) {
-        return restTemplate.getForEntity(URLHelper.appendUrlParams(url, params), CommonPageResult.class)
+    protected <T> CommonResult<?> doPost(String url, T requestBody) {
+        HttpEntity<T> requestEntity = new HttpEntity<T>(requestBody, httpHeaders);
+        return restTemplate.exchange(url, HttpMethod.POST, requestEntity, CommonResult.class)
             .getBody();
     }
 
+    protected CommonResult<?> doGet(String url, Map<String, String> params) {
+        return restTemplate.getForEntity(URLHelper.appendUrlParams(url, params), CommonResult.class)
+            .getBody();
+    }
+
+    protected CommonPageResult<?> doGetPage(String url, Map<String, String> params) {
+        return restTemplate
+            .getForEntity(URLHelper.appendUrlParams(url, params), CommonPageResult.class).getBody();
+    }
+
     protected <T> CommonResult<?> doPut(String url, T requestBody) {
-        HttpEntity<T> requestEntity = new HttpEntity<T>(requestBody);
+        HttpEntity<T> requestEntity = new HttpEntity<T>(requestBody, httpHeaders);
         return restTemplate.exchange(url, HttpMethod.PUT, requestEntity, CommonResult.class)
             .getBody();
     }

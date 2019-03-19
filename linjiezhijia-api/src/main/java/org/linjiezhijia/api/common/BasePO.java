@@ -1,8 +1,14 @@
 package org.linjiezhijia.api.common;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.linjiezhijia.api.common.exception.LinjiezhijiaErrorCodeEnums;
+import org.linjiezhijia.api.common.exception.LinjiezhijiaException;
+import org.linjiezhijia.api.util.DateUtils;
+import org.linjiezhijia.api.util.StringUtils;
 
 /**
  * 查询参数对象基类
@@ -11,6 +17,8 @@ import java.util.Map;
  * @version $Id: BasePO.java, v 0.1 2019年2月28日 下午4:09:20 roilat-J Exp $
  */
 public class BasePO {
+
+    private static final String   DATE_FORMAT = "yyyyMMdd HH:mm:ss";
     protected String              orderByClause;
     protected Integer             currentPage = 1;
     protected Integer             pageSize    = 10;
@@ -49,8 +57,10 @@ public class BasePO {
     }
 
     protected Integer id;
-    protected Date    createDt;
-    protected Date    updateDt;
+    protected Date    createDtStart;
+    protected Date    createDtEnd;
+    protected Date    updateDtStart;
+    protected Date    updateDtEnd;
     protected String  creator;
     protected String  updator;
     protected String  state;
@@ -63,20 +73,44 @@ public class BasePO {
         this.id = id;
     }
 
-    public Date getCreateDt() {
-        return createDt;
+    public void setCreateDt(String createDt) {
+        if (StringUtils.isNotEmpty(createDt)) {
+            String[] ss = createDt.split(",");
+            try {
+                createDtStart = DateUtils.parseDate(ss[0], DATE_FORMAT);
+                createDtEnd = ss.length == 2 ? DateUtils.parseDate(ss[1], DATE_FORMAT) : null;
+            } catch (ParseException e) {
+                throw new LinjiezhijiaException(LinjiezhijiaErrorCodeEnums.PARAM_FORMAT_ERROR, "请求参数格式错误！【期望的格式：yyyyMMdd HH:mm:ss】");
+            }
+        }
     }
 
-    public void setCreateDt(Date createDt) {
-        this.createDt = createDt;
+    public Date getCreateDtStart() {
+        return createDtStart;
     }
 
-    public Date getUpdateDt() {
-        return updateDt;
+    public Date getCreateDtEnd() {
+        return createDtEnd;
     }
 
-    public void setUpdateDt(Date updateDt) {
-        this.updateDt = updateDt;
+    public void setUpdateDt(String updateDt) {
+        if (StringUtils.isNotEmpty(updateDt)) {
+            String[] ss = updateDt.split(",");
+            try {
+                updateDtStart = DateUtils.parseDate(ss[0], DATE_FORMAT);
+                updateDtEnd = ss.length == 2 ? DateUtils.parseDate(ss[1], DATE_FORMAT) : null;
+            } catch (ParseException e) {
+                throw new LinjiezhijiaException(LinjiezhijiaErrorCodeEnums.PARAM_FORMAT_ERROR, "请求参数格式错误！【期望的格式：yyyyMMdd HH:mm:ss】");
+            }
+        }
+    }
+
+    public Date getUpdateDtStart() {
+        return updateDtStart;
+    }
+
+    public Date getUpdateDtEnd() {
+        return updateDtEnd;
     }
 
     public String getCreator() {

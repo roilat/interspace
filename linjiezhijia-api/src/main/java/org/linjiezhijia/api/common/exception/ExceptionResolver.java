@@ -1,7 +1,5 @@
 package org.linjiezhijia.api.common.exception;
 
-import java.io.IOException;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -13,10 +11,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSONObject;
-
 /**
- * 先到这里，然后才重定向到errorController的
+ * 先到这里，然后才重定向到errorController的,这个异常的处理优先级低于GlobalDefaultExceptionHandler,但是两者之间是互补关系.及一个异常先到GlobalDefaultExceptionHandler中如果没有找到处理类,则到这个类中.
  * 
  * @author roilat-J
  * @version $Id: ExceptionResolver.java, v 0.1 2019年3月15日 下午6:05:03 roilat-J Exp $
@@ -32,16 +28,11 @@ public class ExceptionResolver implements HandlerExceptionResolver {
 
         logger.error("system.exceptionResolver", handler, ex);
         WebErrorResult errorResult = null;
-        if (ex instanceof LinjiezhijiaException) {
-            LinjiezhijiaException exception = (LinjiezhijiaException) ex;
-            LinjiezhijiaErrorCodeEnums errorCodeEnums = exception.getExceptionCodeEnums();
-            errorResult = build(errorCodeEnums);
-            response.setStatus(Integer.parseInt(errorResult.getCode()));
-        }
+        
 
         if (errorResult == null) {
             errorResult = new WebErrorResult();
-            errorResult.setCode(response.getStatus() + "");
+            errorResult.setCode(response.getStatus());
             errorResult.setMsg("系统内部未知异常");
         }
 
@@ -50,22 +41,4 @@ public class ExceptionResolver implements HandlerExceptionResolver {
         return new ModelAndView(errorView);
     }
 
-    public WebErrorResult build(LinjiezhijiaErrorCodeEnums errorCodeEnums) {
-        if (errorCodeEnums != null) {
-            WebErrorResult result = new WebErrorResult();
-            switch (errorCodeEnums) {
-                case ID_NOT_EXISTS:
-                    result.setCode("404");
-                    result.setMsg("你访问的资源不存在！");
-                    break;
-
-                default:
-                    break;
-            }
-
-            return result;
-        } else {
-            return null;
-        }
-    }
 }

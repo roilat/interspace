@@ -1,5 +1,6 @@
 package org.linjiezhijia.api.biz.blog.services.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -11,6 +12,7 @@ import org.linjiezhijia.api.biz.blog.dbo.BlogAttachmentDO;
 import org.linjiezhijia.api.biz.blog.model.BlogAttachment;
 import org.linjiezhijia.api.biz.blog.po.BlogAttachmentPO;
 import org.linjiezhijia.api.biz.blog.services.BlogAttachmentService;
+import org.linjiezhijia.api.common.enums.CommonRecordStateEnum;
 import org.linjiezhijia.api.common.result.CommonPageResult;
 import org.linjiezhijia.api.common.result.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,8 @@ public class BlogAttachmentServiceImpl implements BlogAttachmentService {
     @Transactional(value=TxType.REQUIRED)
     public CommonResult<BlogAttachment> save(BlogAttachment blogAttachment) {
         CommonResult<BlogAttachment> result = new CommonResult<BlogAttachment>();
+        blogAttachment.setState(CommonRecordStateEnum.NORMAL.getCode());
+        //blogAttachment.setType("");
         blogAttachmentDAO.save(blogAttachment);
         result.setData(blogAttachment);
         return result;
@@ -50,6 +54,12 @@ public class BlogAttachmentServiceImpl implements BlogAttachmentService {
     @Override
     public CommonResult<BlogAttachment> update(BlogAttachment blogAttachment) {
         CommonResult<BlogAttachment> result = new CommonResult<BlogAttachment>();
+        if(blogAttachmentDAO.existsById(blogAttachment.getId())) {
+            result.setSuccess(false);
+            result.setMsg("数据不存在！");
+            return result;
+        }
+        blogAttachment.setUpdateDt(new Date());
         blogAttachmentDAO.save(blogAttachment);
         result.setData(blogAttachment);
         return result;
@@ -58,6 +68,12 @@ public class BlogAttachmentServiceImpl implements BlogAttachmentService {
     @Override
     public CommonResult<BlogAttachment> delete(BlogAttachment blogAttachment) {
         CommonResult<BlogAttachment> result = new CommonResult<BlogAttachment>();
+        if(blogAttachmentDAO.existsById(blogAttachment.getId())) {
+            result.setSuccess(false);
+            result.setMsg("数据不存在！");
+            return result;
+        }
+        blogAttachment.setState(CommonRecordStateEnum.DELETE.getCode());
         blogAttachmentDAO.delete(blogAttachment);
         result.setData(blogAttachment);
         return result;

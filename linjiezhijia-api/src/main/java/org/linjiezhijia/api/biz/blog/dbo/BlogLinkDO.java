@@ -25,7 +25,19 @@ public class BlogLinkDO extends BaseDO<BlogLinkPO> {
         }
         this.orderByClause = blogLinkPO.getOrderByClause();
         if(StringUtils.isNotEmpty(blogLinkPO.getAddress())) {
-            criteria.andAddressLike(blogLinkPO.getAddress());
+            criteria.andAddressLike("%" + blogLinkPO.getAddress() + "%");
+        }
+        if(StringUtils.isNotEmpty(blogLinkPO.getSource())) {
+            criteria.andSourceEqualTo(blogLinkPO.getSource());
+        }
+        if(StringUtils.isNotEmpty(blogLinkPO.getCreator())) {
+            criteria.andCreatorEqualTo(blogLinkPO.getCreator());
+        }
+        if(blogLinkPO.getCreateDtStart() != null && blogLinkPO.getCreateDtEnd() != null) {
+            criteria.andCreateDtBetween(blogLinkPO.getCreateDtStart(), blogLinkPO.getCreateDtEnd());
+        }
+        if(blogLinkPO.getUpdateDtStart() != null && blogLinkPO.getUpdateDtEnd() != null) {
+            criteria.andUpdateDtBetween(blogLinkPO.getUpdateDtStart(), blogLinkPO.getUpdateDtEnd());
         }
         return criteria;
     }

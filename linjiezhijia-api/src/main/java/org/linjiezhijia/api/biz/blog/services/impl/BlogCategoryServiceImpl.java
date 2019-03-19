@@ -1,5 +1,6 @@
 package org.linjiezhijia.api.biz.blog.services.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -11,6 +12,7 @@ import org.linjiezhijia.api.biz.blog.dbo.BlogCategoryDO;
 import org.linjiezhijia.api.biz.blog.model.BlogCategory;
 import org.linjiezhijia.api.biz.blog.po.BlogCategoryPO;
 import org.linjiezhijia.api.biz.blog.services.BlogCategoryService;
+import org.linjiezhijia.api.common.enums.CommonRecordStateEnum;
 import org.linjiezhijia.api.common.result.CommonPageResult;
 import org.linjiezhijia.api.common.result.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,7 @@ public class BlogCategoryServiceImpl implements BlogCategoryService {
     public CommonPageResult<BlogCategory> pageList(BlogCategoryPO blogCategoryPO) {
         CommonPageResult<BlogCategory> result = new CommonPageResult<BlogCategory>();
         BlogCategoryDO blogCategoryDO = new BlogCategoryDO();
+        blogCategoryDO.buildCriteria(blogCategoryPO);
         long total = blogCategoryMapper.pageCount(blogCategoryDO);
         if (total > 0) {
             List<BlogCategory> list = blogCategoryMapper.pageList(blogCategoryDO);
@@ -49,6 +52,12 @@ public class BlogCategoryServiceImpl implements BlogCategoryService {
     @Override
     public CommonResult<BlogCategory> update(BlogCategory blogCategory) {
         CommonResult<BlogCategory> result = new CommonResult<BlogCategory>();
+        if(blogCategoryDAO.existsById(blogCategory.getId())) {
+            result.setSuccess(false);
+            result.setMsg("数据不存在！");
+            return result;
+        }
+        blogCategory.setUpdateDt(new Date());
         blogCategoryDAO.save(blogCategory);
         result.setData(blogCategory);
         return result;
@@ -57,6 +66,12 @@ public class BlogCategoryServiceImpl implements BlogCategoryService {
     @Override
     public CommonResult<BlogCategory> delete(BlogCategory blogCategory) {
         CommonResult<BlogCategory> result = new CommonResult<BlogCategory>();
+        if(blogCategoryDAO.existsById(blogCategory.getId())) {
+            result.setSuccess(false);
+            result.setMsg("数据不存在！");
+            return result;
+        }
+        blogCategory.setState(CommonRecordStateEnum.DELETE.getCode());
         blogCategoryDAO.delete(blogCategory);
         result.setData(blogCategory);
         return result;

@@ -66,8 +66,9 @@ public class BlogAttachmentPO extends BasePO {
         return "BlogAttachmentPO [blogId=" + blogId + ", savePath=" + savePath + ", name=" + name
                + ", type=" + type + ", orderByClause=" + orderByClause + ", currentPage="
                + currentPage + ", pageSize=" + pageSize + ", params=" + params + ", id=" + id
-               + ", createDt=" + createDt + ", updateDt=" + updateDt + ", creator=" + creator
-               + ", updator=" + updator + ", state=" + state + "]";
+               + ", createDtStart=" + createDtStart + ", createDtEnd=" + createDtEnd
+               + ", updateDtStart=" + updateDtStart + ", updateDtEnd=" + updateDtEnd + ", creator="
+               + creator + ", updator=" + updator + ", state=" + state + "]";
     }
 
 }

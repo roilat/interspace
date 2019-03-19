@@ -25,7 +25,22 @@ public class BlogCategoryDO extends BaseDO<BlogCategoryPO>{
         }
         this.orderByClause = blogCategoryPO.getOrderByClause();
         if(StringUtils.isNotEmpty(blogCategoryPO.getDescription())) {
-            criteria.andDescriptionLike(blogCategoryPO.getDescription());
+            criteria.andDescriptionLike("%" + blogCategoryPO.getDescription() + "%");
+        }
+        if(StringUtils.isNotEmpty(blogCategoryPO.getType())) {
+            criteria.andTypeEqualTo(blogCategoryPO.getType());
+        }
+        if(null != blogCategoryPO.getLevel()) {
+            criteria.andLevelEqualTo(blogCategoryPO.getLevel());
+        }
+        if(StringUtils.isNotEmpty(blogCategoryPO.getCreator())) {
+            criteria.andCreatorEqualTo(blogCategoryPO.getCreator());
+        }
+        if(blogCategoryPO.getCreateDtStart() != null && blogCategoryPO.getCreateDtEnd() != null) {
+            criteria.andCreateDtBetween(blogCategoryPO.getCreateDtStart(), blogCategoryPO.getCreateDtEnd());
+        }
+        if(blogCategoryPO.getUpdateDtStart() != null && blogCategoryPO.getUpdateDtEnd() != null) {
+            criteria.andUpdateDtBetween(blogCategoryPO.getUpdateDtStart(), blogCategoryPO.getUpdateDtEnd());
         }
         return criteria;
     }
