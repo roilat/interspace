@@ -139,9 +139,9 @@ class HomeRight extends React.Component{
 		return (<div className="r_box">
 		{
 			this.state.data.map(function(item){
-    			return  (<li><a href="/"><i><img src={item.img} alt=""></img></i>
-    		      <h3>{item.title}</h3>
-    		      <p>{item.content}</p></a>
+    			return  (<li><i><a href="/"><img src={item.img} alt=""></img></a></i>
+    					<h3><a href="/"><span>{item.title}</span></a></h3>
+    					<a href="/"><p>{item.content}</p></a>
     		    </li>);
     		})
 		}
