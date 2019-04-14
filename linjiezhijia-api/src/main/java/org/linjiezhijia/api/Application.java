@@ -1,9 +1,16 @@
 package org.linjiezhijia.api;
 
+import java.util.List;
+
+import org.linjiezhijia.api.biz.home.controller.BasicErrorController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.boot.autoconfigure.web.ServerProperties;
+import org.springframework.boot.autoconfigure.web.servlet.error.ErrorViewResolver;
 import org.springframework.boot.web.servlet.ServletComponentScan;
+import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -20,6 +27,21 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
                                         "org.linjiezhijia.api.biz.demo.dao" }, transactionManagerRef = "jpaTransactionManager")
 @EntityScan(basePackages= {"org.linjiezhijia.api.biz.blog.model","org.linjiezhijia.api.biz.demo.model"})
 public class Application {
+    
+    @Autowired(required = false)
+    private List<ErrorViewResolver> errorViewResolvers;
+    private final ServerProperties serverProperties;
+
+    public Application(ServerProperties serverProperties) {
+        this.serverProperties = serverProperties;
+    }
+
+    @Bean
+    public BasicErrorController basicErrorController(ErrorAttributes errorAttributes) {
+        return new BasicErrorController(errorAttributes, this.serverProperties.getError(),
+            this.errorViewResolvers);
+    }
+    
     @Bean
     public Runnable createRunnable() {
         return () -> {

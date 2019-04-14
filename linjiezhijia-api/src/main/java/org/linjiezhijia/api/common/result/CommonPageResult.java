@@ -83,7 +83,8 @@ public class CommonPageResult<T> extends BaseResult {
     @Override
     public String toString() {
         return "CommonPageResult [data=" + data + ", totalCounts=" + totalCounts + ", totalPages="
-               + totalPages + ", currentPage=" + currentPage + ", pageSize=" + pageSize + "]";
+               + totalPages + ", currentPage=" + currentPage + ", pageSize=" + pageSize + ", msg="
+               + msg + ", success=" + success + "]";
     }
     
 }

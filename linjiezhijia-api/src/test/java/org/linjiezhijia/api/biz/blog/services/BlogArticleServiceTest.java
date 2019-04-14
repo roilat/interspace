@@ -10,10 +10,15 @@ import org.linjiezhijia.api.Application;
 import org.linjiezhijia.api.biz.blog.model.BlogArticle;
 import org.linjiezhijia.api.biz.blog.po.BlogArticlePO;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@SpringBootTest(classes = Application.class)
+@RunWith(SpringRunner.class)
+@SpringBootTest(classes = Application.class, webEnvironment = WebEnvironment.RANDOM_PORT)
+@DirtiesContext
+@EnableTransactionManagement
 public class BlogArticleServiceTest {
     @Resource
     BlogArticleService blogArticleService;
@@ -21,6 +26,7 @@ public class BlogArticleServiceTest {
     @Test
     public void pageList() {
         BlogArticlePO blogArticlePO = new BlogArticlePO();
+        blogArticlePO.setId(8);
         System.out.println(blogArticleService.pageList(blogArticlePO));
     }
 
@@ -35,8 +41,7 @@ public class BlogArticleServiceTest {
         blogArticle.setIfComment("1");
         blogArticle.setIfPublish("1");
         blogArticle.setSource("own");
-        blogArticle.setState("1");
-        blogArticle.setTitle("测试标题");
+        blogArticle.setTitle("我是大哥测试标题");
         blogArticle.setUpdateDt(new Date());
         blogArticle.setUpdator("admin");
         System.out.println(blogArticleService.save(blogArticle));

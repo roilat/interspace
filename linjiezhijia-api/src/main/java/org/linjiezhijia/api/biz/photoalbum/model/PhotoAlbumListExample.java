@@ -405,52 +405,52 @@ public class PhotoAlbumListExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumEqualTo(Short value) {
+        public Criteria andOrderNumEqualTo(Integer value) {
             addCriterion("ORDER_NUM =", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumNotEqualTo(Short value) {
+        public Criteria andOrderNumNotEqualTo(Integer value) {
             addCriterion("ORDER_NUM <>", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumGreaterThan(Short value) {
+        public Criteria andOrderNumGreaterThan(Integer value) {
             addCriterion("ORDER_NUM >", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumGreaterThanOrEqualTo(Short value) {
+        public Criteria andOrderNumGreaterThanOrEqualTo(Integer value) {
             addCriterion("ORDER_NUM >=", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumLessThan(Short value) {
+        public Criteria andOrderNumLessThan(Integer value) {
             addCriterion("ORDER_NUM <", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumLessThanOrEqualTo(Short value) {
+        public Criteria andOrderNumLessThanOrEqualTo(Integer value) {
             addCriterion("ORDER_NUM <=", value, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumIn(List<Short> values) {
+        public Criteria andOrderNumIn(List<Integer> values) {
             addCriterion("ORDER_NUM in", values, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumNotIn(List<Short> values) {
+        public Criteria andOrderNumNotIn(List<Integer> values) {
             addCriterion("ORDER_NUM not in", values, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumBetween(Short value1, Short value2) {
+        public Criteria andOrderNumBetween(Integer value1, Integer value2) {
             addCriterion("ORDER_NUM between", value1, value2, "orderNum");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNumNotBetween(Short value1, Short value2) {
+        public Criteria andOrderNumNotBetween(Integer value1, Integer value2) {
             addCriterion("ORDER_NUM not between", value1, value2, "orderNum");
             return (Criteria) this;
         }

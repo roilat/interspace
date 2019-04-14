@@ -86,4 +86,12 @@ public class Criterion {
     public Criterion(String condition, Object value, Object secondValue) {
         this(condition, value, secondValue, null);
     }
+
+    @Override
+    public String toString() {
+        return "Criterion [condition=" + condition + ", value=" + value + ", secondValue="
+               + secondValue + ", noValue=" + noValue + ", singleValue=" + singleValue
+               + ", betweenValue=" + betweenValue + ", listValue=" + listValue + ", typeHandler="
+               + typeHandler + "]";
+    }
 }

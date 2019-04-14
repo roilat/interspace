@@ -1,473 +1,134 @@
 package org.linjiezhijia.api.biz.blog.model;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
-@Entity//jpa
-@Table(name = "T_BLOG_CATEGORY")//jpa
-public class BlogCategory {
+
+import org.hibernate.annotations.DynamicUpdate;
+import org.linjiezhijia.api.common.BaseEntity;
+
+/**
+ * 博客类目
+ * 
+ * @author roilat-J
+ * @version $Id: BlogCategory.java, v 0.1 2019年3月7日 下午4:40:24 roilat-J Exp $
+ */
+@Entity 
+@Table(name = "T_BLOG_CATEGORY") 
+@DynamicUpdate
+public class BlogCategory extends BaseEntity {
+    /**  */
+    private static final long serialVersionUID = 7335815104705006277L;
+
     /**
-     *
-     * This field corresponds to the database column t_blog_category.ID
+     *类目类型(L:link,A:article)
      */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private String  type;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_category.TYPE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *类目编码(Cxxxx<4位数字>)
      */
-    private String type;
+    private String  code;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_category.CODE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *类目编码路径
      */
-    private String code;
+    private String  path;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_category.PATH
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *类目层级
      */
-    private String path;
+    private Integer   level;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_category.LEVEL
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *类目排序
      */
-    private Short level;
+    private Integer   orderNum;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_category.ORDER_NUM
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private Short orderNum;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_category.COUNTS
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *文章数量
      */
     private Integer counts;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_category.DESCRIPTION
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *类目描述
      */
-    private String description;
+    private String  description;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_category.P_CODE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *父类目编码
      */
-    private String pCode;
+    private String  pCode;
 
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_category.CREATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private Date createDt;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_category.UPDATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private Date updateDt;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_category.CREATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private String creator;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_category.UPDATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private String updator;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_category.STATE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private String state;
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.ID
-     *
-     * @return the value of t_blog_category.ID
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.ID
-     *
-     * @param id the value for t_blog_category.ID
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.TYPE
-     *
-     * @return the value of t_blog_category.TYPE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getType() {
         return type;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.TYPE
-     *
-     * @param type the value for t_blog_category.TYPE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+        this.type = type == null ? "" : type.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.CODE
-     *
-     * @return the value of t_blog_category.CODE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getCode() {
         return code;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.CODE
-     *
-     * @param code the value for t_blog_category.CODE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setCode(String code) {
-        this.code = code == null ? null : code.trim();
+        this.code = code == null ? "" : code.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.PATH
-     *
-     * @return the value of t_blog_category.PATH
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getPath() {
         return path;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.PATH
-     *
-     * @param path the value for t_blog_category.PATH
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setPath(String path) {
-        this.path = path == null ? null : path.trim();
+        this.path = path == null ? "" : path.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.LEVEL
-     *
-     * @return the value of t_blog_category.LEVEL
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Short getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.LEVEL
-     *
-     * @param level the value for t_blog_category.LEVEL
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setLevel(Short level) {
-        this.level = level;
+    public void setLevel(Integer level) {
+        this.level = level == null ? new Integer(0) : level;
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.ORDER_NUM
-     *
-     * @return the value of t_blog_category.ORDER_NUM
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Short getOrderNum() {
+    public Integer getOrderNum() {
         return orderNum;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.ORDER_NUM
-     *
-     * @param orderNum the value for t_blog_category.ORDER_NUM
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setOrderNum(Short orderNum) {
-        this.orderNum = orderNum;
+    public void setOrderNum(Integer orderNum) {
+        this.orderNum = orderNum == null ? new Integer(0) : orderNum;
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.COUNTS
-     *
-     * @return the value of t_blog_category.COUNTS
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public Integer getCounts() {
         return counts;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.COUNTS
-     *
-     * @param counts the value for t_blog_category.COUNTS
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setCounts(Integer counts) {
-        this.counts = counts;
+        this.counts = counts == null ? new Integer(0) : counts;
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.DESCRIPTION
-     *
-     * @return the value of t_blog_category.DESCRIPTION
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getDescription() {
         return description;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.DESCRIPTION
-     *
-     * @param description the value for t_blog_category.DESCRIPTION
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setDescription(String description) {
-        this.description = description == null ? null : description.trim();
+        this.description = description == null ? "" : description.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.P_CODE
-     *
-     * @return the value of t_blog_category.P_CODE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getpCode() {
         return pCode;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.P_CODE
-     *
-     * @param pCode the value for t_blog_category.P_CODE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setpCode(String pCode) {
-        this.pCode = pCode == null ? null : pCode.trim();
+        this.pCode = pCode == null ? "" : pCode.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.CREATE_DT
-     *
-     * @return the value of t_blog_category.CREATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Date getCreateDt() {
-        return createDt;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.CREATE_DT
-     *
-     * @param createDt the value for t_blog_category.CREATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setCreateDt(Date createDt) {
-        this.createDt = createDt;
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.UPDATE_DT
-     *
-     * @return the value of t_blog_category.UPDATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Date getUpdateDt() {
-        return updateDt;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.UPDATE_DT
-     *
-     * @param updateDt the value for t_blog_category.UPDATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setUpdateDt(Date updateDt) {
-        this.updateDt = updateDt;
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.CREATOR
-     *
-     * @return the value of t_blog_category.CREATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public String getCreator() {
-        return creator;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.CREATOR
-     *
-     * @param creator the value for t_blog_category.CREATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setCreator(String creator) {
-        this.creator = creator == null ? null : creator.trim();
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.UPDATOR
-     *
-     * @return the value of t_blog_category.UPDATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public String getUpdator() {
-        return updator;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.UPDATOR
-     *
-     * @param updator the value for t_blog_category.UPDATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setUpdator(String updator) {
-        this.updator = updator == null ? null : updator.trim();
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_category.STATE
-     *
-     * @return the value of t_blog_category.STATE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public String getState() {
-        return state;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_category.STATE
-     *
-     * @param state the value for t_blog_category.STATE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setState(String state) {
-        this.state = state == null ? null : state.trim();
+    @Override
+    public String toString() {
+        return "BlogCategory [type=" + type + ", code=" + code + ", path=" + path + ", level="
+               + level + ", orderNum=" + orderNum + ", counts=" + counts + ", description="
+               + description + ", pCode=" + pCode + ", id=" + id + ", createDt=" + createDt
+               + ", updateDt=" + updateDt + ", creator=" + creator + ", updator=" + updator
+               + ", state=" + state + "]";
     }
 }

@@ -1,87 +1,53 @@
 package org.linjiezhijia.api.biz.blog.po;
 
-import java.util.Date;
+import org.linjiezhijia.api.common.BasePO;
 
-import org.linjiezhijia.api.common.query.BasePO;
-
+/**
+ * 博客类目-参数对象
+ * 
+ * @author roilat-J
+ * @version $Id: BlogCategoryPO.java, v 0.1 2019年3月7日 下午4:42:00 roilat-J Exp $
+ */
 public class BlogCategoryPO extends BasePO{
     /**
-     *
+     *类目类型(L:link,A:article)
      */
-    private Integer id;
+    private String  type;
 
     /**
-     *
+     *类目编码(Cxxxx<4位数字>)
      */
-    private String type;
+    private String  code;
 
     /**
-     *
+     *类目编码路径
      */
-    private String code;
+    private String  path;
 
     /**
-     *
+     *类目层级
      */
-    private String path;
+    private Integer   level;
 
     /**
-     *
+     *类目排序
      */
-    private Short level;
+    private Integer   orderNum;
 
     /**
-     *
-     */
-    private Short orderNum;
-
-    /**
-     *
+     *文章数量
      */
     private Integer counts;
 
     /**
-     *
+     *类目描述
      */
-    private String description;
+    private String  description;
 
     /**
-     *
+     *父类目编码
      */
-    private String pCode;
-
-    /**
-     *
-     */
-    private Date createDt;
-
-    /**
-     *
-     */
-    private Date updateDt;
-
-    /**
-     *
-     */
-    private String creator;
-
-    /**
-     *
-     */
-    private String updator;
-
-    /**
-     *
-     */
-    private String state;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String  pCode;
 
     public String getType() {
         return type;
@@ -107,19 +73,19 @@ public class BlogCategoryPO extends BasePO{
         this.path = path;
     }
 
-    public Short getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(Short level) {
+    public void setLevel(Integer level) {
         this.level = level;
     }
 
-    public Short getOrderNum() {
+    public Integer getOrderNum() {
         return orderNum;
     }
 
-    public void setOrderNum(Short orderNum) {
+    public void setOrderNum(Integer orderNum) {
         this.orderNum = orderNum;
     }
 
@@ -147,53 +113,15 @@ public class BlogCategoryPO extends BasePO{
         this.pCode = pCode;
     }
 
-    public Date getCreateDt() {
-        return createDt;
-    }
-
-    public void setCreateDt(Date createDt) {
-        this.createDt = createDt;
-    }
-
-    public Date getUpdateDt() {
-        return updateDt;
-    }
-
-    public void setUpdateDt(Date updateDt) {
-        this.updateDt = updateDt;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getUpdator() {
-        return updator;
-    }
-
-    public void setUpdator(String updator) {
-        this.updator = updator;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     @Override
     public String toString() {
-        return "BlogCategory [id=" + id + ", type=" + type + ", code=" + code + ", path=" + path
-               + ", level=" + level + ", orderNum=" + orderNum + ", counts=" + counts
-               + ", description=" + description + ", pCode=" + pCode + ", createDt=" + createDt
-               + ", updateDt=" + updateDt + ", creator=" + creator + ", updator=" + updator
-               + ", state=" + state + "]";
+        return "BlogCategoryPO [type=" + type + ", code=" + code + ", path=" + path + ", level="
+               + level + ", orderNum=" + orderNum + ", counts=" + counts + ", description="
+               + description + ", pCode=" + pCode + ", orderByClause=" + orderByClause
+               + ", currentPage=" + currentPage + ", pageSize=" + pageSize + ", params=" + params
+               + ", id=" + id + ", createDtStart=" + createDtStart + ", createDtEnd=" + createDtEnd
+               + ", updateDtStart=" + updateDtStart + ", updateDtEnd=" + updateDtEnd + ", creator="
+               + creator + ", updator=" + updator + ", state=" + state + "]";
     }
 
 }

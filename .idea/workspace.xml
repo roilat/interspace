@@ -3,28 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="645ebd2a-9df6-4ded-8dda-c99ef6604544" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/doc/crebas.sql" afterPath="$PROJECT_DIR$/doc/crebas.sql" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/linjiiezhijia-api.log" afterPath="$PROJECT_DIR$/linjiezhijia-api/linjiiezhijia-api.log" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/pom.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/linjiezhijia-api/pom.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/doc/demo_db.txt" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/doc/demo_db.txt" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/doc/experence.txt" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/doc/experence.txt" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/DataSourceConfig.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/DataSourceConfig.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/filter/LogFilter0.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/filter/LogFilter0.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/filter/LogFilter1.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/filter/LogFilter1.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/filter/LogFilter2.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/filter/LogFilter2.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/demo/controller/HelloWorldController.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/controller/HelloWorldController.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/demo/dao/ArticleRepository.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/dao/ArticleRepository.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/demo/dao/jdbc/ArticleDAO.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/dao/jdbc/ArticleDAO.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/demo/dao/jdbc/ArticleDAOJdbcTemplateImpl.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/dao/jdbc/ArticleDAOJdbcTemplateImpl.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/demo/mappers/ArticleMapper.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/mappers/ArticleMapper.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/demo/mappers/ArticleMapper.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/mappers/ArticleMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/demo/model/Article.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/demo/model/Article.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.yml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.yml" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/HelloWorldControllerTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/HelloWorldControllerTest.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleDaoTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleDaoTest.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleMapperTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleMapperTest.java" />
-      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleController.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleController.java" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/InterceptorConfig.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/InterceptorConfig.java" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/interceptors/LogCostInterceptor.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/interceptors/LogInvokeInfoInterceptor.java" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/log4j2.xml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/main/resources/log4j2.xml" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleControllerTest.java" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/biz/blog/controller/BlogArticleControllerTest.java" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.properties" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.yml" afterPath="$PROJECT_DIR$/linjiezhijia-api/src/test/resources/application.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/linjiezhijia-web/target/" />
     <ignored path="$PROJECT_DIR$/linjiezhijia-api/target/" />
@@ -38,48 +27,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SpringBootApplication.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnableAutoConfiguration.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="65" column="2" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JDBCType.java" pinned="false" current-in-tab="true">
-        <entry file="jar://D:/softInstall/jdk1.8.0_66/src.zip!/java/sql/JDBCType.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -89,6 +37,9 @@
       <find>spring.redis.timeout</find>
       <find>servletComponentRegisteringPostProcessor</find>
       <find>VARCHAR</find>
+      <find>no transaction is in progress</find>
+      <find>ser</find>
+      <find>hibernate</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -117,6 +68,7 @@
         <option value="$PROJECT_DIR$/linjiezhijia-web/.settings/org.eclipse.jdt.core.prefs" />
         <option value="$PROJECT_DIR$/linjiezhijia-static-web/.settings/org.eclipse.jdt.core.prefs" />
         <option value="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" />
+        <option value="$PROJECT_DIR$/linjiezhijia-api/pom.xml" />
       </list>
     </option>
   </component>
@@ -136,7 +88,21 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="linjiezhijia Maven Webapp" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="linjiezhijia-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="linjiezhijia-api" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Dependencies" type="f4be9f2a:MavenProjectsStructure$DependenciesNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -146,8 +112,8 @@
     <handled-path value="$PROJECT_DIR$/linjiezhijia-static-web/src/main/webapp/static-resources/public/jquery/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -167,6 +133,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -220,48 +190,88 @@
               <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
               <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
-              <item name="linjiezhijia-static-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
-              <item name="linjiezhijia-static-web" type="462c0819:PsiDirectoryNode" />
-              <item name=".settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
-              <item name="linjiezhijia-static-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
-              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
-              <item name="linjiezhijia-static-web" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
               <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
-              <item name="linjiezhijia-static-web" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+              <item name="LogFilter0" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
               <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
-              <item name="linjiezhijia-static-web" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="FilterConfig" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="ArticleRepositoryTest" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
@@ -303,6 +313,40 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia-web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linjiezhijia" type="462c0819:PsiDirectoryNode" />
+              <item name="AppTest" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
@@ -333,6 +377,129 @@
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; jdk1.8.0_66 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; jdk1.8.0_66 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; jdk1.8.0_66 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; jdk1.8.0_66 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="transaction" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; jdk1.8.0_66 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="transaction" type="462c0819:PsiDirectoryNode" />
+              <item name="TransactionRequiredException" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.14" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.14" type="70bed36:NamedLibraryElementNode" />
+              <item name="tomcat-embed-core-9.0.14.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.14" type="70bed36:NamedLibraryElementNode" />
+              <item name="tomcat-embed-core-9.0.14.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.14" type="70bed36:NamedLibraryElementNode" />
+              <item name="tomcat-embed-core-9.0.14.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.14" type="70bed36:NamedLibraryElementNode" />
+              <item name="tomcat-embed-core-9.0.14.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="Filter" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="dialect" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="dialect" type="462c0819:PsiDirectoryNode" />
+              <item name="MySQL5Dialect" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="dialect" type="462c0819:PsiDirectoryNode" />
+              <item name="MySQL5InnoDBDialect" type="1a9f42e2:ClassTreeNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.hibernate:hibernate-core:5.3.7.Final" type="70bed36:NamedLibraryElementNode" />
+              <item name="hibernate-core-5.3.7.Final.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="hibernate" type="462c0819:PsiDirectoryNode" />
+              <item name="dialect" type="462c0819:PsiDirectoryNode" />
+              <item name="MySQLDialect" type="1a9f42e2:ClassTreeNode" />
             </path>
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
@@ -363,25 +530,58 @@
             <path>
               <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-boot-autoconfigure-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="autoconfigure" type="462c0819:PsiDirectoryNode" />
-              <item name="SpringBootApplication" type="1a9f42e2:ClassTreeNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+              <item name="restart" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+              <item name="restart" type="462c0819:PsiDirectoryNode" />
+              <item name="classloader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="linjiezhijia" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework.boot:spring-boot-devtools:2.1.2.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-boot-devtools-2.1.2.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="devtools" type="462c0819:PsiDirectoryNode" />
+              <item name="restart" type="462c0819:PsiDirectoryNode" />
+              <item name="classloader" type="462c0819:PsiDirectoryNode" />
+              <item name="RestartClassLoader" type="1a9f42e2:ClassTreeNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.build.tools" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="D:/WorkSpace/fcrc_projects" />
     <property name="LINKC_FILTER_ACTION" value="all" />
     <property name="LINKC_GROUP_BY_USER_ACTION" value="ALL" />
     <property name="LINKC_SEARCH_ACTION" value="" />
@@ -389,6 +589,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="LINKC_SERVICE_ENABLE_KEY" value="0" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -402,7 +611,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ArticleRepositoryTest">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -423,6 +632,31 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
       <envs />
+    </configuration>
+    <configuration name="ArticleRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="org.linjiezhijia.api.demo.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="linjiezhijia-api" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="org.linjiezhijia.api.demo.dao" />
+      <option name="MAIN_CLASS_NAME" value="org.linjiezhijia.api.demo.dao.ArticleRepositoryTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -490,6 +724,15 @@
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.ArticleRepositoryTest" />
+    </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.ArticleRepositoryTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -512,15 +755,23 @@
       <workItem from="1550456975061" duration="859000" />
       <workItem from="1550547136467" duration="1208000" />
       <workItem from="1551345204090" duration="1334000" />
+      <workItem from="1552028133566" duration="4218000" />
+      <workItem from="1552290155410" duration="652000" />
+      <workItem from="1552358423188" duration="1897000" />
+      <workItem from="1552447485766" duration="187000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ArticleRepositoryTest - 2019.03.08 at 15h 19m 47s.xml">
+      <configuration name="ArticleRepositoryTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14214000" />
+    <option name="totallyTimeSpent" value="21168000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -538,21 +789,22 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19296375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20149253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -566,75 +818,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="64" column="35" lean-forward="false" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="64" column="35" lean-forward="true" selection-start-line="64" selection-start-column="35" selection-end-line="64" selection-end-column="35" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -642,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -650,7 +836,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -658,7 +843,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="61" column="66" lean-forward="false" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -666,7 +850,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="6" column="11" lean-forward="false" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -674,7 +857,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +864,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="608">
           <caret line="61" column="66" lean-forward="false" selection-start-line="61" selection-start-column="66" selection-end-line="61" selection-end-column="66" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -690,7 +871,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,7 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -706,7 +885,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1121">
           <caret line="88" column="36" lean-forward="false" selection-start-line="88" selection-start-column="36" selection-end-line="88" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -714,7 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -722,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1026">
           <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -730,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1045">
           <caret line="84" column="7" lean-forward="true" selection-start-line="84" selection-start-column="7" selection-end-line="84" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -874,22 +1049,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -897,28 +1056,205 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/biz/blog/model/BlogCategory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="23" column="38" lean-forward="false" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/SpringBootApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="54" column="39" lean-forward="false" selection-start-line="54" selection-start-column="18" selection-end-line="54" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-core/9.0.14/tomcat-embed-core-9.0.14-sources.jar!/javax/servlet/Filter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-989">
+          <caret line="45" column="17" lean-forward="false" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/filter/LogFilter0.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="36" lean-forward="true" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/main/java/org/linjiezhijia/api/config/FilterConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-autoconfigure/2.1.2.RELEASE/spring-boot-autoconfigure-2.1.2.RELEASE-sources.jar!/org/springframework/boot/autoconfigure/EnableAutoConfiguration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
           <caret line="65" column="2" lean-forward="false" selection-start-line="65" selection-start-column="2" selection-end-line="65" selection-end-column="2" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/softInstall/jdk1.8.0_66/jre/lib/rt.jar!/javax/transaction/TransactionRequiredException.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="1" lean-forward="false" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="jar://D:/softInstall/jdk1.8.0_66/src.zip!/java/sql/JDBCType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="86" column="33" lean-forward="false" selection-start-line="86" selection-start-column="22" selection-end-line="86" selection-end-column="33" />
-          <folding />
+        <state relative-caret-position="138">
+          <caret line="60" column="52" lean-forward="false" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final-sources.jar!/org/hibernate/dialect/MySQLDialect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8569">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final-sources.jar!/org/hibernate/dialect/MySQL5Dialect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="21" column="42" lean-forward="true" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final-sources.jar!/org/hibernate/dialect/MySQL5InnoDBDialect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="56" lean-forward="true" selection-start-line="15" selection-start-column="56" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.7.Final/hibernate-core-5.3.7.Final.jar!/org/hibernate/dialect/MySQL5InnoDBDialect.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/src/test/java/org/linjiezhijia/api/demo/dao/ArticleRepositoryTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="19" column="23" lean-forward="false" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-web/src/test/java/cn/roilat/linjiezhijia/AppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/linjiezhijia-api/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-devtools/2.1.2.RELEASE/spring-boot-devtools-2.1.2.RELEASE-sources.jar!/org/springframework/boot/devtools/restart/classloader/RestartClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>linjiezhijia-api:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>jdk1.8.0_66</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>linjiezhijia</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>jdk1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

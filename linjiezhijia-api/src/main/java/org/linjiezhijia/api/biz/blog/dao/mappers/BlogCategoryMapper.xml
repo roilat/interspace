@@ -7,8 +7,8 @@
 		<result column="TYPE" jdbcType="CHAR" property="type" />
 		<result column="CODE" jdbcType="CHAR" property="code" />
 		<result column="PATH" jdbcType="VARCHAR" property="path" />
-		<result column="LEVEL" jdbcType="SMALLINT" property="level" />
-		<result column="ORDER_NUM" jdbcType="SMALLINT" property="orderNum" />
+		<result column="LEVEL" jdbcType="INTEGER" property="level" />
+		<result column="ORDER_NUM" jdbcType="INTEGER" property="orderNum" />
 		<result column="COUNTS" jdbcType="INTEGER" property="counts" />
 		<result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
 		<result column="P_CODE" jdbcType="CHAR" property="pCode" />
@@ -123,8 +123,8 @@
 		CREATOR, UPDATOR, STATE
 		)
 		values (#{type,jdbcType=CHAR}, #{code,jdbcType=CHAR},
-		#{path,jdbcType=VARCHAR}, #{level,jdbcType=SMALLINT},
-		#{orderNum,jdbcType=SMALLINT}, #{counts,jdbcType=INTEGER},
+		#{path,jdbcType=VARCHAR}, #{level,jdbcType=INTEGER},
+		#{orderNum,jdbcType=INTEGER}, #{counts,jdbcType=INTEGER},
 		#{description,jdbcType=VARCHAR},
 		#{pCode,jdbcType=CHAR}, #{createDt,jdbcType=TIMESTAMP}, #{updateDt,jdbcType=TIMESTAMP},
 		#{creator,jdbcType=VARCHAR}, #{updator,jdbcType=VARCHAR},
@@ -148,10 +148,10 @@
 				PATH = #{record.path,jdbcType=VARCHAR},
 			</if>
 			<if test="record.level != null">
-				LEVEL = #{record.level,jdbcType=SMALLINT},
+				LEVEL = #{record.level,jdbcType=INTEGER},
 			</if>
 			<if test="record.orderNum != null">
-				ORDER_NUM = #{record.orderNum,jdbcType=SMALLINT},
+				ORDER_NUM = #{record.orderNum,jdbcType=INTEGER},
 			</if>
 			<if test="record.counts != null">
 				COUNTS = #{record.counts,jdbcType=INTEGER},

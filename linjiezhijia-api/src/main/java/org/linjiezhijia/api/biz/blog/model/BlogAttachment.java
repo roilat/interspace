@@ -1,338 +1,82 @@
 package org.linjiezhijia.api.biz.blog.model;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
-@Entity//jpa
-@Table(name = "T_BLOG_ATTACHMENT")//jpa
-public class BlogAttachment {
-    /**
-     *
 
-     * This field corresponds to the database column t_blog_attachment.ID
-     */
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+import org.hibernate.annotations.DynamicUpdate;
+import org.linjiezhijia.api.common.BaseEntity;
 
-    /**
-     *
-     */
-    private Integer blogId;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.SAVE_PATH
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private String savePath;
+/**
+ * 博客附件
+ * 
+ * @author roilat-J
+ * @version $Id: BlogAttachment.java, v 0.1 2019年3月7日 下午4:40:45 roilat-J Exp $
+ */
+@Entity
+@Table(name = "T_BLOG_ATTACHMENT") 
+@DynamicUpdate
+public class BlogAttachment extends BaseEntity {
+    /**  */
+    private static final long serialVersionUID = -7723588296853965328L;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.NAME
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *博客ID
      */
-    private String name;
+    private Integer           blogId;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.TYPE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *附件全限定名（包括路径和名称）
      */
-    private String type;
+    private String            savePath;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.CREATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *附件名称
      */
-    private Date createDt;
+    private String            name;
 
     /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.UPDATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
+     *附件类型(暂未定义)
      */
-    private Date updateDt;
+    private String            type;
 
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.CREATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private String creator;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.UPDATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private String updator;
-
-    /**
-     *
-
-     * This field corresponds to the database column t_blog_attachment.STATE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    private String state;
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.ID
-     *
-     * @return the value of t_blog_attachment.ID
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Integer getId() {
-        return id;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.ID
-     *
-     * @param id the value for t_blog_attachment.ID
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.BLOG_ID
-     *
-     * @return the value of t_blog_attachment.BLOG_ID
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public Integer getBlogId() {
         return blogId;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.BLOG_ID
-     *
-     * @param blogId the value for t_blog_attachment.BLOG_ID
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setBlogId(Integer blogId) {
-        this.blogId = blogId;
+        this.blogId = blogId == null ? new Integer(0) : blogId;
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.SAVE_PATH
-     *
-     * @return the value of t_blog_attachment.SAVE_PATH
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getSavePath() {
         return savePath;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.SAVE_PATH
-     *
-     * @param savePath the value for t_blog_attachment.SAVE_PATH
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setSavePath(String savePath) {
-        this.savePath = savePath == null ? null : savePath.trim();
+        this.savePath = savePath == null ? "" : savePath.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.NAME
-     *
-     * @return the value of t_blog_attachment.NAME
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.NAME
-     *
-     * @param name the value for t_blog_attachment.NAME
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name == null ? "" : name.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.TYPE
-     *
-     * @return the value of t_blog_attachment.TYPE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public String getType() {
         return type;
     }
 
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.TYPE
-     *
-     * @param type the value for t_blog_attachment.TYPE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
     public void setType(String type) {
-        this.type = type == null ? null : type.trim();
+        this.type = type == null ? "" : type.trim();
     }
 
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.CREATE_DT
-     *
-     * @return the value of t_blog_attachment.CREATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Date getCreateDt() {
-        return createDt;
+    @Override
+    public String toString() {
+        return "BlogAttachment [blogId=" + blogId + ", savePath=" + savePath + ", name=" + name
+               + ", type=" + type + ", id=" + id + ", createDt=" + createDt + ", updateDt="
+               + updateDt + ", creator=" + creator + ", updator=" + updator + ", state=" + state
+               + "]";
     }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.CREATE_DT
-     *
-     * @param createDt the value for t_blog_attachment.CREATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setCreateDt(Date createDt) {
-        this.createDt = createDt;
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.UPDATE_DT
-     *
-     * @return the value of t_blog_attachment.UPDATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public Date getUpdateDt() {
-        return updateDt;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.UPDATE_DT
-     *
-     * @param updateDt the value for t_blog_attachment.UPDATE_DT
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setUpdateDt(Date updateDt) {
-        this.updateDt = updateDt;
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.CREATOR
-     *
-     * @return the value of t_blog_attachment.CREATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public String getCreator() {
-        return creator;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.CREATOR
-     *
-     * @param creator the value for t_blog_attachment.CREATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setCreator(String creator) {
-        this.creator = creator == null ? null : creator.trim();
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.UPDATOR
-     *
-     * @return the value of t_blog_attachment.UPDATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public String getUpdator() {
-        return updator;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.UPDATOR
-     *
-     * @param updator the value for t_blog_attachment.UPDATOR
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setUpdator(String updator) {
-        this.updator = updator == null ? null : updator.trim();
-    }
-
-    /**
-     * 
-     * This method returns the value of the database column t_blog_attachment.STATE
-     *
-     * @return the value of t_blog_attachment.STATE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public String getState() {
-        return state;
-    }
-
-    /**
-     * 
-     * This method sets the value of the database column t_blog_attachment.STATE
-     *
-     * @param state the value for t_blog_attachment.STATE
-     *
-     * @mbg.generated Wed Feb 27 18:14:31 CST 2019
-     */
-    public void setState(String state) {
-        this.state = state == null ? null : state.trim();
-    }
+    
 }

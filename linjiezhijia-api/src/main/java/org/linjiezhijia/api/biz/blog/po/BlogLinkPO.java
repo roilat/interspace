@@ -1,62 +1,29 @@
 package org.linjiezhijia.api.biz.blog.po;
 
-import java.util.Date;
+import org.linjiezhijia.api.common.BasePO;
 
-import org.linjiezhijia.api.common.query.BasePO;
-
+/**
+ * 博客链接-参数对象
+ * 
+ * @author roilat-J
+ * @version $Id: BlogLinkPO.java, v 0.1 2019年3月7日 下午4:42:28 roilat-J Exp $
+ */
 public class BlogLinkPO extends BasePO {
-    /**
-     *
-     */
-    private Integer id;
 
     /**
-     *
+     *链接来源(字典待定)
      */
-    private String  source;
+    private String source;
 
     /**
-     *
+     *链接地址
      */
-    private String  address;
+    private String address;
 
     /**
-     *
+     *内容快照
      */
-    private String  snapshoot;
-
-    /**
-     *
-     */
-    private Date    createDt;
-
-    /**
-     *
-     */
-    private Date    updateDt;
-
-    /**
-     *
-     */
-    private String  creator;
-
-    /**
-     *
-     */
-    private String  updator;
-
-    /**
-     *
-     */
-    private String  state;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private String snapshoot;
 
     public String getSource() {
         return source;
@@ -82,51 +49,14 @@ public class BlogLinkPO extends BasePO {
         this.snapshoot = snapshoot;
     }
 
-    public Date getCreateDt() {
-        return createDt;
-    }
-
-    public void setCreateDt(Date createDt) {
-        this.createDt = createDt;
-    }
-
-    public Date getUpdateDt() {
-        return updateDt;
-    }
-
-    public void setUpdateDt(Date updateDt) {
-        this.updateDt = updateDt;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getUpdator() {
-        return updator;
-    }
-
-    public void setUpdator(String updator) {
-        this.updator = updator;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
     @Override
     public String toString() {
-        return "BlogLink [id=" + id + ", source=" + source + ", address=" + address + ", snapshoot="
-               + snapshoot + ", createDt=" + createDt + ", updateDt=" + updateDt + ", creator="
-               + creator + ", updator=" + updator + ", state=" + state + "]";
+        return "BlogLinkPO [source=" + source + ", address=" + address + ", snapshoot=" + snapshoot
+               + ", orderByClause=" + orderByClause + ", currentPage=" + currentPage + ", pageSize="
+               + pageSize + ", params=" + params + ", id=" + id + ", createDtStart=" + createDtStart
+               + ", createDtEnd=" + createDtEnd + ", updateDtStart=" + updateDtStart
+               + ", updateDtEnd=" + updateDtEnd + ", creator=" + creator + ", updator=" + updator
+               + ", state=" + state + "]";
     }
 
 }

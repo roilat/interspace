@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 import org.linjiezhijia.api.biz.blog.dbo.BlogCategoryDO;
-import org.linjiezhijia.api.biz.blog.model.BlogArticle;
 import org.linjiezhijia.api.biz.blog.model.BlogCategory;
 
 public interface BlogCategoryMapper {
@@ -26,7 +25,7 @@ public interface BlogCategoryMapper {
     /**
      * 
      */
-    List<BlogArticle> pageList(BlogCategoryDO blogCategoryDO);
+    List<BlogCategory> pageList(BlogCategoryDO blogCategoryDO);
 
     /**
      * 

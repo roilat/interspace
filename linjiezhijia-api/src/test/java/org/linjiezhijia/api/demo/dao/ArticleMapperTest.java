@@ -9,7 +9,7 @@ import java.util.List;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.linjiezhijia.api.Application;
-import org.linjiezhijia.api.biz.demo.mappers.ArticleMapper;
+import org.linjiezhijia.api.biz.demo.dao.mappers.ArticleMapper;
 import org.linjiezhijia.api.biz.demo.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

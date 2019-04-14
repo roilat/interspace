@@ -6,7 +6,7 @@ spring:
     username: root
     password: abc123
     type: com.alibaba.druid.pool.DruidDataSource
-    default-auto-commit: true
+    default-auto-commit: false
     druid:
       # 连接池的配置信息
       # 初始化大小，最小，最大
@@ -57,7 +57,11 @@ spring:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL5InnoDBDialect
         hbm2ddl: 
-          auto: update
+          auto: none
+  mvc: 
+    static-path-pattern: /image/**
+  resources: 
+    static-locations: classpath:/images/      
 
 #druid: 
 #  # 下面为连接池的补充设置，应用到上面所有数据源中
@@ -94,6 +98,8 @@ mybatis:
 server: 
   port: 8081
   contextPath: /
+  error: 
+    path: /system/error
   tomcat: 
     uri-encoding: UTF-8
     max-threads: 1000

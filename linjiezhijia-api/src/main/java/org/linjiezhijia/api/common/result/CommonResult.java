@@ -22,6 +22,6 @@ public class CommonResult<T> extends BaseResult {
     }
     @Override
     public String toString() {
-        return "CommonResult [data=" + data + "]";
+        return "CommonResult [data=" + data + ", msg=" + msg + ", success=" + success + "]";
     }
 }
