@@ -36,5 +36,9 @@
 	<modules>
 		<module>linjiezhijia-web</module>
 	    <module>linjiezhijia-static-web</module>
+<<<<<<< HEAD
+	    <!-- <module>linjiezhijia-api</module> -->
+=======
+>>>>>>> 4312de82e94f688d343c8f5f026d3ca75b8ca9ab
   </modules>
 </project>
