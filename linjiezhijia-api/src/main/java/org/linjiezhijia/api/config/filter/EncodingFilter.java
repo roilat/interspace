@@ -13,50 +13,48 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
 
 public class EncodingFilter implements Filter {
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response,
-                         FilterChain chain) throws IOException, ServletException {
-        //request.setCharacterEncoding("UTF-8");
-        //ÔÚ´«µİrequestÖ®Ç°¶ÔrequestµÄgetParameter·½·¨½øĞĞÔöÇ¿
-        /*
-         * ×°ÊÎÕßÄ£Ê½(°ü×°)
-         * 1¡¢ÔöÇ¿ÀàÓë±»ÔöÇ¿µÄÀàÒªÊµÏÖÍ³Ò»½Ó¿Ú
-         * 2¡¢ÔÚÔöÇ¿ÀàÖĞ´«Èë±»ÔöÇ¿µÄÀà
-         * 3¡¢ĞèÒªÔöÇ¿µÄ·½·¨ÖØĞ´ ²»ĞèÒªÔöÇ¿µÄ·½·¨µ÷ÓÃ±»ÔöÇ¿¶ÔÏóµÄ
-         */
-        //±»ÔöÇ¿µÄ¶ÔÏó
-        HttpServletRequest req = (HttpServletRequest) request;
-        //ÔöÇ¿¶ÔÏó
-        EnhanceRequest enhanceRequest = new EnhanceRequest(req);
-        chain.doFilter(enhanceRequest, response);
-    }
+	@Override
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+		// request.setCharacterEncoding("UTF-8");
+		// åœ¨ä¼ é€’requestä¹‹å‰å¯¹requestçš„getParameteræ–¹æ³•è¿›è¡Œå¢å¼º
+		/*
+		 * è£…é¥°è€…æ¨¡å¼(åŒ…è£…) 1ã€å¢å¼ºç±»ä¸è¢«å¢å¼ºçš„ç±»è¦å®ç°ç»Ÿä¸€æ¥å£ 2ã€åœ¨å¢å¼ºç±»ä¸­ä¼ å…¥è¢«å¢å¼ºçš„ç±» 3ã€éœ€è¦å¢å¼ºçš„æ–¹æ³•é‡å†™
+		 * ä¸éœ€è¦å¢å¼ºçš„æ–¹æ³•è°ƒç”¨è¢«å¢å¼ºå¯¹è±¡çš„
+		 */
+		// è¢«å¢å¼ºçš„å¯¹è±¡
+		HttpServletRequest req = (HttpServletRequest) request;
+		// å¢å¼ºå¯¹è±¡
+		EnhanceRequest enhanceRequest = new EnhanceRequest(req);
+		chain.doFilter(enhanceRequest, response);
+	}
 
-    @Override
-    public void destroy() {
-    }
+	@Override
+	public void destroy() {
+	}
 
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-    }
+	@Override
+	public void init(FilterConfig filterConfig) throws ServletException {
+	}
 }
 
 class EnhanceRequest extends HttpServletRequestWrapper {
-    private HttpServletRequest request;
+	private HttpServletRequest request;
 
-    public EnhanceRequest(HttpServletRequest request) {
-        super(request);
-        this.request = request;
-    }
+	public EnhanceRequest(HttpServletRequest request) {
+		super(request);
+		this.request = request;
+	}
 
-    //¶ÔgetParaameterÔöÇ¿
-    @Override
-    public String getParameter(String name) {
-        String parameter = request.getParameter(name);//ÂÒÂë
-        try {
-            parameter = new String(parameter.getBytes("iso8859-1"), "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        return parameter;
-    }
+	// å¯¹getParaameterå¢å¼º
+	@Override
+	public String getParameter(String name) {
+		String parameter = request.getParameter(name);// ä¹±ç 
+		try {
+			parameter = new String(parameter.getBytes("iso8859-1"), "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return parameter;
+	}
 }
