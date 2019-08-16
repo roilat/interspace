@@ -1,1 +1,0 @@
-启动生成mybatis相关内容：mybatis-generator:generate
