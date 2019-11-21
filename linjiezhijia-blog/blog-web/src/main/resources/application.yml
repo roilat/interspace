@@ -1,5 +1,5 @@
 server:
-    port: 8080
+    port: 8088
 spring:
     http:
       encoding:
@@ -20,9 +20,9 @@ spring:
 
     datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost/db_blog?useSSL=false&characterEncoding=utf8
-        username: root
-        password: root
+        url: jdbc:mysql://localhost/myblog?allowMultiQueries=true&useUnicode=true&serverTimezone=CTT&characterEncoding=utf8&useSSL=false
+        username: blog
+        password: blog
 
     jpa:
         database: mysql
@@ -60,4 +60,4 @@ site.store.domain: false
 # 资源域名, resource.domain : true 是有效
 # 配置域名, 将域名的根目录指向 store.root 配置的地址
 # ---------------------------------
-site.store.host: http://localhost:8080/blog
+site.store.host: http://localhost:8088/blog
