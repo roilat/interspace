@@ -2,37 +2,48 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>linjiezhijia-blog</artifactId>
-	<packaging>pom</packaging>
-	<modules>
-		<module>blog-base</module>
-		<module>blog-core</module>
-		<module>blog-web</module>
-		<module>blog-plugin-example</module>
-	</modules>
+	<groupId>org.linjiezhijia.blog</groupId>
+	<artifactId>mblog</artifactId>
+	<version>latest</version>
+	<packaging>jar</packaging>
 
 	<properties>
-		<project.version>0.0.1-SNAPSHOT</project.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
+		<commons.lang3>3.8.1</commons.lang3>
+		<commons.io>1.3.2</commons.io>
+		<commons.text>1.3</commons.text>
+		<commons.httpclient>3.1</commons.httpclient>
+		<shiro>1.4.0</shiro>
+		<coobird.thumbnailator>0.4.8</coobird.thumbnailator>
+		<alibaba.fastjson>1.2.55</alibaba.fastjson>
+		<org.jsoup>1.9.2</org.jsoup>
+		<apache.lucene>5.5.5</apache.lucene>
+		<upyun.sdk.version>4.0.1</upyun.sdk.version>
+		<aliyun.sdk.version>2.8.3</aliyun.sdk.version>
+		<qiniu.sdk.version>7.2.18</qiniu.sdk.version>
+		<flyway.version>5.2.4</flyway.version>
+		<commonmark.version>0.12.1</commonmark.version>
 	</properties>
 
 	<parent>
-		<groupId>cn.roilat</groupId>
-		<artifactId>linjiezhijia</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.2.RELEASE</version>
+		<relativePath />
 	</parent>
 
 	<dependencies>
 		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
-			<version>2.6</version>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
 		</dependency>
 
 		<dependency>
@@ -43,27 +54,71 @@
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-io</artifactId>
-			<version>1.3.2</version>
+			<version>${commons.io}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-text</artifactId>
+			<version>${commons.text}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>${commons.httpclient}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.github.biezhi</groupId>
+			<artifactId>oh-my-email</artifactId>
+			<version>0.0.4</version>
 		</dependency>
 
 		<dependency>
 			<groupId>net.coobird</groupId>
 			<artifactId>thumbnailator</artifactId>
-			<version>0.4.8</version>
+			<version>${coobird.thumbnailator}</version>
 		</dependency>
 
 		<!--json格式化类库 -->
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.16</version>
+			<version>${alibaba.fastjson}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
 		</dependency>
 
 		<!--过滤html标签类库 -->
 		<dependency>
 			<groupId>org.jsoup</groupId>
 			<artifactId>jsoup</artifactId>
-			<version>1.9.2</version>
+			<version>${org.jsoup}</version>
+		</dependency>
+
+		<!-- Markdown渲染 -->
+		<dependency>
+			<groupId>com.atlassian.commonmark</groupId>
+			<artifactId>commonmark</artifactId>
+			<version>${commonmark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.commonmark</groupId>
+			<artifactId>commonmark-ext-gfm-tables</artifactId>
+			<version>${commonmark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.atlassian.commonmark</groupId>
+			<artifactId>commonmark-ext-yaml-front-matter</artifactId>
+			<version>${commonmark.version}</version>
 		</dependency>
 
 		<!-- database -->
@@ -72,12 +127,17 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 
 		<!--hibernate search orm -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-search-orm</artifactId>
-			<version>5.6.3.Final</version>
+			<version>5.11.0.Final</version>
 		</dependency>
 		<!--hibernate search dependency -->
 		<dependency>
@@ -88,12 +148,12 @@
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-analyzers-smartcn</artifactId>
-			<version>5.5.4</version>
+			<version>${apache.lucene}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.lucene</groupId>
 			<artifactId>lucene-highlighter</artifactId>
-			<version>5.5.4</version>
+			<version>${apache.lucene}</version>
 		</dependency>
 		<!-- /end -->
 
@@ -103,7 +163,39 @@
 			<artifactId>ehcache</artifactId>
 		</dependency>
 
-		<!-- boot -->
+		<!-- shiro -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-ehcache</artifactId>
+			<version>${shiro}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-spring-boot-web-starter</artifactId>
+			<version>${shiro}</version>
+		</dependency>
+
+		<!-- 又拍云SDK -->
+		<dependency>
+			<groupId>com.upyun</groupId>
+			<artifactId>java-sdk</artifactId>
+			<version>${upyun.sdk.version}</version>
+		</dependency>
+
+		<!-- 阿里云SDK -->
+		<dependency>
+			<groupId>com.aliyun.oss</groupId>
+			<artifactId>aliyun-sdk-oss</artifactId>
+			<version>${aliyun.sdk.version}</version>
+		</dependency>
+
+		<!-- 七牛云SDK -->
+		<dependency>
+			<groupId>com.qiniu</groupId>
+			<artifactId>qiniu-java-sdk</artifactId>
+			<version>${qiniu.sdk.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -118,7 +210,7 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-mail</artifactId>
+			<artifactId>spring-boot-starter-cache</artifactId>
 		</dependency>
 
 		<dependency>
@@ -140,69 +232,158 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-<!-- 			<exclusions>
-				容器启动,启用下面代码
+			<exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-tomcat</artifactId>
 				</exclusion>
-			</exclusions> -->
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-undertow</artifactId>
 		</dependency>
 	</dependencies>
-	
 
+	<repositories>
+		<!--使用阿里云库 -->
+		<repository>
+			<id>nexus-aliyun</id>
+			<name>Nexus aliyun</name>
+			<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+
+	<!-- <profiles>
+		开发默认环境
+		<profile>
+			<id>mysql</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<profileActive>mysql</profileActive>
+			</properties>
+		</profile>
+
+		测试环境
+		<profile>
+			<id>h2</id>
+			<properties>
+				<profileActive>h2</profileActive>
+			</properties>
+		</profile>
+	</profiles> -->
 	<build>
-		<finalName>linjiezhijia-blog</finalName>
+		<defaultGoal>compile</defaultGoal>
 		<resources>
 			<resource>
-				<directory>${basedir}/src/main/webapp</directory>
-				<!--注意此次必须要放在此目录下才能被访问到 -->
-				<targetPath>META-INF/resources</targetPath>
-				<includes>
-					<include>**/**</include>
-				</includes>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+				<excludes>
+					<exclude>static/**</exclude>
+					<exclude>templates/**</exclude>
+				</excludes>
 			</resource>
 			<resource>
-				<directory>${basedir}/src/main/resources</directory>
+				<directory>src/main/resources</directory>
 				<includes>
-					<include>**/**</include>
+					<include>static/**</include>
+					<include>templates/**</include>
 				</includes>
 			</resource>
 		</resources>
 		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-					<jvmArguments>-Dfile.encoding=UTF-8</jvmArguments>
-					<executable>true</executable>
-					<mainClass>cn.roilat.linjiezhijia.blog.BootApplication</mainClass>
-					<includeSystemScope>true</includeSystemScope>
-				</configuration>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<configuration>
+						<archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+								<classpathPrefix>libs/</classpathPrefix>
+								<mainClass>org.linjiezhijia.blog.BootApplication</mainClass>
+							</manifest>
+						</archive>
+						<outputDirectory>${basedir}/deploy/</outputDirectory>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<configuration>
+						<layout>ZIP</layout>
+						<!--使用外部配置文件，jar包里没有资源文件 -->
+						<addResources>true</addResources>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>repackage</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<configuration>
+						<useDefaultDelimiters>true</useDefaultDelimiters>
+						<encoding>${project.build.sourceEncoding}</encoding>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<encoding>${project.build.sourceEncoding}</encoding>
+						<compilerArgs>
+							<arg>-parameters</arg>
+						</compilerArgs>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<configuration>
+						<forkCount>10</forkCount>
+						<parallel>methods</parallel>
+						<threadCount>10</threadCount>
+						<skipTests>true</skipTests>    <!--默认关掉单元测试 -->
+						<useSystemClassLoader>false</useSystemClassLoader>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.surefire</groupId>
+							<artifactId>surefire-logger-api</artifactId>
+							<version>${maven-surefire-plugin.version}</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<artifactId>maven-dependency-plugin</artifactId>
 				<executions>
 					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+						</goals>
 						<configuration>
-							<classifier>exec</classifier>
+							<outputDirectory>${basedir}/deploy/libs/</outputDirectory>
+							<overWriteReleases>false</overWriteReleases>
+							<overWriteSnapshots>false</overWriteSnapshots>
+							<overWriteIfNewer>true</overWriteIfNewer>
+							<!-- <includeScope>compile</includeScope> -->
+							<excludes>
+							</excludes>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<configuration>
-					<useSystemClassLoader>false</useSystemClassLoader>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
-				</configuration>
-			</plugin>
 		</plugins>
 	</build>
-
 </project>
