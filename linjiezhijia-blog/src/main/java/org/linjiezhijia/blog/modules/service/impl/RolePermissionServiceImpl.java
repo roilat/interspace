@@ -19,34 +19,34 @@ import java.util.Set;
  */
 @Service
 public class RolePermissionServiceImpl implements RolePermissionService {
-    @Autowired
-    private PermissionRepository permissionRepository;
-    @Autowired
-    private RolePermissionRepository rolePermissionRepository;
+	@Autowired
+	private PermissionRepository permissionRepository;
+	@Autowired
+	private RolePermissionRepository rolePermissionRepository;
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<Permission> findPermissions(long roleId) {
-        List<RolePermission> rps = rolePermissionRepository.findAllByRoleId(roleId);
+	@Override
+	@Transactional(readOnly = true)
+	public List<Permission> findPermissions(long roleId) {
+		List<RolePermission> rps = rolePermissionRepository.findAllByRoleId(roleId);
 
-        List<Permission> rets = null;
-        if (rps != null && rps.size() > 0) {
-            Set<Long> pids = new HashSet<>();
-            rps.forEach(rp -> pids.add(rp.getPermissionId()));
-            rets = permissionRepository.findAllById(pids);
-        }
-        return rets;
-    }
+		List<Permission> rets = null;
+		if (rps != null && rps.size() > 0) {
+			Set<Long> pids = new HashSet<>();
+			rps.forEach(rp -> pids.add(rp.getPermissionId()));
+			rets = permissionRepository.findAllById(pids);
+		}
+		return rets;
+	}
 
-    @Override
-    @Transactional
-    public void deleteByRoleId(long roleId) {
-        rolePermissionRepository.deleteByRoleId(roleId);
-    }
+	@Override
+	@Transactional
+	public void deleteByRoleId(long roleId) {
+		rolePermissionRepository.deleteByRoleId(roleId);
+	}
 
-    @Override
-    @Transactional
-    public void add(Set<RolePermission> rolePermissions) {
-        rolePermissionRepository.saveAll(rolePermissions);
-    }
+	@Override
+	@Transactional
+	public void add(Set<RolePermission> rolePermissions) {
+		rolePermissionRepository.saveAll(rolePermissions);
+	}
 }

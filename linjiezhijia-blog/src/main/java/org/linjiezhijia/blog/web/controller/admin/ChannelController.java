@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.admin;
 
 import org.linjiezhijia.blog.base.lang.Result;
@@ -36,14 +27,14 @@ public class ChannelController extends BaseController {
 	private ChannelService channelService;
 	@Autowired
 	private ContextStartup contextStartup;
-	
+
 	@RequestMapping("/list")
 //	@RequiresPermissions("channel:list")
 	public String list(ModelMap model) {
 		model.put("list", channelService.findAll(Consts.IGNORE));
 		return "/admin/channel/list";
 	}
-	
+
 	@RequestMapping("/view")
 	public String view(Integer id, ModelMap model) {
 		if (id != null) {
@@ -52,8 +43,8 @@ public class ChannelController extends BaseController {
 		}
 		return "/admin/channel/view";
 	}
-	
-	@RequestMapping("/update") 
+
+	@RequestMapping("/update")
 //	@RequiresPermissions("channel:update")
 	public String update(Channel view) {
 		if (view != null) {
@@ -66,18 +57,18 @@ public class ChannelController extends BaseController {
 
 	@RequestMapping("/weight")
 	@ResponseBody
-	public Result weight(@RequestParam Integer id, HttpServletRequest request) {
+	public Result<?> weight(@RequestParam Integer id, HttpServletRequest request) {
 		int weight = ServletRequestUtils.getIntParameter(request, "weight", Consts.FEATURED_ACTIVE);
 		channelService.updateWeight(id, weight);
 		contextStartup.resetChannels();
 		return Result.success();
 	}
-	
+
 	@RequestMapping("/delete")
 	@ResponseBody
 //	@RequiresPermissions("channel:delete")
-	public Result delete(Integer id) {
-		Result data = Result.failure("操作失败");
+	public Result<?> delete(Integer id) {
+		Result<?> data = Result.failure("操作失败");
 		if (id != null) {
 			try {
 				channelService.delete(id);
@@ -90,5 +81,5 @@ public class ChannelController extends BaseController {
 		}
 		return data;
 	}
-	
+
 }

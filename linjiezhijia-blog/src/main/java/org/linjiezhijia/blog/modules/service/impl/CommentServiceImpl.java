@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service.impl;
 
 import org.linjiezhijia.blog.modules.data.CommentVO;
@@ -43,13 +34,13 @@ public class CommentServiceImpl implements CommentService {
 	private UserEventService userEventService;
 	@Autowired
 	private PostService postService;
-	
+
 	@Override
 	public Page<CommentVO> paging4Admin(Pageable pageable) {
 		Page<Comment> page = commentRepository.findAll(pageable);
 		List<CommentVO> rets = new ArrayList<>();
 
-		HashSet<Long> uids= new HashSet<>();
+		HashSet<Long> uids = new HashSet<>();
 
 		page.getContent().forEach(po -> {
 			uids.add(po.getAuthorId());
@@ -94,7 +85,7 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public Page<CommentVO> pagingByPostId(Pageable pageable, long postId) {
 		Page<Comment> page = commentRepository.findAllByPostId(pageable, postId);
-		
+
 		List<CommentVO> rets = new ArrayList<>();
 		Set<Long> parentIds = new HashSet<>();
 		Set<Long> uids = new HashSet<>();
@@ -124,7 +115,7 @@ public class CommentServiceImpl implements CommentService {
 		Page<Comment> page = commentRepository.findAll(pageable);
 		List<CommentVO> rets = new ArrayList<>();
 
-		HashSet<Long> uids= new HashSet<>();
+		HashSet<Long> uids = new HashSet<>();
 
 		page.getContent().forEach(po -> {
 			uids.add(po.getAuthorId());
@@ -159,7 +150,7 @@ public class CommentServiceImpl implements CommentService {
 	@Transactional
 	public long post(CommentVO comment) {
 		Comment po = new Comment();
-		
+
 		po.setAuthorId(comment.getAuthorId());
 		po.setPostId(comment.getPostId());
 		po.setContent(comment.getContent());

@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.site;
 
 import org.linjiezhijia.blog.modules.data.PostVO;
@@ -22,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * 文章搜索
+ * 
  * @author roilat-J
  *
  */
@@ -44,5 +36,5 @@ public class SearchController extends BaseController {
 		model.put("kw", kw);
 		return view(Views.SEARCH);
 	}
-	
+
 }

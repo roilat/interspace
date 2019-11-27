@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.data;
 
 import com.alibaba.fastjson.annotation.JSONField;
@@ -30,10 +21,10 @@ public class PostVO extends Post implements Serializable {
 
 	private UserVO author;
 	private Channel channel;
-	
+
 	@JSONField(serialize = false)
 	private PostAttribute attribute;
-	
+
 	public String[] getTagsArray() {
 		if (StringUtils.isNotBlank(super.getTags())) {
 			return super.getTags().split(Consts.SEPARATOR);

@@ -9,20 +9,24 @@ import java.util.List;
  * @author - roilat-J on 2018/2/11
  */
 public class PermissionTree extends Permission {
-    private List<PermissionTree> items;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8701243904235420273L;
+	private List<PermissionTree> items;
 
-    public List<PermissionTree> getItems() {
-        return items;
-    }
+	public List<PermissionTree> getItems() {
+		return items;
+	}
 
-    public void setItems(List<PermissionTree> items) {
-        this.items = items;
-    }
+	public void setItems(List<PermissionTree> items) {
+		this.items = items;
+	}
 
-    public void addItem(PermissionTree item){
-        if(this.items == null){
-            this.items = new LinkedList<>();
-        }
-        this.items.add(item);
-    }
+	public void addItem(PermissionTree item) {
+		if (this.items == null) {
+			this.items = new LinkedList<>();
+		}
+		this.items.add(item);
+	}
 }

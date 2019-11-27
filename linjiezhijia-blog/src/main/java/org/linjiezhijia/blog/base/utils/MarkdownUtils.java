@@ -14,46 +14,44 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * created by roilat-J
- * on 2019/3/8
+ * created by roilat-J on 2019/3/8
  */
 public class MarkdownUtils {
-    /**
-     * 插件
-     */
-    private static final List<Extension> EXTENSIONS = Arrays.asList(
-            YamlFrontMatterExtension.create(),
-            TablesExtension.create()
-    );
+	/**
+	 * 插件
+	 */
+	private static final List<Extension> EXTENSIONS = Arrays.asList(YamlFrontMatterExtension.create(),
+			TablesExtension.create());
 
-    /**
-     * 解析Markdown文档
-     */
-    private static final Parser PARSER = Parser.builder().extensions(EXTENSIONS).build();
+	/**
+	 * 解析Markdown文档
+	 */
+	private static final Parser PARSER = Parser.builder().extensions(EXTENSIONS).build();
 
-    /**
-     * 渲染HTML文档
-     */
-    private static final HtmlRenderer RENDERER = HtmlRenderer.builder().extensions(EXTENSIONS).attributeProviderFactory(context -> new BlogAttributeProvider()).build();
+	/**
+	 * 渲染HTML文档
+	 */
+	private static final HtmlRenderer RENDERER = HtmlRenderer.builder().extensions(EXTENSIONS)
+			.attributeProviderFactory(context -> new BlogAttributeProvider()).build();
 
-    /**
-     * 渲染Markdown
-     *
-     * @param content content
-     * @return String
-     */
-    public static String renderMarkdown(String content) {
-        final Node document = PARSER.parse(content);
-        return RENDERER.render(document);
-    }
+	/**
+	 * 渲染Markdown
+	 *
+	 * @param content content
+	 * @return String
+	 */
+	public static String renderMarkdown(String content) {
+		final Node document = PARSER.parse(content);
+		return RENDERER.render(document);
+	}
 
-    static class BlogAttributeProvider implements AttributeProvider {
+	static class BlogAttributeProvider implements AttributeProvider {
 
-        @Override
-        public void setAttributes(Node node, String s, Map<String, String> map) {
-            if (node instanceof TableBlock) {
-                map.put("class", "table table-bordered");
-            }
-        }
-    }
+		@Override
+		public void setAttributes(Node node, String s, Map<String, String> map) {
+			if (node instanceof TableBlock) {
+				map.put("class", "table table-bordered");
+			}
+		}
+	}
 }

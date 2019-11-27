@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.data;
 
 import com.alibaba.fastjson.annotation.JSONField;
@@ -27,7 +18,7 @@ public class UserVO implements Serializable {
 	private String password;
 	private String avatar;
 	private String name;
-	
+
 	@JSONField(serialize = false)
 	private String email;
 

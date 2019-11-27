@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.linjiezhijia.blog.web.controller.site.auth;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -42,7 +39,7 @@ public class RegisterController extends BaseController {
 		}
 		return view(Views.REGISTER);
 	}
-	
+
 	@PostMapping("/register")
 	public String register(UserVO post, HttpServletRequest request, ModelMap model) {
 		String view = view(Views.REGISTER);
@@ -58,7 +55,7 @@ public class RegisterController extends BaseController {
 			Result<AccountProfile> result = executeLogin(post.getUsername(), post.getPassword(), false);
 			view = String.format(Views.REDIRECT_USER_HOME, result.getData().getId());
 		} catch (Exception e) {
-            model.addAttribute("post", post);
+			model.addAttribute("post", post);
 			model.put("data", Result.failure(e.getMessage()));
 		}
 		return view;

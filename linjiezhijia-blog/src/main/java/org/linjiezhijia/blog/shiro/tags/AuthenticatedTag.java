@@ -26,7 +26,8 @@ import java.util.Map;
 public class AuthenticatedTag extends SecureTag {
     private static final Logger log = Logger.getLogger("AuthenticatedTag");
 
-    @Override
+    @SuppressWarnings("rawtypes")
+	@Override
     public void render(Environment env, Map params, TemplateDirectiveBody body) throws IOException, TemplateException {
         if (getSubject() != null && (getSubject().isAuthenticated() || getSubject().isRemembered())) {
             if (log.isDebugEnabled()) {
@@ -38,6 +39,6 @@ public class AuthenticatedTag extends SecureTag {
             if (log.isDebugEnabled()) {
                 log.debug("Subject does not exist or is not authenticated.  Tag body will not be evaluated.");
             }
-        }
-    }
+		}
+	}
 }

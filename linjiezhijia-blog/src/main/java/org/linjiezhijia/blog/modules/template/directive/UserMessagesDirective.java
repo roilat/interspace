@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.linjiezhijia.blog.modules.template.directive;
 
 import org.linjiezhijia.blog.modules.data.MessageVO;
@@ -15,12 +12,12 @@ import org.springframework.stereotype.Component;
 /**
  * 查询用户消息列表
  *
- * @author landy
+ * @author roilat-J
  * @since 3.0
  */
 @Component
 public class UserMessagesDirective extends TemplateDirective {
-    @Autowired
+	@Autowired
 	private MessageService messageService;
 
 	@Override
@@ -28,13 +25,13 @@ public class UserMessagesDirective extends TemplateDirective {
 		return "user_messages";
 	}
 
-    @Override
-    public void execute(DirectiveHandler handler) throws Exception {
-        long userId = handler.getInteger("userId", 0);
-        Pageable pageable = wrapPageable(handler);
+	@Override
+	public void execute(DirectiveHandler handler) throws Exception {
+		long userId = handler.getInteger("userId", 0);
+		Pageable pageable = wrapPageable(handler);
 
-        Page<MessageVO> result = messageService.pagingByUserId(pageable, userId);
-        handler.put(RESULTS, result).render();
-    }
+		Page<MessageVO> result = messageService.pagingByUserId(pageable, userId);
+		handler.put(RESULTS, result).render();
+	}
 
 }

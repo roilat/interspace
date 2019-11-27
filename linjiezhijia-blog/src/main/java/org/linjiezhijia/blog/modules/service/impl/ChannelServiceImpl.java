@@ -1,26 +1,20 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service.impl;
 
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+
 import org.linjiezhijia.blog.base.lang.Consts;
-import org.linjiezhijia.blog.modules.entity.Post;
+import org.linjiezhijia.blog.modules.entity.Channel;
 import org.linjiezhijia.blog.modules.repository.ChannelRepository;
 import org.linjiezhijia.blog.modules.service.ChannelService;
-import org.linjiezhijia.blog.modules.entity.Channel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.*;
 
 /**
  * @author roilat-J

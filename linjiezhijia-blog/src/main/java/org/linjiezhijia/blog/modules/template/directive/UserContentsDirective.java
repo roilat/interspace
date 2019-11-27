@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.linjiezhijia.blog.modules.template.directive;
 
 import org.linjiezhijia.blog.modules.data.PostVO;
@@ -20,7 +17,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class UserContentsDirective extends TemplateDirective {
-    @Autowired
+	@Autowired
 	private PostService postService;
 
 	@Override
@@ -28,13 +25,13 @@ public class UserContentsDirective extends TemplateDirective {
 		return "user_contents";
 	}
 
-    @Override
-    public void execute(DirectiveHandler handler) throws Exception {
-        long userId = handler.getInteger("userId", 0);
-        Pageable pageable = wrapPageable(handler);
+	@Override
+	public void execute(DirectiveHandler handler) throws Exception {
+		long userId = handler.getInteger("userId", 0);
+		Pageable pageable = wrapPageable(handler);
 
-        Page<PostVO> result = postService.pagingByAuthorId(pageable, userId);
-        handler.put(RESULTS, result).render();
-    }
+		Page<PostVO> result = postService.pagingByAuthorId(pageable, userId);
+		handler.put(RESULTS, result).render();
+	}
 
 }

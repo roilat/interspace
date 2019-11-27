@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.admin;
 
 import java.util.List;
@@ -34,7 +25,7 @@ import org.linjiezhijia.blog.modules.service.CommentService;
 public class CommentController extends BaseController {
 	@Autowired
 	private CommentService commentService;
-	
+
 	@RequestMapping("/list")
 	public String list(ModelMap model) {
 		Pageable pageable = wrapPageable();
@@ -42,11 +33,11 @@ public class CommentController extends BaseController {
 		model.put("page", page);
 		return "/admin/comment/list";
 	}
-	
+
 	@RequestMapping("/delete")
 	@ResponseBody
-	public Result delete(@RequestParam("id") List<Long> id) {
-		Result data = Result.failure("操作失败");
+	public Result<?> delete(@RequestParam("id") List<Long> id) {
+		Result<?> data = Result.failure("操作失败");
 		if (id != null) {
 			try {
 				commentService.delete(id);

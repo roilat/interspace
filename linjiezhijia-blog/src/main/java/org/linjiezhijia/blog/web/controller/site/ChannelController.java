@@ -1,19 +1,11 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.site;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.linjiezhijia.blog.base.lang.Consts;
 import org.linjiezhijia.blog.base.utils.MarkdownUtils;
 import org.linjiezhijia.blog.modules.data.PostVO;
 import org.linjiezhijia.blog.modules.entity.Channel;
-import org.linjiezhijia.blog.modules.entity.PostAttribute;
 import org.linjiezhijia.blog.modules.service.ChannelService;
 import org.linjiezhijia.blog.modules.service.PostService;
 import org.linjiezhijia.blog.web.controller.BaseController;
@@ -26,10 +18,9 @@ import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServletRequest;
-
 /**
  * Channel 主页
+ * 
  * @author roilat-J
  *
  */
@@ -39,10 +30,9 @@ public class ChannelController extends BaseController {
 	private ChannelService channelService;
 	@Autowired
 	private PostService postService;
-	
+
 	@RequestMapping("/channel/{id}")
-	public String channel(@PathVariable Integer id, ModelMap model,
-			HttpServletRequest request) {
+	public String channel(@PathVariable Integer id, ModelMap model, HttpServletRequest request) {
 		// init params
 		String order = ServletRequestUtils.getStringParameter(request, "order", Consts.order.NEWEST);
 		int pageNo = ServletRequestUtils.getIntParameter(request, "pageNo", 1);

@@ -35,7 +35,7 @@ public class EmailController extends BaseController {
     private static final String EMAIL_TITLE = "[{0}]您正在使用邮箱安全验证服务";
 
     @GetMapping("/send_code")
-    public Result sendCode(String email, @RequestParam(name = "type", defaultValue = "1") Integer type) {
+	public Result<?> sendCode(String email, @RequestParam(name = "type", defaultValue = "1") Integer type) {
         Assert.hasLength(email, "请输入邮箱地址");
         Assert.notNull(type, "缺少必要的参数");
 

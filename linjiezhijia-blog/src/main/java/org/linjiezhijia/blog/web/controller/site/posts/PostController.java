@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.linjiezhijia.blog.web.controller.site.posts;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -20,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * 文章操作
+ * 
  * @author roilat-J
  *
  */
@@ -33,6 +31,7 @@ public class PostController extends BaseController {
 
 	/**
 	 * 发布文章页
+	 * 
 	 * @return
 	 */
 	@GetMapping("/editing")
@@ -60,6 +59,7 @@ public class PostController extends BaseController {
 
 	/**
 	 * 提交发布
+	 * 
 	 * @param post
 	 * @return
 	 */
@@ -87,13 +87,14 @@ public class PostController extends BaseController {
 
 	/**
 	 * 删除文章
+	 * 
 	 * @param id
 	 * @return
 	 */
 	@RequestMapping("/delete/{id}")
 	@ResponseBody
-	public Result delete(@PathVariable Long id) {
-		Result data;
+	public Result<?> delete(@PathVariable Long id) {
+		Result<?> data;
 		try {
 			postService.delete(id, getProfile().getId());
 			data = Result.success();

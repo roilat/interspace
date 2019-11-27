@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.data;
 
 import com.alibaba.fastjson.annotation.JSONField;
@@ -21,7 +12,7 @@ import java.util.Date;
 public class CommentVO extends Comment implements Serializable {
 	private static final long serialVersionUID = 9192186139010913437L;
 
-	@JSONField(format="yyyy-MM-dd")
+	@JSONField(format = "yyyy-MM-dd")
 	private Date created;
 
 	// extend parameter

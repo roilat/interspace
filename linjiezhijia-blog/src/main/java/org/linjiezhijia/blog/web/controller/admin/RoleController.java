@@ -1,6 +1,3 @@
-/**
- * 
- */
 package org.linjiezhijia.blog.web.controller.admin;
 
 import org.linjiezhijia.blog.base.lang.Result;
@@ -29,7 +26,7 @@ import java.util.List;
 @RequestMapping("/admin/role")
 public class RoleController extends BaseController {
 	@Autowired
-    private RoleService roleService;
+	private RoleService roleService;
 	@Autowired
 	private PermissionService permissionService;
 
@@ -49,56 +46,56 @@ public class RoleController extends BaseController {
 			model.put("view", role);
 		}
 
-        model.put("permissions", permissionService.tree());
-        return "/admin/role/view";
+		model.put("permissions", permissionService.tree());
+		return "/admin/role/view";
 	}
-	
+
 	@RequestMapping("/update")
-	public String update(Role role, @RequestParam(value = "perms", required=false) List<Long> perms, ModelMap model) {
-		Result data;
+	public String update(Role role, @RequestParam(value = "perms", required = false) List<Long> perms, ModelMap model) {
+		Result<?> data;
 
 		HashSet<Permission> permissions = new HashSet<>();
-		if(perms != null && perms.size() > 0){
+		if (perms != null && perms.size() > 0) {
 
-            for(Long pid: perms){
-                Permission p = new Permission();
-                p.setId(pid);
+			for (Long pid : perms) {
+				Permission p = new Permission();
+				p.setId(pid);
 				permissions.add(p);
-            }
-        }
-        
-        if (Role.ADMIN_ID == role.getId()) {
+			}
+		}
+
+		if (Role.ADMIN_ID == role.getId()) {
 			data = Result.failure("管理员角色不可编辑");
-        } else {
-            roleService.update(role, permissions);
-            data = Result.success();
-        }
-        model.put("data", data);
-        return "redirect:/admin/role/list";
+		} else {
+			roleService.update(role, permissions);
+			data = Result.success();
+		}
+		model.put("data", data);
+		return "redirect:/admin/role/list";
 	}
-	
+
 	@RequestMapping("/activate")
 	@ResponseBody
-	public Result activate(Long id, Boolean active) {
-		Result ret = Result.failure("操作失败");
+	public Result<?> activate(Long id, Boolean active) {
+		Result<?> ret = Result.failure("操作失败");
 		if (id != null && id != Role.ADMIN_ID) {
 			roleService.activate(id, active);
 			ret = Result.success();
 		}
 		return ret;
 	}
-	
+
 	@RequestMapping("/delete")
 	@ResponseBody
-	public Result delete(@RequestParam("id") Long id) {
-		Result ret;
+	public Result<?> delete(@RequestParam("id") Long id) {
+		Result<?> ret;
 		if (Role.ADMIN_ID == id) {
 			ret = Result.failure("管理员不能操作");
-        }else if(roleService.delete(id)){
-        	ret = Result.success();
-        }else{
-        	ret = Result.failure("该角色不能被操作");
-        }
+		} else if (roleService.delete(id)) {
+			ret = Result.success();
+		} else {
+			ret = Result.failure("该角色不能被操作");
+		}
 		return ret;
 	}
 }

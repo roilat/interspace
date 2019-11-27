@@ -11,9 +11,10 @@ public class LinjiezhijiaBlogException extends RuntimeException {
 
 	public LinjiezhijiaBlogException() {
 	}
-	
+
 	/**
 	 * MtonsException
+	 * 
 	 * @param code 错误代码
 	 */
 	public LinjiezhijiaBlogException(int code) {
@@ -23,6 +24,7 @@ public class LinjiezhijiaBlogException extends RuntimeException {
 
 	/**
 	 * MtonsException
+	 * 
 	 * @param message 错误消息
 	 */
 	public LinjiezhijiaBlogException(String message) {
@@ -31,6 +33,7 @@ public class LinjiezhijiaBlogException extends RuntimeException {
 
 	/**
 	 * MtonsException
+	 * 
 	 * @param cause 捕获的异常
 	 */
 	public LinjiezhijiaBlogException(Throwable cause) {
@@ -39,16 +42,18 @@ public class LinjiezhijiaBlogException extends RuntimeException {
 
 	/**
 	 * MtonsException
+	 * 
 	 * @param message 错误消息
-	 * @param cause 捕获的异常
+	 * @param cause   捕获的异常
 	 */
 	public LinjiezhijiaBlogException(String message, Throwable cause) {
 		super(message, cause);
 	}
-	
+
 	/**
 	 * MtonsException
-	 * @param code 错误代码
+	 * 
+	 * @param code    错误代码
 	 * @param message 错误消息
 	 */
 	public LinjiezhijiaBlogException(int code, String message) {

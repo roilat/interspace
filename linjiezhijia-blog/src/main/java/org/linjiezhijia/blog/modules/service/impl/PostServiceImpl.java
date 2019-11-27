@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service.impl;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -72,13 +63,11 @@ public class PostServiceImpl implements PostService {
 			Predicate predicate = builder.conjunction();
 
 			if (channelId > Consts.ZERO) {
-				predicate.getExpressions().add(
-						builder.equal(root.get("channelId").as(Integer.class), channelId));
+				predicate.getExpressions().add(builder.equal(root.get("channelId").as(Integer.class), channelId));
 			}
 
 			if (null != excludeChannelIds && !excludeChannelIds.isEmpty()) {
-				predicate.getExpressions().add(
-						builder.not(root.get("channelId").in(excludeChannelIds)));
+				predicate.getExpressions().add(builder.not(root.get("channelId").in(excludeChannelIds)));
 			}
 
 //			predicate.getExpressions().add(
@@ -93,17 +82,15 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public Page<PostVO> paging4Admin(Pageable pageable, int channelId, String title) {
 		Page<Post> page = postRepository.findAll((root, query, builder) -> {
-            Predicate predicate = builder.conjunction();
+			Predicate predicate = builder.conjunction();
 			if (channelId > Consts.ZERO) {
-				predicate.getExpressions().add(
-						builder.equal(root.get("channelId").as(Integer.class), channelId));
+				predicate.getExpressions().add(builder.equal(root.get("channelId").as(Integer.class), channelId));
 			}
 			if (StringUtils.isNotBlank(title)) {
-				predicate.getExpressions().add(
-						builder.like(root.get("title").as(String.class), "%" + title + "%"));
+				predicate.getExpressions().add(builder.like(root.get("title").as(String.class), "%" + title + "%"));
 			}
-            return predicate;
-        }, pageable);
+			return predicate;
+		}, pageable);
 
 		return new PageImpl<>(toPosts(page.getContent()), pageable, page.getTotalElements());
 	}
@@ -120,13 +107,13 @@ public class PostServiceImpl implements PostService {
 	public List<PostVO> findLatestPosts(int maxResults) {
 		return find("created", maxResults).stream().map(BeanMapUtils::copy).collect(Collectors.toList());
 	}
-	
+
 	@Override
 	@PostStatusFilter
 	public List<PostVO> findHottestPosts(int maxResults) {
 		return find("views", maxResults).stream().map(BeanMapUtils::copy).collect(Collectors.toList());
 	}
-	
+
 	@Override
 	@PostStatusFilter
 	public Map<Long, PostVO> findMapByIds(Set<Long> ids) {
@@ -143,7 +130,7 @@ public class PostServiceImpl implements PostService {
 			rets.put(po.getId(), BeanMapUtils.copy(po));
 			uids.add(po.getAuthorId());
 		});
-		
+
 		// 加载用户信息
 		buildUsers(rets.values(), uids);
 		return rets;
@@ -169,25 +156,25 @@ public class PostServiceImpl implements PostService {
 		postRepository.save(po);
 		tagService.batchUpdate(po.getTags(), po.getId());
 
-        String key = ResourceLock.getPostKey(po.getId());
-        AtomicInteger lock = ResourceLock.getAtomicInteger(key);
-        try {
-            synchronized (lock){
-                PostAttribute attr = new PostAttribute();
-                attr.setContent(post.getContent());
-                attr.setEditor(post.getEditor());
-                attr.setId(po.getId());
-                postAttributeRepository.save(attr);
+		String key = ResourceLock.getPostKey(po.getId());
+		AtomicInteger lock = ResourceLock.getAtomicInteger(key);
+		try {
+			synchronized (lock) {
+				PostAttribute attr = new PostAttribute();
+				attr.setContent(post.getContent());
+				attr.setEditor(post.getEditor());
+				attr.setId(po.getId());
+				postAttributeRepository.save(attr);
 
-                countResource(po.getId(), null,  attr.getContent());
-                onPushEvent(po, PostUpdateEvent.ACTION_PUBLISH);
-                return po.getId();
-            }
-        }finally {
-            ResourceLock.giveUpAtomicInteger(key);
-        }
+				countResource(po.getId(), null, attr.getContent());
+				onPushEvent(po, PostUpdateEvent.ACTION_PUBLISH);
+				return po.getId();
+			}
+		} finally {
+			ResourceLock.giveUpAtomicInteger(key);
+		}
 	}
-	
+
 	@Override
 	public PostVO get(long id) {
 		Optional<Post> po = postRepository.findById(id);
@@ -207,52 +194,53 @@ public class PostServiceImpl implements PostService {
 
 	/**
 	 * 更新文章方法
+	 * 
 	 * @param p
 	 */
 	@Override
 	@Transactional
-	public void update(PostVO p){
+	public void update(PostVO p) {
 		Optional<Post> optional = postRepository.findById(p.getId());
 
 		if (optional.isPresent()) {
-            String key = ResourceLock.getPostKey(p.getId());
-            AtomicInteger lock = ResourceLock.getAtomicInteger(key);
-            try {
-                synchronized (lock){
-                    Post po = optional.get();
-                    po.setTitle(p.getTitle());//标题
-                    po.setChannelId(p.getChannelId());
-                    po.setThumbnail(p.getThumbnail());
-                    po.setStatus(p.getStatus());
+			String key = ResourceLock.getPostKey(p.getId());
+			AtomicInteger lock = ResourceLock.getAtomicInteger(key);
+			try {
+				synchronized (lock) {
+					Post po = optional.get();
+					po.setTitle(p.getTitle());// 标题
+					po.setChannelId(p.getChannelId());
+					po.setThumbnail(p.getThumbnail());
+					po.setStatus(p.getStatus());
 
-                    // 处理摘要
-                    if (StringUtils.isBlank(p.getSummary())) {
-                        po.setSummary(trimSummary(p.getEditor(), p.getContent()));
-                    } else {
-                        po.setSummary(p.getSummary());
-                    }
+					// 处理摘要
+					if (StringUtils.isBlank(p.getSummary())) {
+						po.setSummary(trimSummary(p.getEditor(), p.getContent()));
+					} else {
+						po.setSummary(p.getSummary());
+					}
 
-                    po.setTags(p.getTags());//标签
+					po.setTags(p.getTags());// 标签
 
-                    // 保存扩展
-                    Optional<PostAttribute> attributeOptional = postAttributeRepository.findById(po.getId());
-                    String originContent = "";
-                    if (attributeOptional.isPresent()){
-                        originContent = attributeOptional.get().getContent();
-                    }
-                    PostAttribute attr = new PostAttribute();
-                    attr.setContent(p.getContent());
-                    attr.setEditor(p.getEditor());
-                    attr.setId(po.getId());
-                    postAttributeRepository.save(attr);
+					// 保存扩展
+					Optional<PostAttribute> attributeOptional = postAttributeRepository.findById(po.getId());
+					String originContent = "";
+					if (attributeOptional.isPresent()) {
+						originContent = attributeOptional.get().getContent();
+					}
+					PostAttribute attr = new PostAttribute();
+					attr.setContent(p.getContent());
+					attr.setEditor(p.getEditor());
+					attr.setId(po.getId());
+					postAttributeRepository.save(attr);
 
-                    tagService.batchUpdate(po.getTags(), po.getId());
+					tagService.batchUpdate(po.getTags(), po.getId());
 
-                    countResource(po.getId(), originContent, p.getContent());
-                }
-            }finally {
-                ResourceLock.giveUpAtomicInteger(key);
-            }
+					countResource(po.getId(), originContent, p.getContent());
+				}
+			} finally {
+				ResourceLock.giveUpAtomicInteger(key);
+			}
 		}
 	}
 
@@ -260,7 +248,7 @@ public class PostServiceImpl implements PostService {
 	@Transactional
 	public void updateFeatured(long id, int featured) {
 		Post po = postRepository.findById(id).get();
-		int status = Consts.FEATURED_ACTIVE == featured ? Consts.FEATURED_ACTIVE: Consts.FEATURED_DEFAULT;
+		int status = Consts.FEATURED_ACTIVE == featured ? Consts.FEATURED_ACTIVE : Consts.FEATURED_DEFAULT;
 		po.setFeatured(status);
 		postRepository.save(po);
 	}
@@ -285,16 +273,16 @@ public class PostServiceImpl implements PostService {
 		// 判断文章是否属于当前登录用户
 		Assert.isTrue(po.getAuthorId() == authorId, "认证失败");
 
-        String key = ResourceLock.getPostKey(po.getId());
-        AtomicInteger lock = ResourceLock.getAtomicInteger(key);
-		try	{
-			synchronized (lock){
+		String key = ResourceLock.getPostKey(po.getId());
+		AtomicInteger lock = ResourceLock.getAtomicInteger(key);
+		try {
+			synchronized (lock) {
 				postRepository.deleteById(id);
 				postAttributeRepository.deleteById(id);
 				cleanResource(po.getId());
 				onPushEvent(po, PostUpdateEvent.ACTION_DELETE);
 			}
-		}finally {
+		} finally {
 			ResourceLock.giveUpAtomicInteger(key);
 		}
 	}
@@ -307,14 +295,14 @@ public class PostServiceImpl implements PostService {
 			list.forEach(po -> {
 				String key = ResourceLock.getPostKey(po.getId());
 				AtomicInteger lock = ResourceLock.getAtomicInteger(key);
-				try	{
-					synchronized (lock){
+				try {
+					synchronized (lock) {
 						postRepository.delete(po);
 						postAttributeRepository.deleteById(po.getId());
 						cleanResource(po.getId());
 						onPushEvent(po, PostUpdateEvent.ACTION_DELETE);
 					}
-				}finally {
+				} finally {
 					ResourceLock.giveUpAtomicInteger(key);
 				}
 			});
@@ -344,7 +332,7 @@ public class PostServiceImpl implements PostService {
 	@Override
 	@Transactional
 	public void unfavor(long userId, long postId) {
-		postRepository.updateFavors(postId,  Consts.DECREASE_STEP);
+		postRepository.updateFavors(postId, Consts.DECREASE_STEP);
 		favoriteService.delete(userId, postId);
 	}
 
@@ -368,8 +356,7 @@ public class PostServiceImpl implements PostService {
 		Page<Post> page = postRepository.findAll((root, query, builder) -> {
 			Predicate predicate = builder.conjunction();
 			if (excludeChannelIds.size() > 0) {
-				predicate.getExpressions().add(
-						builder.not(root.get("channelId").in(excludeChannelIds)));
+				predicate.getExpressions().add(builder.not(root.get("channelId").in(excludeChannelIds)));
 			}
 			return predicate;
 		}, pageable);
@@ -378,10 +365,11 @@ public class PostServiceImpl implements PostService {
 
 	/**
 	 * 截取文章内容
+	 * 
 	 * @param text
 	 * @return
 	 */
-	private String trimSummary(String editor, final String text){
+	private String trimSummary(String editor, final String text) {
 		if (Consts.EDITOR_MARKDOWN.endsWith(editor)) {
 			return PreviewTextUtils.getText(MarkdownUtils.renderMarkdown(text), 126);
 		} else {
@@ -426,18 +414,19 @@ public class PostServiceImpl implements PostService {
 		applicationContext.publishEvent(event);
 	}
 
-	private void countResource(Long postId, String originContent, String newContent){
-	    if (StringUtils.isEmpty(originContent)){
-	        originContent = "";
-        }
-        if (StringUtils.isEmpty(newContent)){
-	        newContent = "";
-        }
+	@SuppressWarnings("unchecked")
+	private void countResource(Long postId, String originContent, String newContent) {
+		if (StringUtils.isEmpty(originContent)) {
+			originContent = "";
+		}
+		if (StringUtils.isEmpty(newContent)) {
+			newContent = "";
+		}
 
 		Set<String> exists = extractImageMd5(originContent);
 		Set<String> news = extractImageMd5(newContent);
 
-        List<String> adds = ListUtils.removeAll(news, exists);
+		List<String> adds = ListUtils.removeAll(news, exists);
 		List<String> deleteds = ListUtils.removeAll(exists, news);
 
 		if (adds.size() > 0) {

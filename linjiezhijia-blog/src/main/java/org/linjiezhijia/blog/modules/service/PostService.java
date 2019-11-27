@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -24,6 +15,7 @@ import java.util.Set;
 
 /**
  * 文章管理
+ * 
  * @author roilat-J
  *
  */
@@ -39,9 +31,10 @@ public interface PostService {
 	Page<PostVO> paging(Pageable pageable, int channelId, Set<Integer> excludeChannelIds);
 
 	Page<PostVO> paging4Admin(Pageable pageable, int channelId, String title);
-	
+
 	/**
 	 * 查询个人发布文章
+	 * 
 	 * @param pageable
 	 * @param userId
 	 */
@@ -50,6 +43,7 @@ public interface PostService {
 
 	/**
 	 * 查询最近更新 - 按发布时间排序
+	 * 
 	 * @param maxResults
 	 * @return
 	 */
@@ -58,14 +52,16 @@ public interface PostService {
 
 	/**
 	 * 查询热门文章 - 按浏览次数排序
+	 * 
 	 * @param maxResults
 	 * @return
 	 */
 	@Cacheable(key = "'hottest_' + #maxResults")
 	List<PostVO> findHottestPosts(int maxResults);
-	
+
 	/**
 	 * 根据Ids查询
+	 * 
 	 * @param ids
 	 * @return <id, 文章对象>
 	 */
@@ -73,13 +69,15 @@ public interface PostService {
 
 	/**
 	 * 发布文章
+	 * 
 	 * @param post
 	 */
 	@CacheEvict(allEntries = true)
 	long post(PostVO post);
-	
+
 	/**
 	 * 文章详情
+	 * 
 	 * @param id
 	 * @return
 	 */
@@ -88,6 +86,7 @@ public interface PostService {
 
 	/**
 	 * 更新文章方法
+	 * 
 	 * @param p
 	 */
 	@CacheEvict(allEntries = true)
@@ -95,6 +94,7 @@ public interface PostService {
 
 	/**
 	 * 推荐/精华
+	 * 
 	 * @param id
 	 * @param featured 0: 取消, 1: 加精
 	 */
@@ -103,14 +103,16 @@ public interface PostService {
 
 	/**
 	 * 置顶
+	 * 
 	 * @param id
 	 * @param weighted 0: 取消, 1: 置顶
 	 */
 	@CacheEvict(allEntries = true)
 	void updateWeight(long id, int weighted);
-	
+
 	/**
 	 * 带作者验证的删除 - 验证是否属于自己的文章
+	 * 
 	 * @param id
 	 * @param authorId
 	 */
@@ -124,16 +126,18 @@ public interface PostService {
 	 */
 	@CacheEvict(allEntries = true)
 	void delete(Collection<Long> ids);
-	
+
 	/**
 	 * 自增浏览数
+	 * 
 	 * @param id
 	 */
 	@CacheEvict(key = "'view_' + #id")
 	void identityViews(long id);
-	
+
 	/**
 	 * 自增评论数
+	 * 
 	 * @param id
 	 */
 	@CacheEvict(key = "'view_' + #id")
@@ -141,6 +145,7 @@ public interface PostService {
 
 	/**
 	 * 喜欢文章
+	 * 
 	 * @param userId
 	 * @param postId
 	 */
@@ -149,6 +154,7 @@ public interface PostService {
 
 	/**
 	 * 取消喜欢文章
+	 * 
 	 * @param userId
 	 * @param postId
 	 */

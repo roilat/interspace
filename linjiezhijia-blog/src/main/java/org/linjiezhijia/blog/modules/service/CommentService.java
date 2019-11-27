@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service;
 
 import org.linjiezhijia.blog.modules.data.CommentVO;
@@ -29,6 +20,7 @@ public interface CommentService {
 
 	/**
 	 * 查询评论列表
+	 * 
 	 * @param pageable
 	 * @param postId
 	 */
@@ -39,14 +31,15 @@ public interface CommentService {
 	Map<Long, CommentVO> findByIds(Set<Long> ids);
 
 	Comment findById(long id);
-	
+
 	/**
 	 * 发表评论
+	 * 
 	 * @param comment
 	 * @return
 	 */
 	long post(CommentVO comment);
-	
+
 	void delete(List<Long> ids);
 
 	void delete(long id, long authorId);

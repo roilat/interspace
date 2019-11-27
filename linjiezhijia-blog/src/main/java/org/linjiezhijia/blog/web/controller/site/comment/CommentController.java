@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.linjiezhijia.blog.web.controller.site.comment;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -33,75 +30,75 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/comment")
 @ConditionalOnProperty(name = "site.controls.comment", havingValue = "true", matchIfMissing = true)
 public class CommentController extends BaseController {
-    @Autowired
-    private CommentService commentService;
-    @Autowired
-    private ApplicationContext applicationContext;
+	@Autowired
+	private CommentService commentService;
+	@Autowired
+	private ApplicationContext applicationContext;
 
-    @RequestMapping("/list/{toId}")
-    public Page<CommentVO> view(@PathVariable Long toId) {
-        Pageable pageable = wrapPageable(Sort.by(Sort.Direction.DESC, "id"));
-        return commentService.pagingByPostId(pageable, toId);
-    }
+	@RequestMapping("/list/{toId}")
+	public Page<CommentVO> view(@PathVariable Long toId) {
+		Pageable pageable = wrapPageable(Sort.by(Sort.Direction.DESC, "id"));
+		return commentService.pagingByPostId(pageable, toId);
+	}
 
-    @RequestMapping("/submit")
-    public Result post(Long toId, String text, HttpServletRequest request) {
-        if (!isAuthenticated()) {
-            return Result.failure("请先登录在进行操作");
-        }
+	@RequestMapping("/submit")
+	public Result<?> post(Long toId, String text, HttpServletRequest request) {
+		if (!isAuthenticated()) {
+			return Result.failure("请先登录在进行操作");
+		}
 
-        long pid = ServletRequestUtils.getLongParameter(request, "pid", 0);
+		long pid = ServletRequestUtils.getLongParameter(request, "pid", 0);
 
-        if (toId <= 0 || StringUtils.isBlank(text)) {
-            return Result.failure("操作失败");
-        }
+		if (toId <= 0 || StringUtils.isBlank(text)) {
+			return Result.failure("操作失败");
+		}
 
-        AccountProfile profile = getProfile();
+		AccountProfile profile = getProfile();
 
-        CommentVO c = new CommentVO();
-        c.setPostId(toId);
-        c.setContent(HtmlUtils.htmlEscape(text));
-        c.setAuthorId(profile.getId());
+		CommentVO c = new CommentVO();
+		c.setPostId(toId);
+		c.setContent(HtmlUtils.htmlEscape(text));
+		c.setAuthorId(profile.getId());
 
-        c.setPid(pid);
+		c.setPid(pid);
 
-        commentService.post(c);
+		commentService.post(c);
 
-        sendMessage(profile.getId(), toId, pid);
+		sendMessage(profile.getId(), toId, pid);
 
-        return Result.successMessage("发表成功");
-    }
+		return Result.successMessage("发表成功");
+	}
 
-    @RequestMapping("/delete")
-    public Result delete(@RequestParam(name = "id") Long id) {
-        Result data;
-        try {
-            commentService.delete(id, getProfile().getId());
-            data = Result.success();
-        } catch (Exception e) {
-            data = Result.failure(e.getMessage());
-        }
-        return data;
-    }
+	@RequestMapping("/delete")
+	public Result<?> delete(@RequestParam(name = "id") Long id) {
+		Result<?> data;
+		try {
+			commentService.delete(id, getProfile().getId());
+			data = Result.success();
+		} catch (Exception e) {
+			data = Result.failure(e.getMessage());
+		}
+		return data;
+	}
 
-    /**
-     * 发送通知
-     *
-     * @param userId
-     * @param postId
-     */
-    private void sendMessage(long userId, long postId, long pid) {
-        MessageEvent event = new MessageEvent("MessageEvent");
-        event.setFromUserId(userId);
+	/**
+	 * 发送通知
+	 *
+	 * @param userId
+	 * @param postId
+	 */
+	private void sendMessage(long userId, long postId, long pid) {
+		MessageEvent event = new MessageEvent("MessageEvent");
+		event.setFromUserId(userId);
 
-        if (pid > 0) {
-            event.setEvent(Consts.MESSAGE_EVENT_COMMENT_REPLY);
-            event.setCommentParentId(pid);
-        } else {
-            event.setEvent(Consts.MESSAGE_EVENT_COMMENT);
-        }
-        // 此处不知道文章作者, 让通知事件系统补全
-        event.setPostId(postId);
-        applicationContext.publishEvent(event);
-    }
+		if (pid > 0) {
+			event.setEvent(Consts.MESSAGE_EVENT_COMMENT_REPLY);
+			event.setCommentParentId(pid);
+		} else {
+			event.setEvent(Consts.MESSAGE_EVENT_COMMENT);
+		}
+		// 此处不知道文章作者, 让通知事件系统补全
+		event.setPostId(postId);
+		applicationContext.publishEvent(event);
+	}
 }

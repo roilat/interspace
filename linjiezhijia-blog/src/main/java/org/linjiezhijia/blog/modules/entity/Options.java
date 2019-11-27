@@ -1,18 +1,10 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.entity;
 
 import javax.persistence.*;
 
 /**
  * 系统配置
+ * 
  * @author roilat-J
  *
  */
@@ -72,5 +64,5 @@ public class Options {
 	public void setValue(String value) {
 		this.value = value;
 	}
-	
+
 }

@@ -16,17 +16,17 @@ import org.linjiezhijia.blog.modules.data.OpenOauthVO;
  * @author roilat-J on 2015/8/12.
  */
 public interface OpenOauthService {
-    //通过 oauth_token 查询 user
-    UserVO getUserByOauthToken(String oauth_token);
+	// 通过 oauth_token 查询 user
+	UserVO getUserByOauthToken(String oauth_token);
 
-    OpenOauthVO getOauthByToken(String oauth_token);
-    
-    OpenOauthVO getOauthByOauthUserId(String oauthUserId);
+	OpenOauthVO getOauthByToken(String oauth_token);
 
-    OpenOauthVO getOauthByUid(long userId);
+	OpenOauthVO getOauthByOauthUserId(String oauthUserId);
 
-    boolean checkIsOriginalPassword(long userId);
+	OpenOauthVO getOauthByUid(long userId);
 
-    void saveOauthToken(OpenOauthVO oauth);
+	boolean checkIsOriginalPassword(long userId);
+
+	void saveOauthToken(OpenOauthVO oauth);
 
 }

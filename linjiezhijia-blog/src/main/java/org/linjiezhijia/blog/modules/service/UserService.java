@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -29,6 +20,7 @@ import java.util.Set;
 public interface UserService {
 	/**
 	 * 分页查询
+	 * 
 	 * @param pageable
 	 * @param name
 	 */
@@ -38,6 +30,7 @@ public interface UserService {
 
 	/**
 	 * 登录
+	 * 
 	 * @param username
 	 * @param password
 	 * @return
@@ -46,6 +39,7 @@ public interface UserService {
 
 	/**
 	 * 登录,用于记住登录时获取用户信息
+	 * 
 	 * @param id
 	 * @return
 	 */
@@ -53,12 +47,14 @@ public interface UserService {
 
 	/**
 	 * 注册
+	 * 
 	 * @param user
 	 */
 	UserVO register(UserVO user);
 
 	/**
 	 * 修改用户信息
+	 * 
 	 * @param user
 	 * @return
 	 */
@@ -67,6 +63,7 @@ public interface UserService {
 
 	/**
 	 * 修改用户信息
+	 * 
 	 * @param email
 	 * @return
 	 */
@@ -75,6 +72,7 @@ public interface UserService {
 
 	/**
 	 * 查询单个用户
+	 * 
 	 * @param userId
 	 * @return
 	 */
@@ -87,6 +85,7 @@ public interface UserService {
 
 	/**
 	 * 修改头像
+	 * 
 	 * @param id
 	 * @param path
 	 * @return
@@ -96,6 +95,7 @@ public interface UserService {
 
 	/**
 	 * 修改密码
+	 * 
 	 * @param id
 	 * @param newPassword
 	 */
@@ -103,6 +103,7 @@ public interface UserService {
 
 	/**
 	 * 修改密码
+	 * 
 	 * @param id
 	 * @param oldPassword
 	 * @param newPassword
@@ -111,6 +112,7 @@ public interface UserService {
 
 	/**
 	 * 修改用户状态
+	 * 
 	 * @param id
 	 * @param status
 	 */

@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.exceptions;
 
 import com.alibaba.fastjson.JSON;
@@ -28,6 +19,7 @@ import java.util.Map;
 
 /**
  * 异常处理
+ * 
  * @author roilat-J
  *
  */
@@ -35,12 +27,13 @@ import java.util.Map;
 @Component
 public class DefaultExceptionHandler implements HandlerExceptionResolver {
 	private static final String errorView = "/error";
-	
-	@Override
-	public ModelAndView resolveException(HttpServletRequest request,
-			HttpServletResponse response, Object handler, Exception ex) {
 
-		if (ex instanceof IllegalArgumentException || ex instanceof IllegalStateException || ex instanceof LinjiezhijiaBlogException) {
+	@Override
+	public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler,
+			Exception ex) {
+
+		if (ex instanceof IllegalArgumentException || ex instanceof IllegalStateException
+				|| ex instanceof LinjiezhijiaBlogException) {
 			log.error(ex.getMessage());
 		} else {
 			log.error(ex.getMessage(), ex);
@@ -48,7 +41,7 @@ public class DefaultExceptionHandler implements HandlerExceptionResolver {
 
 		ModelAndView view = null;
 		String ret = ex.getMessage();
-		
+
 		if (isAjax(handler)) {
 			try {
 				response.setContentType("application/json;charset=UTF-8");
@@ -56,17 +49,17 @@ public class DefaultExceptionHandler implements HandlerExceptionResolver {
 			} catch (IOException e) {
 				// do something
 			}
-			
+
 			view = new ModelAndView();
 		} else {
-			Map<String, Object> map = new HashMap<String, Object>();  
+			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("error", ret);
-	        map.put("base", request.getContextPath());
+			map.put("base", request.getContextPath());
 			view = new ModelAndView(errorView, map);
 		}
 		return view;
 	}
-	
+
 	/**
 	 * 判断是否 ajax 调用
 	 * 
@@ -76,11 +69,12 @@ public class DefaultExceptionHandler implements HandlerExceptionResolver {
 	private boolean isAjax(Object handler) {
 		if (handler != null && handler instanceof HandlerMethod) {
 			HandlerMethod handlerMethod = (HandlerMethod) handler;
-			ResponseBody responseBodyAnn = AnnotationUtils.findAnnotation(handlerMethod.getMethod(), ResponseBody.class);  
+			ResponseBody responseBodyAnn = AnnotationUtils.findAnnotation(handlerMethod.getMethod(),
+					ResponseBody.class);
 			return responseBodyAnn != null;
 		}
-		
+
 		return false;
 	}
-	
+
 }

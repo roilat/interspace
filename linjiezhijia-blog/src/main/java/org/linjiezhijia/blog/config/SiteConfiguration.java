@@ -27,47 +27,44 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Configuration
 @EnableAsync
 public class SiteConfiguration {
-    @Autowired
-    private freemarker.template.Configuration configuration;
-    @Autowired
-    private ApplicationContext applicationContext;
+	@Autowired
+	private freemarker.template.Configuration configuration;
+	@Autowired
+	private ApplicationContext applicationContext;
 
-    @PostConstruct
-    public void setSharedVariable() {
-        Map<String, TemplateDirective> map = applicationContext.getBeansOfType(TemplateDirective.class);
-        map.forEach((k, v) -> configuration.setSharedVariable(v.getName(), v));
-        configuration.setSharedVariable("timeAgo", new TimeAgoMethod());
-        configuration.setSharedVariable("shiro", new ShiroTags());
-    }
+	@PostConstruct
+	public void setSharedVariable() {
+		Map<String, TemplateDirective> map = applicationContext.getBeansOfType(TemplateDirective.class);
+		map.forEach((k, v) -> configuration.setSharedVariable(v.getName(), v));
+		configuration.setSharedVariable("timeAgo", new TimeAgoMethod());
+		configuration.setSharedVariable("shiro", new ShiroTags());
+	}
 
-    @Bean
-    public TaskExecutor taskExecutor() {
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setCorePoolSize(2);
-        executor.setMaxPoolSize(8);
-        executor.setQueueCapacity(100);
-        executor.setKeepAliveSeconds(60);
-        executor.setThreadNamePrefix("mtons.mblog.logThread-");
-        executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
-        executor.setWaitForTasksToCompleteOnShutdown(true);
-        return executor;
-    }
+	@Bean
+	public TaskExecutor taskExecutor() {
+		ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+		executor.setCorePoolSize(2);
+		executor.setMaxPoolSize(8);
+		executor.setQueueCapacity(100);
+		executor.setKeepAliveSeconds(60);
+		executor.setThreadNamePrefix("mtons.mblog.logThread-");
+		executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
+		executor.setWaitForTasksToCompleteOnShutdown(true);
+		return executor;
+	}
 
-    @Bean
-    @ConditionalOnClass({JSON.class})
-    public FastJsonHttpMessageConverter fastJsonHttpMessageConverter() {
-        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
+	@Bean
+	@ConditionalOnClass({ JSON.class })
+	public FastJsonHttpMessageConverter fastJsonHttpMessageConverter() {
+		FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
 
-        FastJsonConfig fastJsonConfig = new FastJsonConfig();
-        fastJsonConfig.setSerializerFeatures(
-                SerializerFeature.WriteMapNullValue,
-                SerializerFeature.WriteNullStringAsEmpty,
-                SerializerFeature.WriteNullListAsEmpty,
-                SerializerFeature.DisableCircularReferenceDetect
-        );
-        fastConverter.setFastJsonConfig(fastJsonConfig);
-        return fastConverter;
-    }
+		FastJsonConfig fastJsonConfig = new FastJsonConfig();
+		fastJsonConfig.setSerializerFeatures(SerializerFeature.WriteMapNullValue,
+				SerializerFeature.WriteNullStringAsEmpty, SerializerFeature.WriteNullListAsEmpty,
+				SerializerFeature.DisableCircularReferenceDetect);
+		fastConverter.setFastJsonConfig(fastJsonConfig);
+		return fastConverter;
+	}
 
 //    @Bean
 //    public HttpMessageConverters httpMessageConverters(){

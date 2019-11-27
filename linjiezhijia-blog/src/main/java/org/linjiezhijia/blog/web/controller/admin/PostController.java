@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.admin;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -43,7 +34,7 @@ public class PostController extends BaseController {
 	private PostService postService;
 	@Autowired
 	private ChannelService channelService;
-	
+
 	@RequestMapping("/list")
 	public String list(String title, ModelMap model, HttpServletRequest request) {
 		long id = ServletRequestUtils.getLongParameter(request, "id", Consts.ZERO);
@@ -58,9 +49,10 @@ public class PostController extends BaseController {
 		model.put("channels", channelService.findAll(Consts.IGNORE));
 		return "/admin/post/list";
 	}
-	
+
 	/**
 	 * 跳转到文章编辑方法
+	 * 
 	 * @param id
 	 * @param model
 	 * @return
@@ -79,9 +71,10 @@ public class PostController extends BaseController {
 		model.put("channels", channelService.findAll(Consts.IGNORE));
 		return "/admin/post/view";
 	}
-	
+
 	/**
 	 * 更新文章方法
+	 * 
 	 * @author LBB
 	 * @return
 	 */
@@ -101,8 +94,8 @@ public class PostController extends BaseController {
 
 	@RequestMapping("/featured")
 	@ResponseBody
-	public Result featured(Long id, HttpServletRequest request) {
-		Result data = Result.failure("操作失败");
+	public Result<?> featured(Long id, HttpServletRequest request) {
+		Result<?> data = Result.failure("操作失败");
 		int featured = ServletRequestUtils.getIntParameter(request, "featured", Consts.FEATURED_ACTIVE);
 		if (id != null) {
 			try {
@@ -117,8 +110,8 @@ public class PostController extends BaseController {
 
 	@RequestMapping("/weight")
 	@ResponseBody
-	public Result weight(Long id, HttpServletRequest request) {
-		Result data = Result.failure("操作失败");
+	public Result<?> weight(Long id, HttpServletRequest request) {
+		Result<?> data = Result.failure("操作失败");
 		int weight = ServletRequestUtils.getIntParameter(request, "weight", Consts.FEATURED_ACTIVE);
 		if (id != null) {
 			try {
@@ -130,11 +123,11 @@ public class PostController extends BaseController {
 		}
 		return data;
 	}
-	
+
 	@RequestMapping("/delete")
 	@ResponseBody
-	public Result delete(@RequestParam("id") List<Long> id) {
-		Result data = Result.failure("操作失败");
+	public Result<?> delete(@RequestParam("id") List<Long> id) {
+		Result<?> data = Result.failure("操作失败");
 		if (id != null) {
 			try {
 				postService.delete(id);

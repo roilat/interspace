@@ -17,11 +17,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/admin/permission")
 public class PermissionController extends BaseController {
-    @Autowired
-    private PermissionService permissionService;
+	@Autowired
+	private PermissionService permissionService;
 
-    @GetMapping("/tree")
-    public List<PermissionTree> tree() {
-        return permissionService.tree();
-    }
+	@GetMapping("/tree")
+	public List<PermissionTree> tree() {
+		return permissionService.tree();
+	}
 }

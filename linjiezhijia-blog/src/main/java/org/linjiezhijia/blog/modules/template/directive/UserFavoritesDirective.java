@@ -1,6 +1,3 @@
-/**
- *
- */
 package org.linjiezhijia.blog.modules.template.directive;
 
 import org.linjiezhijia.blog.modules.data.FavoriteVO;
@@ -15,12 +12,12 @@ import org.springframework.stereotype.Component;
 /**
  * 根据作者取收藏列表
  *
- * @author landy
+ * @author roilat-J
  * @since 3.0
  */
 @Component
 public class UserFavoritesDirective extends TemplateDirective {
-    @Autowired
+	@Autowired
 	private FavoriteService favoriteService;
 
 	@Override
@@ -28,13 +25,13 @@ public class UserFavoritesDirective extends TemplateDirective {
 		return "user_favorites";
 	}
 
-    @Override
-    public void execute(DirectiveHandler handler) throws Exception {
-        long userId = handler.getInteger("userId", 0);
-        Pageable pageable = wrapPageable(handler);
+	@Override
+	public void execute(DirectiveHandler handler) throws Exception {
+		long userId = handler.getInteger("userId", 0);
+		Pageable pageable = wrapPageable(handler);
 
-        Page<FavoriteVO> result = favoriteService.pagingByUserId(pageable, userId);
-        handler.put(RESULTS, result).render();
-    }
+		Page<FavoriteVO> result = favoriteService.pagingByUserId(pageable, userId);
+		handler.put(RESULTS, result).render();
+	}
 
 }

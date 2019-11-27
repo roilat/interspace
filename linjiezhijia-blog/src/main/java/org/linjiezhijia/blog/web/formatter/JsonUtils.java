@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.formatter;
 
 import java.io.IOException;
@@ -87,9 +78,8 @@ public class JsonUtils {
 		}
 
 		@Override
-		public void serialize(Date date, JsonGenerator gen,
-				SerializerProvider provider) throws IOException,
-				JsonProcessingException {
+		public void serialize(Date date, JsonGenerator gen, SerializerProvider provider)
+				throws IOException, JsonProcessingException {
 			String value = dateFormat.format(date);
 			gen.writeString(value);
 		}

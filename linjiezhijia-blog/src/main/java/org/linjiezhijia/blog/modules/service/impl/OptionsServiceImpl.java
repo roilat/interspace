@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service.impl;
 
 import org.linjiezhijia.blog.modules.entity.Options;
@@ -41,7 +32,7 @@ public class OptionsServiceImpl implements OptionsService {
 	public List<Options> findAll() {
 		List<Options> list = optionsRepository.findAll();
 		List<Options> rets = new ArrayList<>();
-		
+
 		for (Options po : list) {
 			Options r = new Options();
 			BeanUtils.copyProperties(po, r);

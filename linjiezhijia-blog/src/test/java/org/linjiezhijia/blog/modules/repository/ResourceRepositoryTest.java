@@ -16,21 +16,21 @@ import java.util.List;
 /**
  * pic repo test
  *
- * @author saxing 2019/4/5 17:25
+ * @author roilat-J 2019/4/5 17:25
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = BootApplication.class)
 public class ResourceRepositoryTest {
 
-    @Autowired
-    ResourceRepository resourceRepository;
+	@Autowired
+	ResourceRepository resourceRepository;
 
-    @Test
-    public void find0Before() {
+	@Test
+	public void find0Before() {
 
-        LocalDateTime now = LocalDateTime.now();
-        String timeStr = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(now);
-        List<Resource> beforeResources = resourceRepository.find0Before(timeStr);
-        System.out.println(beforeResources);
-    }
+		LocalDateTime now = LocalDateTime.now();
+		String timeStr = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").format(now);
+		List<Resource> beforeResources = resourceRepository.find0Before(timeStr);
+		System.out.println(beforeResources);
+	}
 }

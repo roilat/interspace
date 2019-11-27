@@ -11,8 +11,10 @@ import java.util.Set;
  * @create - 2018/5/18
  */
 public interface RolePermissionService {
-    List<Permission> findPermissions(long roleId);
-    void deleteByRoleId(long roleId);
-    void add(Set<RolePermission> rolePermissions);
+	List<Permission> findPermissions(long roleId);
+
+	void deleteByRoleId(long roleId);
+
+	void add(Set<RolePermission> rolePermissions);
 
 }

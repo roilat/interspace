@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   mtons [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.base.utils;
 
 import org.apache.commons.lang3.StringUtils;
@@ -41,11 +32,11 @@ public class MD5 {
 	 * 对字符串进行Md5加密
 	 *
 	 * @param input 原文
-	 * @param salt 随机数
+	 * @param salt  随机数
 	 * @return string
 	 */
 	public static String md5(String input, String salt) {
-		if(StringUtils.isEmpty(salt)) {
+		if (StringUtils.isEmpty(salt)) {
 			salt = "";
 		}
 		return md5(salt + md5(input));
@@ -58,7 +49,7 @@ public class MD5 {
 	 * @return
 	 * @throws NoSuchAlgorithmException
 	 */
-	public static String md5File(byte[] bytes)  {
+	public static String md5File(byte[] bytes) {
 		byte[] code = new byte[0];
 		try {
 			code = MessageDigest.getInstance("md5").digest(bytes);

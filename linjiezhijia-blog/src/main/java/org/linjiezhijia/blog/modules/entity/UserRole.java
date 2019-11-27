@@ -12,16 +12,16 @@ import java.io.Serializable;
 @Table(name = "shiro_user_role")
 public class UserRole implements Serializable {
 	private static final long serialVersionUID = -2908144287976184011L;
-	
+
 	@Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 
 	@Column(name = "user_id")
 	private Long userId;
 
 	@Column(name = "role_id")
-    private Long roleId;
+	private Long roleId;
 
 	public Long getId() {
 		return id;

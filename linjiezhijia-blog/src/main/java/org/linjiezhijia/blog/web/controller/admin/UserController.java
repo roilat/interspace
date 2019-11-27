@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.admin;
 
 import org.linjiezhijia.blog.base.lang.Result;
@@ -78,7 +69,8 @@ public class UserController extends BaseController {
 
 	@PostMapping("/update_role")
 //	@RequiresPermissions("user:role")
-	public String postAuthc(Long id, @RequestParam(value = "roleIds", required=false) Set<Long> roleIds, ModelMap model) {
+	public String postAuthc(Long id, @RequestParam(value = "roleIds", required = false) Set<Long> roleIds,
+			ModelMap model) {
 		userRoleService.updateRole(id, roleIds);
 		model.put("data", Result.success());
 		return "redirect:/admin/user/list";
@@ -110,7 +102,7 @@ public class UserController extends BaseController {
 	@RequestMapping("/open")
 //	@RequiresPermissions("user:open")
 	@ResponseBody
-	public Result open(Long id) {
+	public Result<?> open(Long id) {
 		userService.updateStatus(id, Consts.STATUS_NORMAL);
 		return Result.success();
 	}
@@ -118,7 +110,7 @@ public class UserController extends BaseController {
 	@RequestMapping("/close")
 //	@RequiresPermissions("user:close")
 	@ResponseBody
-	public Result close(Long id) {
+	public Result<?> close(Long id) {
 		userService.updateStatus(id, Consts.STATUS_CLOSED);
 		return Result.success();
 	}

@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.site;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,9 +15,9 @@ import org.linjiezhijia.blog.web.controller.BaseController;
  *
  */
 @Controller
-public class IndexController extends BaseController{
-	
-	@RequestMapping(value= {"/", "/index"})
+public class IndexController extends BaseController {
+
+	@RequestMapping(value = { "/", "/index" })
 	public String root(ModelMap model, HttpServletRequest request) {
 		String order = ServletRequestUtils.getStringParameter(request, "order", Consts.order.NEWEST);
 		int pageNo = ServletRequestUtils.getIntParameter(request, "pageNo", 1);

@@ -12,7 +12,9 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface PostTagRepository extends JpaRepository<PostTag, Long>, JpaSpecificationExecutor<PostTag> {
-    Page<PostTag> findAllByTagId(Pageable pageable, long tagId);
-    PostTag findByPostIdAndTagId(long postId, long tagId);
-    int deleteByPostId(long postId);
+	Page<PostTag> findAllByTagId(Pageable pageable, long tagId);
+
+	PostTag findByPostIdAndTagId(long postId, long tagId);
+
+	int deleteByPostId(long postId);
 }

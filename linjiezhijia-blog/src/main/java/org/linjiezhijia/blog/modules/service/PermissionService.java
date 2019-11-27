@@ -38,10 +38,11 @@ public interface PermissionService {
     List<Permission> list();
 
     /**
-     * 根据权限项ID获得权限项信息
-     * @param id 权限ID
-     * @return Permission
-     */
-    Permission get(long id);
+	 * 根据权限项ID获得权限项信息
+	 * 
+	 * @param id 权限ID
+	 * @return Permission
+	 */
+	Permission get(long id);
 
 }

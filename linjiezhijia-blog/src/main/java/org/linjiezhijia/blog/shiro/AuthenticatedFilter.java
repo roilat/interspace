@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.shiro;
 
 import java.io.IOException;
@@ -30,38 +21,38 @@ import org.apache.shiro.web.util.WebUtils;
  * @version 1.0.0
  */
 public class AuthenticatedFilter extends OncePerRequestFilter {
-    private static final String JS = "<script type='text/javascript'>var wp=window.parent; if(wp!=null){while(wp.parent&&wp.parent!==wp){wp=wp.parent;}wp.location.href='%1$s';}else{window.location.href='%1$s';}</script>";
-    private String loginUrl = "/login";
+	private static final String JS = "<script type='text/javascript'>var wp=window.parent; if(wp!=null){while(wp.parent&&wp.parent!==wp){wp=wp.parent;}wp.location.href='%1$s';}else{window.location.href='%1$s';}</script>";
+	private String loginUrl = "/login";
 
-    @Override
-    protected void doFilterInternal(ServletRequest request, ServletResponse response, FilterChain chain)
-            throws ServletException, IOException {
+	@Override
+	protected void doFilterInternal(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws ServletException, IOException {
 
-        Subject subject = SecurityUtils.getSubject();
-        if (subject.isAuthenticated() || subject.isRemembered()) {
-            chain.doFilter(request, response);
-        } else {
-            WebUtils.saveRequest(request);
-            String path = WebUtils.getContextPath((HttpServletRequest) request);
-            String url = loginUrl;
-            if (StringUtils.isNotBlank(path) && path.length() > 1) {
-                url = path + url;
-            }
+		Subject subject = SecurityUtils.getSubject();
+		if (subject.isAuthenticated() || subject.isRemembered()) {
+			chain.doFilter(request, response);
+		} else {
+			WebUtils.saveRequest(request);
+			String path = WebUtils.getContextPath((HttpServletRequest) request);
+			String url = loginUrl;
+			if (StringUtils.isNotBlank(path) && path.length() > 1) {
+				url = path + url;
+			}
 
-            if (isAjaxRequest((HttpServletRequest) request)) {
-                response.setContentType("application/json;charset=UTF-8");
-                response.getWriter().print(JSON.toJSONString(Result.failure("您还没有登录!")));
-            } else {
-		response.setContentType("text/html;charset=UTF-8");
-                response.getWriter().write(new Formatter().format(JS, url).toString());
-            }
-        }
-    }
+			if (isAjaxRequest((HttpServletRequest) request)) {
+				response.setContentType("application/json;charset=UTF-8");
+				response.getWriter().print(JSON.toJSONString(Result.failure("您还没有登录!")));
+			} else {
+				response.setContentType("text/html;charset=UTF-8");
+				response.getWriter().write(new Formatter().format(JS, url).toString());
+			}
+		}
+	}
 
-    public void setLoginUrl(String loginUrl) {
-        this.loginUrl = loginUrl;
-    }
-    
+	public void setLoginUrl(String loginUrl) {
+		this.loginUrl = loginUrl;
+	}
+
 	/**
 	 * 判断是否为Ajax请求 <功能详细描述>
 	 * 
@@ -71,7 +62,7 @@ public class AuthenticatedFilter extends OncePerRequestFilter {
 	 */
 	public static boolean isAjaxRequest(HttpServletRequest request) {
 		String header = request.getHeader("X-Requested-With");
-        return "XMLHttpRequest".equals(header);
+		return "XMLHttpRequest".equals(header);
 	}
 
 }

@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.entity;
 
 import org.apache.lucene.analysis.cn.smart.SmartChineseAnalyzer;
@@ -23,15 +14,13 @@ import java.util.Date;
 
 /**
  * 内容表
+ * 
  * @author roilat-J
  *
  */
 @Entity
-@Table(name = "mto_post", indexes = {
-		@Index(name = "IK_CHANNEL_ID", columnList = "channel_id")
-})
-@FilterDefs({
-		@FilterDef(name = "POST_STATUS_FILTER", defaultCondition = "status = 0" )})
+@Table(name = "mto_post", indexes = { @Index(name = "IK_CHANNEL_ID", columnList = "channel_id") })
+@FilterDefs({ @FilterDef(name = "POST_STATUS_FILTER", defaultCondition = "status = 0") })
 @Filters({ @Filter(name = "POST_STATUS_FILTER") })
 @Indexed(index = "post")
 @Analyzer(impl = SmartChineseAnalyzer.class)

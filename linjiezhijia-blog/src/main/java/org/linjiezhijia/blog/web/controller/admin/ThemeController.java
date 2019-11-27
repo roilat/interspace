@@ -20,45 +20,45 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * @author : landy
+ * @author : roilat-J
  */
 @Controller
 @RequestMapping("/admin/theme")
 public class ThemeController extends BaseController {
-    @Autowired
-    private OptionsService optionsService;
-    @Autowired
-    private ContextStartup contextStartup;
+	@Autowired
+	private OptionsService optionsService;
+	@Autowired
+	private ContextStartup contextStartup;
 
-    @RequestMapping("/index")
-    public String index(ModelMap model) {
-        model.put("themes", BlogUtils.getThemes());
-        return "/admin/theme/index";
-    }
+	@RequestMapping("/index")
+	public String index(ModelMap model) {
+		model.put("themes", BlogUtils.getThemes());
+		return "/admin/theme/index";
+	}
 
-    @RequestMapping("/active")
-    @ResponseBody
-    public Result update(@RequestParam Map<String, String> body) {
-        optionsService.update(body);
-        contextStartup.reloadOptions(false);
-        return Result.success();
-    }
+	@RequestMapping("/active")
+	@ResponseBody
+	public Result<?> update(@RequestParam Map<String, String> body) {
+		optionsService.update(body);
+		contextStartup.reloadOptions(false);
+		return Result.success();
+	}
 
-    @PostMapping("/upload")
-    @ResponseBody
-    public Result upload(@RequestParam("file") MultipartFile file) {
-        if (null == file || file.isEmpty()) {
-            return Result.failure("文件不能为空");
-        } else {
-            String suffix = FileKit.getSuffix(Objects.requireNonNull(file.getOriginalFilename()));
-            if (!".zip".equalsIgnoreCase(suffix)) {
-                return Result.failure("请上传zip文件");
-            }
-            try {
-                return BlogUtils.uploadTheme(file);
-            } catch (IOException e) {
-                return Result.failure(e.getMessage());
-            }
-        }
-    }
+	@PostMapping("/upload")
+	@ResponseBody
+	public Result<?> upload(@RequestParam("file") MultipartFile file) {
+		if (null == file || file.isEmpty()) {
+			return Result.failure("文件不能为空");
+		} else {
+			String suffix = FileKit.getSuffix(Objects.requireNonNull(file.getOriginalFilename()));
+			if (!".zip".equalsIgnoreCase(suffix)) {
+				return Result.failure("请上传zip文件");
+			}
+			try {
+				return BlogUtils.uploadTheme(file);
+			} catch (IOException e) {
+				return Result.failure(e.getMessage());
+			}
+		}
+	}
 }

@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service;
 
 import org.linjiezhijia.blog.modules.entity.Channel;
@@ -23,10 +14,16 @@ import java.util.Map;
  */
 public interface ChannelService {
 	List<Channel> findAll(int status);
+
 	Map<Integer, Channel> findMapByIds(Collection<Integer> ids);
+
 	Channel getById(int id);
+
 	void update(Channel channel);
+
 	void updateWeight(int id, int weighted);
+
 	void delete(int id);
+
 	long count();
 }

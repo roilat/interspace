@@ -1,6 +1,6 @@
 ### Mblog 开源Java博客系统, 支持多用户, 支持切换主题
 
-[![Author](https://img.shields.io/badge/author-landy-green.svg?style=flat-square)](http://mtons.com)
+[![Author](https://img.shields.io/badge/author-roilat-J-green.svg?style=flat-square)](http://mtons.com)
 [![JDK](https://img.shields.io/badge/jdk-1.8-green.svg?style=flat-square)](#)
 [![Release](https://img.shields.io/github/release/roilat-J/mblog.svg?style=flat-square)](https://github.com/roilat-J/mblog)
 [![license](https://img.shields.io/badge/license-GPL--3.0-green.svg)](https://github.com/roilat-J/mblog/blob/master/LICENSE)

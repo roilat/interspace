@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class PostTagVO extends PostTag implements Serializable {
-    private static final long serialVersionUID = 73354108587481371L;
+	private static final long serialVersionUID = 73354108587481371L;
 
-    private PostVO post;
+	private PostVO post;
 }

@@ -11,26 +11,26 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 /**
- * @author Mark Han
+ * @author roilat-J
  */
 @Aspect
 @Component
 public class HibernateFilterAspect {
 
-    private static final String FILTER_NAME = "POST_STATUS_FILTER";
+	private static final String FILTER_NAME = "POST_STATUS_FILTER";
 
-    @PersistenceContext
-    protected EntityManager em;
+	@PersistenceContext
+	protected EntityManager em;
 
-    @Pointcut("@annotation(org.linjiezhijia.blog.modules.aspect.PostStatusFilter)")
-    public void filter() {
-    }
+	@Pointcut("@annotation(org.linjiezhijia.blog.modules.aspect.PostStatusFilter)")
+	public void filter() {
+	}
 
-    @Before("filter()")
-    public void doBefore(JoinPoint joinPoint) {
-        Session mfSession = (Session) em.getDelegate();
-        if (mfSession.isOpen()) {
-            mfSession.enableFilter(FILTER_NAME).validate();
-        }
-    }
+	@Before("filter()")
+	public void doBefore(JoinPoint joinPoint) {
+		Session mfSession = (Session) em.getDelegate();
+		if (mfSession.isOpen()) {
+			mfSession.enableFilter(FILTER_NAME).validate();
+		}
+	}
 }

@@ -1,12 +1,3 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.modules.service.impl;
 
 import org.linjiezhijia.blog.base.lang.Consts;
@@ -29,67 +20,67 @@ import java.util.Date;
  */
 @Service
 public class SecurityCodeServiceImpl implements SecurityCodeService {
-    @Autowired
-    private SecurityCodeRepository securityCodeRepository;
+	@Autowired
+	private SecurityCodeRepository securityCodeRepository;
 
-    // 验证码存活时间 单位：分钟
-    private int survivalTime = 30;
+	// 验证码存活时间 单位：分钟
+	private int survivalTime = 30;
 
-    @Override
-    @Transactional
-    public String generateCode(String key, int type, String target) {
-        SecurityCode po = securityCodeRepository.findByKey(key);
+	@Override
+	@Transactional
+	public String generateCode(String key, int type, String target) {
+		SecurityCode po = securityCodeRepository.findByKey(key);
 
-        String code = RandomStringUtils.randomNumeric(6);
-        Date now = new Date();
+		String code = RandomStringUtils.randomNumeric(6);
+		Date now = new Date();
 
-        if (po == null) {
-            po = new SecurityCode();
-            po.setKey(key);
-            po.setCreated(now);
-            po.setExpired(DateUtils.addMinutes(now, survivalTime));
-            po.setCode(code);
-            po.setType(type);
-            po.setTarget(target);
-        } else {
+		if (po == null) {
+			po = new SecurityCode();
+			po.setKey(key);
+			po.setCreated(now);
+			po.setExpired(DateUtils.addMinutes(now, survivalTime));
+			po.setCode(code);
+			po.setType(type);
+			po.setTarget(target);
+		} else {
 
-            long interval = ( now.getTime() - po.getCreated().getTime() ) / 1000;
+			long interval = (now.getTime() - po.getCreated().getTime()) / 1000;
 
-            if (interval <= 60) {
-                throw new LinjiezhijiaBlogException("发送间隔时间不能少于1分钟");
-            }
+			if (interval <= 60) {
+				throw new LinjiezhijiaBlogException("发送间隔时间不能少于1分钟");
+			}
 
-            // 把 验证位 置0
-            po.setStatus(EntityStatus.ENABLED);
-            po.setCreated(now);
-            po.setExpired(DateUtils.addMinutes(now, survivalTime));
-            po.setCode(code);
-            po.setType(type);
-            po.setTarget(target);
-        }
+			// 把 验证位 置0
+			po.setStatus(EntityStatus.ENABLED);
+			po.setCreated(now);
+			po.setExpired(DateUtils.addMinutes(now, survivalTime));
+			po.setCode(code);
+			po.setType(type);
+			po.setTarget(target);
+		}
 
-        securityCodeRepository.save(po);
+		securityCodeRepository.save(po);
 
-        return code;
-    }
+		return code;
+	}
 
-    @Override
-    @Transactional
-    public boolean verify(String key, int type, String code) {
-        Assert.hasLength(code, "验证码不能为空");
-        SecurityCode po = securityCodeRepository.findByKeyAndType(key, type);
-        Assert.notNull(po, "您没有进行过类型验证");
+	@Override
+	@Transactional
+	public boolean verify(String key, int type, String code) {
+		Assert.hasLength(code, "验证码不能为空");
+		SecurityCode po = securityCodeRepository.findByKeyAndType(key, type);
+		Assert.notNull(po, "您没有进行过类型验证");
 
-        Date now = new Date();
+		Date now = new Date();
 
-        Assert.state(now.getTime() <= po.getExpired().getTime(), "验证码已过期");
-        Assert.isTrue(po.getType() == type, "验证码类型错误");
-        Assert.isTrue(po.getStatus() == Consts.CODE_STATUS_INIT, "验证码已经使用过");
-        Assert.state(code.equals(po.getCode()), "验证码不对");
+		Assert.state(now.getTime() <= po.getExpired().getTime(), "验证码已过期");
+		Assert.isTrue(po.getType() == type, "验证码类型错误");
+		Assert.isTrue(po.getStatus() == Consts.CODE_STATUS_INIT, "验证码已经使用过");
+		Assert.state(code.equals(po.getCode()), "验证码不对");
 
-        po.setStatus(Consts.CODE_STATUS_CERTIFIED);
-        securityCodeRepository.save(po);
-        return true;
-    }
+		po.setStatus(Consts.CODE_STATUS_CERTIFIED);
+		securityCodeRepository.save(po);
+		return true;
+	}
 
 }

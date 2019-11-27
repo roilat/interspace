@@ -1,16 +1,8 @@
-/*
-+--------------------------------------------------------------------------
-|   Mblog [#RELEASE_VERSION#]
-|   ========================================
-|   Copyright (c) 2014, 2015 mtons. All Rights Reserved
-|   http://www.mtons.com
-|
-+---------------------------------------------------------------------------
-*/
 package org.linjiezhijia.blog.web.controller.admin;
 
+import java.util.Map;
+
 import org.linjiezhijia.blog.base.lang.Result;
-import org.linjiezhijia.blog.base.utils.BlogUtils;
 import org.linjiezhijia.blog.config.ContextStartup;
 import org.linjiezhijia.blog.modules.service.OptionsService;
 import org.linjiezhijia.blog.modules.service.PostSearchService;
@@ -21,9 +13,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
-import java.util.Map;
 
 /**
  * 系统配置
@@ -45,7 +34,7 @@ public class OptionsController extends BaseController {
 	public String index(ModelMap model) {
 		return "/admin/options/index";
 	}
-	
+
 	@RequestMapping("/update")
 	public String update(@RequestParam Map<String, String> body, ModelMap model) {
 		optionsService.update(body);
@@ -56,11 +45,12 @@ public class OptionsController extends BaseController {
 
 	/**
 	 * 刷新系统变量
+	 * 
 	 * @return
 	 */
 	@RequestMapping("/reload_options")
 	@ResponseBody
-	public Result reloadOptions() {
+	public Result<?> reloadOptions() {
 		contextStartup.reloadOptions(false);
 		contextStartup.resetChannels();
 		return Result.success();
@@ -68,7 +58,7 @@ public class OptionsController extends BaseController {
 
 	@RequestMapping("/reset_indexes")
 	@ResponseBody
-	public Result resetIndexes() {
+	public Result<?> resetIndexes() {
 		postSearchService.resetIndexes();
 		return Result.success();
 	}

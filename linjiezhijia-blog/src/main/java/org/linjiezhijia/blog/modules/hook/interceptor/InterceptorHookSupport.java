@@ -1,8 +1,8 @@
 package org.linjiezhijia.blog.modules.hook.interceptor;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.annotation.PreDestroy;
+
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * 拦截类钩子支持类

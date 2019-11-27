@@ -8,20 +8,24 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * <p>Equivalent to {@link org.apache.shiro.web.tags.RoleTag}</p>
+ * <p>
+ * Equivalent to {@link org.apache.shiro.web.tags.RoleTag}
+ * </p>
  */
 public abstract class RoleTag extends SecureTag {
-    String getName(Map params) {
-        return getParam(params, "name");
-    }
+	@SuppressWarnings("rawtypes")
+	String getName(Map params) {
+		return getParam(params, "name");
+	}
 
-    @Override
-    public void render(Environment env, Map params, TemplateDirectiveBody body) throws IOException, TemplateException {
-        boolean show = showBody(getName(params));
-        if (show) {
-            renderBody(env, body);
-        }
-    }
+	@SuppressWarnings("rawtypes")
+	@Override
+	public void render(Environment env, Map params, TemplateDirectiveBody body) throws IOException, TemplateException {
+		boolean show = showBody(getName(params));
+		if (show) {
+			renderBody(env, body);
+		}
+	}
 
-    protected abstract boolean showBody(String roleName);
+	protected abstract boolean showBody(String roleName);
 }
