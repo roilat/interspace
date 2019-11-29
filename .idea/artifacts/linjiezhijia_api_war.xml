@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="linjiezhijia-api:war">
-    <output-path>$PROJECT_DIR$/linjiezhijia-api/target</output-path>
-    <root id="archive" name="linjiezhijia-api.war">
-      <element id="artifact" artifact-name="linjiezhijia-api:war exploded" />
+  <artifact type="war" name="interspace-api:war">
+    <output-path>$PROJECT_DIR$/interspace-api/target</output-path>
+    <root id="archive" name="interspace-api.war">
+      <element id="artifact" artifact-name="interspace-api:war exploded" />
     </root>
   </artifact>
 </component>

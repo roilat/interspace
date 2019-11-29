@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="linjiezhijia-api" />
-        <module name="linjiezhijia-static-web" />
-        <module name="linjiezhijia-web" />
+        <module name="interspace-api" />
+        <module name="interspace-static-web" />
+        <module name="interspace-web" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="linjiezhijia" target="1.5" />
-      <module name="linjiezhijia-api" target="1.8" />
-      <module name="linjiezhijia-static-web" target="1.5" />
-      <module name="linjiezhijia-web" target="1.5" />
+      <module name="interspace" target="1.5" />
+      <module name="interspace-api" target="1.8" />
+      <module name="interspace-static-web" target="1.5" />
+      <module name="interspace-web" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

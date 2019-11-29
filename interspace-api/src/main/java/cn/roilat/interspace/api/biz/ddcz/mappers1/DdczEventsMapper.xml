@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.roilat.interspace.api.biz.ddcz.mappers.DdczEventsMapper">
+  <resultMap id="BaseResultMap" type="cn.roilat.interspace.api.biz.ddcz.model.DdczEvents">
+    <result column="ID" jdbcType="INTEGER" property="id" />
+    <result column="EVENT_TYPE" jdbcType="CHAR" property="eventType" />
+    <result column="EVENT_NAME" jdbcType="VARCHAR" property="eventName" />
+    <result column="DESCRIPTION" jdbcType="VARCHAR" property="description" />
+    <result column="ORDER_NUM" jdbcType="INTEGER" property="orderNum" />
+    <result column="RELA_LINKS" jdbcType="VARCHAR" property="relaLinks" />
+    <result column="FILE_SAVE_PATH" jdbcType="VARCHAR" property="fileSavePath" />
+    <result column="FILE_NAME" jdbcType="VARCHAR" property="fileName" />
+    <result column="FILE_TYPE" jdbcType="CHAR" property="fileType" />
+    <result column="EVENT_DATE" jdbcType="CHAR" property="eventDate" />
+    <result column="EVENT_TIME" jdbcType="CHAR" property="eventTime" />
+    <result column="CREATE_DT" jdbcType="TIMESTAMP" property="createDt" />
+    <result column="UPDATE_DT" jdbcType="TIMESTAMP" property="updateDt" />
+    <result column="CREATOR" jdbcType="VARCHAR" property="creator" />
+    <result column="UPDATOR" jdbcType="VARCHAR" property="updator" />
+    <result column="STATE" jdbcType="CHAR" property="state" />
+  </resultMap>
+  <sql id="Where_Clause">
+    <where>
+      <foreach collection="criterias" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Where_Clause">
+    <where>
+      <foreach collection="example.criterias" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    ID, EVENT_TYPE, EVENT_NAME, DESCRIPTION, ORDER_NUM, RELA_LINKS, FILE_SAVE_PATH, FILE_NAME, 
+    FILE_TYPE, EVENT_DATE, EVENT_TIME, CREATE_DT, UPDATE_DT, CREATOR, UPDATOR, STATE
+  </sql>
+  <select id="selectByCondition" parameterType="cn.roilat.interspace.api.biz.ddcz.model.DdczEventsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_ddcz_events
+    <if test="_parameter != null">
+      <include refid="Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByCondition" parameterType="cn.roilat.interspace.api.biz.ddcz.model.DdczEventsExample">
+    delete from t_ddcz_events
+    <if test="_parameter != null">
+      <include refid="Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="cn.roilat.interspace.api.biz.ddcz.model.DdczEvents">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_ddcz_events (EVENT_TYPE, EVENT_NAME, DESCRIPTION, 
+      ORDER_NUM, RELA_LINKS, FILE_SAVE_PATH, 
+      FILE_NAME, FILE_TYPE, EVENT_DATE, 
+      EVENT_TIME, CREATE_DT, UPDATE_DT, 
+      CREATOR, UPDATOR, STATE
+      )
+    values (#{eventType,jdbcType=CHAR}, #{eventName,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{orderNum,jdbcType=INTEGER}, #{relaLinks,jdbcType=VARCHAR}, #{fileSavePath,jdbcType=VARCHAR}, 
+      #{fileName,jdbcType=VARCHAR}, #{fileType,jdbcType=CHAR}, #{eventDate,jdbcType=CHAR}, 
+      #{eventTime,jdbcType=CHAR}, #{createDt,jdbcType=TIMESTAMP}, #{updateDt,jdbcType=TIMESTAMP}, 
+      #{creator,jdbcType=VARCHAR}, #{updator,jdbcType=VARCHAR}, #{state,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="cn.roilat.interspace.api.biz.ddcz.model.DdczEvents">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into t_ddcz_events
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="eventType != null">
+        EVENT_TYPE,
+      </if>
+      <if test="eventName != null">
+        EVENT_NAME,
+      </if>
+      <if test="description != null">
+        DESCRIPTION,
+      </if>
+      <if test="orderNum != null">
+        ORDER_NUM,
+      </if>
+      <if test="relaLinks != null">
+        RELA_LINKS,
+      </if>
+      <if test="fileSavePath != null">
+        FILE_SAVE_PATH,
+      </if>
+      <if test="fileName != null">
+        FILE_NAME,
+      </if>
+      <if test="fileType != null">
+        FILE_TYPE,
+      </if>
+      <if test="eventDate != null">
+        EVENT_DATE,
+      </if>
+      <if test="eventTime != null">
+        EVENT_TIME,
+      </if>
+      <if test="createDt != null">
+        CREATE_DT,
+      </if>
+      <if test="updateDt != null">
+        UPDATE_DT,
+      </if>
+      <if test="creator != null">
+        CREATOR,
+      </if>
+      <if test="updator != null">
+        UPDATOR,
+      </if>
+      <if test="state != null">
+        STATE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="eventType != null">
+        #{eventType,jdbcType=CHAR},
+      </if>
+      <if test="eventName != null">
+        #{eventName,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="orderNum != null">
+        #{orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="relaLinks != null">
+        #{relaLinks,jdbcType=VARCHAR},
+      </if>
+      <if test="fileSavePath != null">
+        #{fileSavePath,jdbcType=VARCHAR},
+      </if>
+      <if test="fileName != null">
+        #{fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="fileType != null">
+        #{fileType,jdbcType=CHAR},
+      </if>
+      <if test="eventDate != null">
+        #{eventDate,jdbcType=CHAR},
+      </if>
+      <if test="eventTime != null">
+        #{eventTime,jdbcType=CHAR},
+      </if>
+      <if test="createDt != null">
+        #{createDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateDt != null">
+        #{updateDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="creator != null">
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="updator != null">
+        #{updator,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByCondition" parameterType="cn.roilat.interspace.api.biz.ddcz.model.DdczEventsExample" resultType="java.lang.Long">
+    select count(*) from t_ddcz_events
+    <if test="_parameter != null">
+      <include refid="Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByConditionSelective" parameterType="map">
+    update t_ddcz_events
+    <set>
+      <if test="record.id != null">
+        ID = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.eventType != null">
+        EVENT_TYPE = #{record.eventType,jdbcType=CHAR},
+      </if>
+      <if test="record.eventName != null">
+        EVENT_NAME = #{record.eventName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.description != null">
+        DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderNum != null">
+        ORDER_NUM = #{record.orderNum,jdbcType=INTEGER},
+      </if>
+      <if test="record.relaLinks != null">
+        RELA_LINKS = #{record.relaLinks,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileSavePath != null">
+        FILE_SAVE_PATH = #{record.fileSavePath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileName != null">
+        FILE_NAME = #{record.fileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fileType != null">
+        FILE_TYPE = #{record.fileType,jdbcType=CHAR},
+      </if>
+      <if test="record.eventDate != null">
+        EVENT_DATE = #{record.eventDate,jdbcType=CHAR},
+      </if>
+      <if test="record.eventTime != null">
+        EVENT_TIME = #{record.eventTime,jdbcType=CHAR},
+      </if>
+      <if test="record.createDt != null">
+        CREATE_DT = #{record.createDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.updateDt != null">
+        UPDATE_DT = #{record.updateDt,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.creator != null">
+        CREATOR = #{record.creator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updator != null">
+        UPDATOR = #{record.updator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null">
+        STATE = #{record.state,jdbcType=CHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByCondition" parameterType="map">
+    update t_ddcz_events
+    set ID = #{record.id,jdbcType=INTEGER},
+      EVENT_TYPE = #{record.eventType,jdbcType=CHAR},
+      EVENT_NAME = #{record.eventName,jdbcType=VARCHAR},
+      DESCRIPTION = #{record.description,jdbcType=VARCHAR},
+      ORDER_NUM = #{record.orderNum,jdbcType=INTEGER},
+      RELA_LINKS = #{record.relaLinks,jdbcType=VARCHAR},
+      FILE_SAVE_PATH = #{record.fileSavePath,jdbcType=VARCHAR},
+      FILE_NAME = #{record.fileName,jdbcType=VARCHAR},
+      FILE_TYPE = #{record.fileType,jdbcType=CHAR},
+      EVENT_DATE = #{record.eventDate,jdbcType=CHAR},
+      EVENT_TIME = #{record.eventTime,jdbcType=CHAR},
+      CREATE_DT = #{record.createDt,jdbcType=TIMESTAMP},
+      UPDATE_DT = #{record.updateDt,jdbcType=TIMESTAMP},
+      CREATOR = #{record.creator,jdbcType=VARCHAR},
+      UPDATOR = #{record.updator,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=CHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Where_Clause" />
+    </if>
+  </update>
+</mapper>

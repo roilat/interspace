@@ -1,8 +1,8 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="linjiezhijia-static-web:war">
-    <output-path>$PROJECT_DIR$/linjiezhijia-static-web/target</output-path>
-    <root id="archive" name="linjiezhijia-static-web.war">
-      <element id="artifact" artifact-name="linjiezhijia-static-web:war exploded" />
+  <artifact type="war" name="interspace-static-web:war">
+    <output-path>$PROJECT_DIR$/interspace-static-web/target</output-path>
+    <root id="archive" name="interspace-static-web.war">
+      <element id="artifact" artifact-name="interspace-static-web:war exploded" />
     </root>
   </artifact>
 </component>

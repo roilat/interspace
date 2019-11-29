@@ -1,0 +1,17 @@
+[
+	{
+		"page": "index.html",
+		"title": "我的博客",
+		"action":"Blogs"
+	},
+	{
+		"page": "photos.html",
+		"title": "我的相册",
+		"action":"Photos"
+	},
+	{
+		"page": "about.html",
+		"title": "关于我",
+		"action":"AboutMe"
+	}
+]

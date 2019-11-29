@@ -4,10 +4,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>cn.roilat</groupId>
-	<artifactId>linjiezhijia</artifactId>
+	<artifactId>interspace</artifactId>
 	<packaging>pom</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>linjiezhijia Maven Webapp</name>
+	<name>interspace Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -25,7 +25,7 @@
 	</dependencies>
 	
 	<build>
-		<finalName>linjiezhijia</finalName>
+		<finalName>interspace</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -41,10 +41,10 @@
 		</plugins>
 	</build>
 	<modules>
-		<module>linjiezhijia-web</module>
-		<module>linjiezhijia-static-web</module>
-		<module>linjiezhijia-api</module>
-		<module>linjiezhijia-blog</module>
-		<module>linjiezhijia-common</module>
+		<module>interspace-web</module>
+		<module>interspace-static-web</module>
+		<module>interspace-api</module>
+		<module>interspace-blog</module>
+		<module>interspace-common</module>
 	</modules>
 </project>

@@ -1,0 +1,10 @@
+version: '3'
+services:
+    server:
+        container_name: interspace-blog
+        image: roilat-J/interspace-blog:latest
+        environment:
+            TZ: Asia/Shanghai
+        ports:
+        - "8080:8080"
+        restart: always

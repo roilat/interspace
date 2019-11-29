@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS linjiezhijia;
-ALTER DATABASE linjiezhijia DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+CREATE DATABASE IF NOT EXISTS interspace;
+ALTER DATABASE interspace DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 /*==============================================================*/
 /* DBMS name:      MySQL 5.0                                    */
