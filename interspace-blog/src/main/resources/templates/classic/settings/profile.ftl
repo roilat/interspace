@@ -29,12 +29,12 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label class="control-label col-lg-3" for="gender">gender</label>
+					<label class="control-label col-lg-3" for="gender">性别</label>
 					<div class="col-lg-4">
-						<select class="form-control" name="gender" data-select="${view.gender}" maxlength="7">
+						<select class="form-control" name="gender" data-select="${view.gender}" >
 							<option value="0">--</option>
-							<option value="1">男</option>
-							<option value="2">女</option>
+							<option value="2">男</option>
+							<option value="1">女</option>
 						</select>
 					</div>
 				</div>
